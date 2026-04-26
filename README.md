@@ -1,6 +1,10 @@
-# Agent Skills
+# Agent Skills For Real Engineers
 
-A collection of agent skills that extend capabilities across planning, development, and tooling.
+My agent skills that I use every day to do real engineering - not vibe coding.
+
+If you want to keep up with changes to these skills, and any new ones I create, you can join ~60,000 other devs on my newsletter:
+
+[Sign Up To The Newsletter](https://www.aihero.dev/s/skills-newsletter)
 
 ## Planning & Design
 
