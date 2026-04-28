@@ -11,10 +11,6 @@
     "./skills/engineering/zoom-out",
     "./skills/productivity/caveman",
     "./skills/productivity/grill-me",
-    "./skills/productivity/write-a-skill",
-    "./skills/misc/git-guardrails-claude-code",
-    "./skills/misc/migrate-to-shoehorn",
-    "./skills/misc/scaffold-exercises",
-    "./skills/misc/setup-pre-commit"
+    "./skills/productivity/write-a-skill"
   ]
 }
