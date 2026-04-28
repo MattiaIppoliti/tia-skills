@@ -82,7 +82,7 @@ Before presenting anything to the maintainer:
 
 - Read the full issue: body, all comments, all labels, who reported it, when
 - If there are prior triage notes comments (from previous sessions), parse them to understand what has already been established
-- Explore the codebase to build context — understand the domain, relevant interfaces, and existing behavior related to the issue
+- Explore the codebase to build context — understand the domain, relevant interfaces, and existing behavior related to the issue. Before exploring, follow [../grill-with-docs/DOMAIN-AWARENESS.md](../grill-with-docs/DOMAIN-AWARENESS.md).
 - Read `.out-of-scope/*.md` files and check if this issue matches or is similar to a previously rejected concept
 
 ### Step 2: Present a recommendation

@@ -26,18 +26,13 @@ Key principles (see [LANGUAGE.md](LANGUAGE.md) for the full list):
 - **The interface is the test surface.**
 - **One adapter = hypothetical seam. Two adapters = real seam.**
 
-This skill is _informed_ by the project's domain model — `CONTEXT.md` and any `docs/adr/`. The domain language gives names to good seams; ADRs record decisions the skill should not re-litigate. See [CONTEXT-FORMAT.md](../grill-with-docs/CONTEXT-FORMAT.md) and [ADR-FORMAT.md](../grill-with-docs/ADR-FORMAT.md).
+This skill is _informed_ by the project's domain model. The domain language gives names to good seams; ADRs record decisions the skill should not re-litigate.
 
 ## Process
 
 ### 1. Explore
 
-Read existing documentation first:
-
-- `CONTEXT.md` (or `CONTEXT-MAP.md` + each `CONTEXT.md` in a multi-context repo)
-- Relevant ADRs in `docs/adr/` (and any context-scoped `docs/adr/` directories)
-
-If any of these files don't exist, proceed silently — don't flag their absence or suggest creating them upfront.
+Before exploring, follow [../grill-with-docs/DOMAIN-AWARENESS.md](../grill-with-docs/DOMAIN-AWARENESS.md) — read `CONTEXT.md` and relevant ADRs first.
 
 Then use the Agent tool with `subagent_type=Explore` to walk the codebase. Don't follow rigid heuristics — explore organically and note where you experience friction:
 
