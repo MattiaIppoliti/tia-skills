@@ -10,6 +10,18 @@ If you want to keep up with changes to these skills, and any new ones I create, 
 
 [Sign Up To The Newsletter](https://www.aihero.dev/s/skills-newsletter)
 
+## Quickstart (30-second setup)
+
+1. Run the skills.sh installer:
+
+```bash
+npx skills@latest add mattpocock/skills
+```
+
+2. Pick the skills you want, and which coding agents you want to install them on.
+
+3. Bam - you're ready to go.
+
 ## Why These Skills Exist
 
 I built these skills as a way to fix common failure modes I see with AI.
