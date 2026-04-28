@@ -1,19 +1,19 @@
 ---
 name: to-issues
-description: Break a plan, spec, or PRD into independently-grabbable issues on the project backlog using tracer-bullet vertical slices. Use when user wants to convert a plan into issues, create implementation tickets, or break down work into issues.
+description: Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices. Use when user wants to convert a plan into issues, create implementation tickets, or break down work into issues.
 ---
 
 # To Issues
 
-Break a plan into independently-grabbable backlog issues using vertical slices (tracer bullets).
+Break a plan into independently-grabbable issues using vertical slices (tracer bullets).
 
-The backlog backend and triage label vocabulary should have been provided to you — run `/setup-matt-pocock-skills` if not.
+The issue tracker and triage label vocabulary should have been provided to you — run `/setup-matt-pocock-skills` if not.
 
 ## Process
 
 ### 1. Gather context
 
-Work from whatever is already in the conversation context. If the user passes a backlog ticket reference (issue number, URL, or path) as an argument, fetch it from the backlog and read its full body and comments.
+Work from whatever is already in the conversation context. If the user passes an issue reference (issue number, URL, or path) as an argument, fetch it from the issue tracker and read its full body and comments.
 
 ### 2. Explore the codebase (optional)
 
@@ -49,16 +49,16 @@ Ask the user:
 
 Iterate until the user approves the breakdown.
 
-### 5. Publish the issues to the backlog
+### 5. Publish the issues to the issue tracker
 
-For each approved slice, publish a new issue to the backlog. Use the issue body template below. Apply the `needs-triage` triage label so each issue enters the normal triage flow.
+For each approved slice, publish a new issue to the issue tracker. Use the issue body template below. Apply the `needs-triage` triage label so each issue enters the normal triage flow.
 
 Publish issues in dependency order (blockers first) so you can reference real issue identifiers in the "Blocked by" field.
 
 <issue-template>
 ## Parent
 
-A reference to the parent ticket on the backlog (if the source was a backlog ticket, otherwise omit this section).
+A reference to the parent issue on the issue tracker (if the source was an existing issue, otherwise omit this section).
 
 ## What to build
 
