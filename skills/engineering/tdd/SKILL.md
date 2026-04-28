@@ -44,7 +44,7 @@ RIGHT (vertical):
 
 ### 1. Planning
 
-Before exploring the codebase, follow [../grill-with-docs/DOMAIN-AWARENESS.md](../grill-with-docs/DOMAIN-AWARENESS.md). Test names and interface vocabulary should match the project's `CONTEXT.md`.
+When exploring the codebase, use the project's domain glossary so that test names and interface vocabulary match the project's language, and respect ADRs in the area you're touching.
 
 Before writing any code:
 
