@@ -29,37 +29,61 @@ Look at the current repo to understand its starting state. Read whatever exists;
 
 ### 2. Present findings and ask
 
-Summarise what's present and what's missing. Then walk the user through three decisions:
+Summarise what's present and what's missing. Then walk the user through the three decisions **one at a time** — present a section, get the user's answer, then move to the next. Don't dump all three at once.
 
-**Backlog backend.** Default posture: these skills were designed for GitHub. If a `git remote` points at GitHub, propose that. Otherwise (or if the user prefers), offer:
+Assume the user does not know what these terms mean. Each section starts with a short explainer (what it is, why these skills need it, what changes if they pick differently). Then show the choices and the default.
 
-- **Local markdown** — issues live as files under `.scratch/<feature>/` in this repo
+**Section A — Backlog backend.**
+
+> Explainer: "Backlog" is where issues/tickets live for this repo. Skills like `to-issues`, `triage`, `to-prd`, and `qa` read from and write to it — they need to know whether to call `gh issue create`, write a markdown file under `.scratch/`, or follow some other workflow you describe. Pick the place you actually track work for this repo.
+
+Default posture: these skills were designed for GitHub. If a `git remote` points at GitHub, propose that. Otherwise (or if the user prefers), offer:
+
+- **GitHub** — issues live in the repo's GitHub Issues
+- **Local markdown** — issues live as files under `.scratch/<feature>/` in this repo (good for solo projects or repos without a GitHub remote)
 - **Other** (Jira, Linear, etc.) — ask the user to describe the workflow in one paragraph; the skill will record it as freeform prose
 
-**Triage label vocabulary.** Five canonical roles need to be mapped to whatever string the user wants to use in their backlog:
+**Section B — Triage label vocabulary.**
+
+> Explainer: When the `triage` skill processes an incoming issue, it moves it through a state machine — needs evaluation, waiting on reporter, ready for an AFK agent to pick up, ready for a human, or won't fix. To do that, it needs to apply labels (or the equivalent in your backlog) that match strings *you've actually configured*. If your repo already uses different label names (e.g. `bug:triage` instead of `needs-triage`), map them here so the skill applies the right ones instead of creating duplicates.
+
+The five canonical roles:
 
 - `needs-triage` — maintainer needs to evaluate
 - `needs-info` — waiting on reporter
-- `ready-for-agent` — fully specified, AFK-ready
+- `ready-for-agent` — fully specified, AFK-ready (an agent can pick it up with no human context)
 - `ready-for-human` — needs human implementation
 - `wontfix` — will not be actioned
 
-Default: each role's string equals its name. Let the user override any of them.
+Default: each role's string equals its name. Ask the user if they want to override any. If their backlog has no existing labels, the defaults are fine.
 
-**Domain docs.** Confirm the layout — single-context (`CONTEXT.md` + `docs/adr/` at root) or multi-context (`CONTEXT-MAP.md` at root, `CONTEXT.md` per context). Most repos are single-context.
+**Section C — Domain docs.**
+
+> Explainer: Some skills (`improve-codebase-architecture`, `diagnose`, `tdd`) read a `CONTEXT.md` file to learn the project's domain language, and `docs/adr/` for past architectural decisions. They need to know whether the repo has one global context or multiple (e.g. a monorepo with separate frontend/backend contexts) so they look in the right place.
+
+Confirm the layout:
+
+- **Single-context** — one `CONTEXT.md` + `docs/adr/` at the repo root. Most repos are this.
+- **Multi-context** — `CONTEXT-MAP.md` at the root pointing to per-context `CONTEXT.md` files (typically a monorepo).
 
 ### 3. Confirm and edit
 
 Show the user a draft of:
 
-- The `## Agent skills` block to add to AGENTS.md (or CLAUDE.md if AGENTS.md is absent and CLAUDE.md is present)
+- The `## Agent skills` block to add to whichever of `CLAUDE.md` / `AGENTS.md` is being edited (see step 4 for selection rules)
 - The contents of `docs/agents/backlog.md`, `docs/agents/triage-labels.md`, `docs/agents/domain.md`
 
 Let them edit before writing.
 
 ### 4. Write
 
-**Prefer AGENTS.md over CLAUDE.md.** It's a cross-tool standard. If neither exists, create AGENTS.md.
+**Pick the file to edit:**
+
+- If `CLAUDE.md` exists, edit it.
+- Else if `AGENTS.md` exists, edit it.
+- If neither exists, ask the user which one to create — don't pick for them.
+
+Never create `AGENTS.md` when `CLAUDE.md` already exists (or vice versa) — always edit the one that's already there.
 
 If an `## Agent skills` block already exists in the chosen file, update its contents in-place rather than appending a duplicate. Don't overwrite user edits to the surrounding sections.
 
