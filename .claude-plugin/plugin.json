@@ -1,6 +1,20 @@
 {
   "name": "mattpocock-skills",
   "skills": [
-    "./skills/deprecated/design-an-interface"
+    "./skills/engineering/diagnose",
+    "./skills/engineering/domain-model",
+    "./skills/engineering/github-triage",
+    "./skills/engineering/improve-codebase-architecture",
+    "./skills/engineering/tdd",
+    "./skills/engineering/to-issues",
+    "./skills/engineering/to-prd",
+    "./skills/engineering/zoom-out",
+    "./skills/productivity/caveman",
+    "./skills/productivity/grill-me",
+    "./skills/productivity/write-a-skill",
+    "./skills/misc/git-guardrails-claude-code",
+    "./skills/misc/migrate-to-shoehorn",
+    "./skills/misc/scaffold-exercises",
+    "./skills/misc/setup-pre-commit"
   ]
 }
