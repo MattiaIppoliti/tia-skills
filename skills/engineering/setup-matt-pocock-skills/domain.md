@@ -1,6 +1,6 @@
-# Domain Awareness
+# Domain Docs
 
-Consumer rules for any skill that explores a codebase. Producer rules (writing `CONTEXT.md`, offering ADRs) live in [SKILL.md](./SKILL.md).
+How the engineering skills should consume this repo's domain documentation when exploring the codebase.
 
 ## Before exploring, read these
 
