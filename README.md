@@ -24,15 +24,60 @@ npx skills@latest add mattpocock/skills
 
 ## Why These Skills Exist
 
-I built these skills as a way to fix common failure modes I see with AI.
+I built these skills as a way to fix common failure modes I see with Claude Code, Codex, and other coding agents.
 
-### Failure Mode #1: It Didn't Do What I Wanted
+### #1: The Agent Didn't Do What I Wanted
 
-The most common failure mode is misalignment. You think the AI knows what you want. Then you see what it's built - and you realize it didn't understand you at all.
+**The Problem**. The most common failure mode in software development is misalignment. You think the dev knows what you want. Then you see what they've built - and you realize it didn't understand you at all.
 
-The fix for this is a **grilling session** - getting the AI to ask you detailed questions about what you're building.
+This is just the same in the AI age. There is a communication gap between you and the agent. The fix for this is a **grilling session** - getting the agent to ask you detailed questions about what you're building.
 
-## Skill Reference
+**The Fix** is to use:
+
+- `/grill-me` - for non-code uses
+- `/grill-with-docs` - same as `/grill-me`, but adds more goodies (see below)
+
+These are my most popular skills. They help you align with the agent before you get started, and think deeply about the change you're making. Use them _every_ time you want to make a change.
+
+### #2: The Agent Is Way Too Verbose
+
+**The Problem**: At the start of a project, devs and the people they're building the software for (the domain experts) are usually speaking different languages.
+
+The domain experts are speaking their language, and the devs are trying to translate it into code. They're often talking past each other.
+
+I felt exactly the same tension with my agents. Agents are usually dropped into a project and asked to figure out the jargon as they go. This leads to incredible verbosity. Agents use 20 words where 1 will do.
+
+**The Fix** for this is a shared language. It's a document that helps agents decode the jargon used in the project.
+
+<details>
+<summary>
+Example
+</summary>
+
+Here's an example [`CONTEXT.md`](https://github.com/mattpocock/course-video-manager/blob/076a5a7a182db0fe1e62971dd7a68bcadf010f1c/CONTEXT.md), from my `course-video-manager` repo. Which one is easier to read?
+
+- **BEFORE**: "There's a problem when a lesson inside a section of a course is made 'real' (i.e. given a spot in the file system)"
+- **AFTER**: "There's a problem with the materialization cascade"
+
+This concision pays off session after session.
+
+</details>
+
+This is built into `/grill-with-docs`. It's a grilling session, but with two extra abilities:
+
+- It interrogates your shared language as you go, saving it in `CONTEXT.md`
+- It surfaces hard-to-explain decisions in ADR's (architectural decision records)
+
+It's hard to explain how powerful this is.
+
+> [!TIP]
+> A shared language has many other benefits than reducing verbosity:
+>
+> - **Variables, functions and files are named consistently**, using the shared language
+> - As a result, the **codebase is easier to navigate** for the agent
+> - The agent also **spends fewer tokens on thinking**, because it has access to a more concise language
+
+## Reference
 
 ### Engineering
 
