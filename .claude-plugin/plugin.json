@@ -2,7 +2,7 @@
   "name": "mattpocock-skills",
   "skills": [
     "./skills/engineering/diagnose",
-    "./skills/engineering/domain-model",
+    "./skills/engineering/grill-with-docs",
     "./skills/engineering/github-triage",
     "./skills/engineering/improve-codebase-architecture",
     "./skills/engineering/tdd",

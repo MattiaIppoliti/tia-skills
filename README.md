@@ -2,11 +2,27 @@
 
 My agent skills that I use every day to do real engineering - not vibe coding.
 
+Developing real applications is hard. Approaches like GSD, BMAD, and Spec-Kit try to help by owning the process. But while doing so, they take away your control and make bugs in the process hard to resolve.
+
+These skills are designed to be small, easy to adapt, and composable. They're based on decades of engineering experience. Hack around with them. Make them your own. Enjoy.
+
 If you want to keep up with changes to these skills, and any new ones I create, you can join ~60,000 other devs on my newsletter:
 
 [Sign Up To The Newsletter](https://www.aihero.dev/s/skills-newsletter)
 
-## Engineering
+## Why These Skills Exist
+
+I built these skills as a way to fix common failure modes I see with AI.
+
+### Failure Mode #1: It Didn't Do What I Wanted
+
+The most common failure mode is misalignment. You think the AI knows what you want. Then you see what it's built - and you realize it didn't understand you at all.
+
+The fix for this is a **grilling session** - getting the AI to ask you detailed questions about what you're building.
+
+## Skill Reference
+
+### Engineering
 
 Skills I use daily for code work.
 
@@ -16,10 +32,10 @@ Skills I use daily for code work.
   npx skills@latest add mattpocock/skills/diagnose
   ```
 
-- **[domain-model](./skills/engineering/domain-model/SKILL.md)** — Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates `CONTEXT.md` and ADRs inline.
+- **[grill-with-docs](./skills/engineering/grill-with-docs/SKILL.md)** — Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates `CONTEXT.md` and ADRs inline.
 
   ```
-  npx skills@latest add mattpocock/skills/domain-model
+  npx skills@latest add mattpocock/skills/grill-with-docs
   ```
 
 - **[github-triage](./skills/engineering/github-triage/SKILL.md)** — Triage GitHub issues through a label-based state machine.
@@ -58,7 +74,7 @@ Skills I use daily for code work.
   npx skills@latest add mattpocock/skills/zoom-out
   ```
 
-## Productivity
+### Productivity
 
 General workflow tools, not code-specific.
 
@@ -80,7 +96,7 @@ General workflow tools, not code-specific.
   npx skills@latest add mattpocock/skills/write-a-skill
   ```
 
-## Misc
+### Misc
 
 Tools I keep around but rarely use.
 
