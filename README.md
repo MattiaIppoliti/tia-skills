@@ -51,9 +51,7 @@ These are my most popular skills. They help you align with the agent before you 
 
 **The Problem**: At the start of a project, devs and the people they're building the software for (the domain experts) are usually speaking different languages.
 
-The domain experts are speaking their language, and the devs are trying to translate it into code. They're often talking past each other.
-
-I felt exactly the same tension with my agents. Agents are usually dropped into a project and asked to figure out the jargon as they go. This leads to incredible verbosity. Agents use 20 words where 1 will do.
+I felt the same tension with my agents. Agents are usually dropped into a project and asked to figure out the jargon as they go. So they use 20 words where 1 will do.
 
 **The Fix** for this is a shared language. It's a document that helps agents decode the jargon used in the project.
 
@@ -71,10 +69,7 @@ This concision pays off session after session.
 
 </details>
 
-This is built into [`/grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md). It's a grilling session, but with two extra abilities:
-
-- It interrogates your shared language as you go, saving it in `CONTEXT.md`
-- It surfaces hard-to-explain decisions in ADR's (architectural decision records)
+This is built into [`/grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md). It's a grilling session, but that helps you build a shared language with the AI, and document hard-to-explain decisions in ADR's.
 
 It's hard to explain how powerful this is. It might be the single coolest technique in this repo. Try it, and see.
 
