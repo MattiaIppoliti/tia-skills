@@ -4,7 +4,4 @@ description: Grilling session that also builds your project's domain model — s
 disable-model-invocation: true
 ---
 
-Run the `/grilling` and `/domain-modeling` skills together:
-
-- Grill me about the plan one question at a time, walking each branch of the decision tree (`/grilling`).
-- As domain terms and decisions surface, actively sharpen the language and update `CONTEXT.md` and ADRs inline (`/domain-modeling`).
+Run a `/grilling` session, using the `/domain-modeling` skill.
