@@ -1,7 +1,7 @@
 ---
 name: grill-me
-description: Get relentlessly interviewed about a plan or design until every branch of the decision tree is resolved.
+description: A relentless interview to sharpen a plan or design.
 disable-model-invocation: true
 ---
 
-Run the `/grilling` skill.
+Run a `/grilling` session.
