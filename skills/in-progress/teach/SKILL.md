@@ -71,6 +71,14 @@ Each lesson should contain a reminder to ask followup questions to the agent. Th
 
 Skills should be taught through interactive lessons. There are several tools at your disposal:
 
+Lessons should be littered with citations - links to external resources to back up any claim made.
+
+Lessons should be as interactive as possible, with "try this" callouts to let the user try the knowledge.
+
+Once the user has read the knowledge, allow them to ask questions about it. Answer their questions directly, and amend the lesson if needed (or produce another one). At this point, you can amend the glossary if it appears clear they understand a term.
+
+There are several tools at your disposal:
+
 - Interactive lessons, using quizzes and light in-browser tasks
 - Lessons which guide the user through a list of real-world steps to take (for instance, yoga poses)
 - In-agent quizzes, where you ask the user scenario-based questions about what they've learned
