@@ -63,21 +63,13 @@ A user may tell you that they already know about that topic. If so, record it in
 
 Lessons should be designed around a skill the user is going to learn. The knowledge in the lesson should be only what's required to acquire that skill. You teach the knowledge first, then get the user to practice the skills via an interactive feedback loop.
 
-Knowledge should first be gathered from trusted resources. Use `RESOURCES.md` to keep track of them.
+Knowledge should first be gathered from trusted resources. Use `RESOURCES.md` to keep track of them. Lessons should be littered with citations - links to external resources to back up any claim made. This increases the trustworthiness of the lesson, and gives the user a path to acquire more knowledge if they want to go deeper.
 
 Each lesson should contain a reminder to ask followup questions to the agent. The agent is their teacher, and can assist with anything that's unclear.
 
 ### Skills
 
 Skills should be taught through interactive lessons. There are several tools at your disposal:
-
-Lessons should be littered with citations - links to external resources to back up any claim made.
-
-Lessons should be as interactive as possible, with "try this" callouts to let the user try the knowledge.
-
-Once the user has read the knowledge, allow them to ask questions about it. Answer their questions directly, and amend the lesson if needed (or produce another one). At this point, you can amend the glossary if it appears clear they understand a term.
-
-There are several tools at your disposal:
 
 - Interactive lessons, using quizzes and light in-browser tasks
 - Lessons which guide the user through a list of real-world steps to take (for instance, yoga poses)
