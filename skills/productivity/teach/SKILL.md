@@ -40,6 +40,8 @@ The lesson should teach ONE THING only. It should be completable very quickly - 
 
 Make opening a lesson as easy as possible — ideally a single CLI command the user can run to open the HTML file in their browser.
 
+Each lesson should link via HTML anchors to other lessons and reference documents.
+
 ## The Mission
 
 Every lesson should be tied into the mission - the reason that the user is interested in learning about the topic.
