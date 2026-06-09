@@ -48,6 +48,8 @@ If the user is unclear about the mission, or the `MISSION.md` is not populated, 
 
 Failing to understand the mission will mean knowledge acquisition is not grounded in real-world goals. Lessons will feel too abstract. You will have no way of judging what the user should do next.
 
+Missions may change as the user develops more skills and knowledge. This is normal - make sure to update the `MISSION.md` and add a learning record to capture the change. Confirm with the user before changing the mission.
+
 ## Zone Of Proximal Development
 
 Each lesson, the learner should always feel as if they are being challenged 'just enough'.
