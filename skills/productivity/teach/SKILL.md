@@ -98,7 +98,7 @@ For skill acquisition, difficulty is the tool. Effortful retrieval is what build
 
 Each of these should be based on a **feedback loop**, where the user receives feedback on their performance. This feedback loop should be as tight as possible, giving feedback immediately - and ideally automatically.
 
-For quizzes, remember that users will try to find shortcuts where possible. Don't leave 'tells' in the quiz, such as the correct answer being the longest one.
+For quizzes, each answer should be exactly the same number of words (and characters, if possible). Don't give the user any clues about the answer through formatting.
 
 ## Acquiring Wisdom
 
