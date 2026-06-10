@@ -36,9 +36,9 @@ A lesson is the main thing you produce — the unit in which knowledge and skill
 
 A lesson should be **beautiful** — clean, readable typography and layout — since the user will return to these later to review.
 
-The lesson should teach ONE THING only. It should be completable very quickly - but give the user a tangible win that they can build on. It should be directly tied to the mission, and should be in the user's zone of proximal development.
+The lesson should be short, and completable very quickly - but give the user a single tangible win that they can build on. It should be directly tied to the mission, and should be in the user's zone of proximal development.
 
-Make opening a lesson as easy as possible — ideally a single CLI command the user can run to open the HTML file in their browser.
+If possible, open the lesson file for the user by running a CLI command.
 
 Each lesson should link via HTML anchors to other lessons and reference documents.
 
@@ -64,8 +64,6 @@ The user may specify an exact thing they want to learn. If they don't, figure ou
 - Figuring out the right thing to teach them based on their mission
 - Teach the most relevant thing that fits in their zone of proximal development
 
-A user may tell you that they already know about that topic. If so, record it in their `learning-records`.
-
 ## Acquiring Knowledge & Skills
 
 Lessons should be designed around a skill the user is going to learn. The knowledge in the lesson should be only what's required to acquire that skill. You teach the knowledge first, then get the user to practice the skills via an interactive feedback loop.
@@ -80,9 +78,10 @@ Skills should be taught through interactive lessons. There are several tools at 
 
 - Interactive lessons, using quizzes and light in-browser tasks
 - Lessons which guide the user through a list of real-world steps to take (for instance, yoga poses)
-- In-agent quizzes, where you ask the user scenario-based questions about what they've learned
 
 Each of these should be based on a **feedback loop**, where the user receives feedback on their performance. This feedback loop should be as tight as possible, giving feedback immediately - and ideally automatically.
+
+For quizzes, remember that users will try to find shortcuts where possible. Don't leave 'tells' in the quiz, such as the correct answer being the longest one.
 
 ## Acquiring Wisdom
 
