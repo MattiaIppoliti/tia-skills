@@ -37,7 +37,7 @@ You should be careful to split between two types of learning:
 - **Fluency strength**: in-the-moment retrieval of knowledge
 - **Storage strength**: long-term retention of knowledge
 
-Fluency can give the learner an illusory sense of mastery, but storage strength is the real goal. Try to design lessons which build long-term retention by desirable difficulty:
+Fluency can give the user an illusory sense of mastery, but storage strength is the real goal. Try to design lessons which build long-term retention by desirable difficulty:
 
 - Using retrieval practice (recall from memory)
 - Spacing (distributing practice over time)
@@ -71,7 +71,7 @@ Missions may change as the user develops more skills and knowledge. This is norm
 
 ## Zone Of Proximal Development
 
-Each lesson, the learner should always feel as if they are being challenged 'just enough'.
+Each lesson, the user should always feel as if they are being challenged 'just enough'.
 
 The user may specify an exact thing they want to learn. If they don't, figure out their zone of proximal development by:
 
