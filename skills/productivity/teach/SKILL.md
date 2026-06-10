@@ -42,6 +42,8 @@ Make opening a lesson as easy as possible — ideally a single CLI command the u
 
 Each lesson should link via HTML anchors to other lessons and reference documents.
 
+Each lesson should recommend a primary source for the user to read or watch. This should be the most high-quality, high-trust resource you found on the topic.
+
 ## The Mission
 
 Every lesson should be tied into the mission - the reason that the user is interested in learning about the topic.
