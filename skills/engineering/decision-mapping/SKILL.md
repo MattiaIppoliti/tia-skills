@@ -1,77 +1,60 @@
 ---
 name: decision-mapping
-description: Turn a loose idea with many interdependent open decisions into a sequenced map of one-session investigation tickets, then drive them to resolution one at a time. Use when the user's idea is too loose to plan in one sitting, there are many dependent design decisions, the user wants to map or sequence open decisions, plan prototyping or spike sessions, "plan the planning", or resume work on an existing decision map.
+description: Turn a loose idea into a sequenced map of investigation tickets, then drive them to resolution one at a time. Use when the user's idea is too loose to plan in one sitting, they want to plan prototyping sessions, or resume work on an existing decision map.
 ---
 
-# Decision Mapping
+This skill is invoked when a loose idea requires more than one agent session to turn into a plan. It creates a stateful decision map in a markdown file, and drives the user through a sequence of tickets to resolve the open questions - which may require either prototyping, research or discussion.
 
-This skill bridges loose idea and actionable plan. When a concept has too many open, interdependent design decisions to grill to a conclusion in one session — some unresolvable by discussion alone, others blocked on spikes — it maps those decisions into a sequenced DAG of one-session investigation tickets, then drives them to resolution one at a time.
-
-It is the planning-phase mirror of `/to-issues`: `/to-issues` breaks a *stable* design into implementation tickets; this breaks a *loose* one into investigation tickets. It sits at the front of the pipeline, before `/to-prd`.
-
-## The decision map
+## The Decision Map
 
 The decision map is a single compact Markdown file, one per planning effort, git-tracked alongside the project. It is the canonical artifact — the **whole map is loaded as context into every session**, so it must stay compact.
+
+Assets created during tickets should be linked to from the map, not duplicated within it.
 
 ### Structure
 
 Numbered entries ("tickets"), each its own section keyed by its number:
 
 ```markdown
-## 1. Should we use a relational or document store?
+## #1: Relational Or Non-Relational Database?
 
-blocked_by: []
+Blocked by: #<ticket-number>, #<ticket-number>
+Type: Research | Prototype | Discuss
 
-**Question.** ...
+### Question
 
-**Answer.** ... (once resolved)
+<question-here>
 
-**Reasoning.** ...
+### Answer
+
+<answer-here>
 ```
 
-Each ticket carries:
+Each ticket must be sized to one 100K token agent session.
 
-- **Number** — unique, stable, never reused.
-- **`blocked_by: [numbers]`** — the dependency edges, forming a DAG. Omit or leave empty when unblocked.
-- **Free-form body** — the decision phrased as a question, and once resolved, the answer and reasoning. Keep it minimal but non-lossy. No rigid extra fields (no risk scores, no expiry fields).
+## Ticket Types
 
-Each ticket must be sized to **one context-window session** — resolvable before the agent drifts out of the smart zone. Same sizing constraint as a Ticket in `/to-issues`. Each ticket owns its own section so parallel sessions editing different tickets produce clean diffs.
+There are three types of tickets:
 
-## Two traversals
-
-**Breadth-first** — used to build or update the map. Fan across the frontier of open decisions. Resolve trivially-decidable ones inline. Tag the rest by how they'll be resolved:
-
-- **discuss** — run `/grilling` for a focused interview.
-- **spike** — build throwaway code via `/prototype` to learn something the discussion can't settle. The build step may be delegated to a subagent.
-- **defer** — record the question but mark it out-of-scope until a later session unlocks it.
-
-Do not descend into or resolve decisions deeply during breadth-first traversal.
-
-**Depth-first** — used inside a session to drive one ticket as far as it goes until its question resolves. Invoke `/grilling` for the interview itself.
-
-These compose: breadth-first to see the tree, depth-first to drive one node to ground.
+- **Research**: Reading documentation, third-party API's, or local resources like knowledge bases. Creates a markdown summary as an asset. Use this when knowledge outside the current working directory is required.
+- **Prototype**: Writing UI or logic code to test a hypothesis, or to explore a design space. Uses the /prototype skill. Creates a prototype as an asset. Use this when "how should it look" or "how should it behave" is the key question.
+- **Discuss**: Conversation with the agent. Uses the /grilling and /domain-modelling skills. The default case.
 
 ## Fog of war
 
-The map is *deliberately* incomplete beyond the frontier — only map as deep as the next spike, because a spike's outcome determines which decisions even exist downstream.
+The map is _deliberately_ incomplete beyond the frontier. Your job is to investigate the frontier, and to resolve tickets in order to push the frontier forward. Push back the fog of war, one node at a time.
 
-Every session ends with a **re-map**:
-
-1. Record what the session resolved in the ticket's body.
-2. Add newly-discovered tickets (with correct `blocked_by` edges).
-3. Reopen any previously-resolved ticket the session invalidated, and propagate suspicion to anything `blocked_by` it.
-
-Never try to prove the map complete. The only validation target is that the **next session is correctly chosen**.
+At some point, the fog of war should have been pushed back far enough that the path to the finish line is clear. At that point, no more tickets will be required and the decision map can be considered 'done'.
 
 ## Invocation
 
-There is no auto-discovery. The user always points the skill at what to work on.
+There are two ways this skill can be invoked: **bootstrap** and **resume**.
 
 ### Bootstrap
 
 User invokes with a loose idea.
 
-1. Run breadth-first grilling (via `/grilling`) to surface the open decisions.
+1. Run a /grilling and /domain-modelling session to surface the open decisions.
 2. Write a new decision map — mostly fog, frontier identified, trivially-decidable entries resolved inline.
 3. Stop. Map-building is one session's work; do not also resolve tickets.
 
@@ -80,24 +63,21 @@ User invokes with a loose idea.
 User invokes with a path to an existing map and a ticket number.
 
 1. Load the **whole map** as context.
-2. Depth-first grill that ticket to resolution (via `/grilling`).
-3. Write the answer and reasoning back into that ticket's section.
-4. Re-map: add new tickets, reopen invalidated ones, update `blocked_by` edges.
+2. Run a session to resolve the ticket, invoking skills as needed. If in doubt, use `/grilling` and `/domain-modelling`.
+3. Record what the session resolved in the ticket's body.
+4. Add newly-discovered tickets (with correct `blocked_by` edges).
 5. Stop.
 
-The user picks the ticket. You may advise which tickets are currently unblocked, but do not choose. The process is entirely user-driven and never autonomous.
+If the decisions made invalidate other parts of the map, update or delete those nodes.
 
-A pair of independent (unblocked, non-overlapping) tickets may be run in parallel as separate sessions; any cross-cutting edits are a git merge the user reconciles.
+## Parallelism
 
-## Lifecycle
+The user may choose to run tickets in parallel, so expect other agents to make changes to the map.
 
-```
-loose idea
-  → bootstrap map          (this skill)
-  → resume sessions        (this skill, one ticket per session)
-  → concept stabilises
-  → /to-prd absorbs the map
-  → /to-issues
-  → /implement
-  → map archived/deleted   (durable conclusions now live in the PRD)
-```
+## Skipping The Decision Map
+
+Many times, the initial grilling will result in no fog of war. No unresolved tickets. Nothing to do, except implement.
+
+In those situations, you should offer the user the chance to skip the decision map - since the decision map is only needed if multi-session decisions need to be made.
+
+If they skip it, you should recommend either implementing directly or using `/to-prd` to schedule a multi-session implementation.
