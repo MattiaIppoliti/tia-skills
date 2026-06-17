@@ -5,6 +5,7 @@
     { "repo": "mattpocock/skills" }
   ],
   "commit": false,
+  "privatePackages": { "version": true, "tag": true },
   "fixed": [],
   "linked": [],
   "access": "restricted",
