@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Ask Matt
 
-You don't remember every skill, so ask. Describe where you are — "I've got a vague idea", "bugs are piling up", "this code's a mess" — and this answers with the **flow** to follow and the skill to type next.
+You don't remember every skill, so ask.
 
 A **flow** is a path through the skills. Most paths run along one **main flow**, and two **on-ramps** merge onto it. Everything else is standalone.
 
