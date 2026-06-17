@@ -19,6 +19,14 @@ Pick model-invocation only when the agent must reach the skill on its own, or an
 
 When user-invoked skills multiply past what you can remember, that piled-up cognitive load is cured by a **router skill**: one user-invoked skill that names the others and when to reach for each.
 
+## Writing the description
+
+A model-invoked **description** does two jobs — state what the skill is, and list the **branches** that should trigger it. Every word increases **context load**, so a description earns even harder pruning than the body:
+
+- **Front-load the skill's leading word** — the description is where it does its invocation work.
+- **One trigger per branch.** Synonyms that rename a single branch are **duplication** — "build features using TDD … asks for test-first development" is one branch written twice. Collapse them; keep only genuinely distinct branches.
+- **Cut identity that's already in the body.** Keep the description to triggers, plus any "when another skill needs…" reach clause.
+
 ## Information hierarchy
 
 A skill is built from two content types — **steps** and **reference** — that mix freely: a skill can be all steps, all reference, or both. The core decision is which to use and where each sits on the **information hierarchy**, a ladder ranked by how immediately the agent needs the material:

@@ -1,6 +1,7 @@
 ---
 name: decision-mapping
-description: Turn a loose idea into a sequenced map of investigation tickets, then drive them to resolution one at a time. Use when the user's idea is too loose to plan in one sitting, they want to plan prototyping sessions, or resume work on an existing decision map.
+description: Turn a loose idea into a sequenced map of investigation tickets, then drive them to resolution one at a time.
+disable-model-invocation: true
 ---
 
 This skill is invoked when a loose idea requires more than one agent session to turn into a plan. It creates a stateful decision map in a markdown file, and drives the user through a sequence of tickets to resolve the open questions - which may require either prototyping, research or discussion.

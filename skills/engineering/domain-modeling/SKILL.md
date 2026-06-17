@@ -1,6 +1,6 @@
 ---
 name: domain-modeling
-description: Actively build and sharpen a project's domain model while you design — challenge fuzzy or conflicting terms against the glossary, stress-test concepts with concrete edge-case scenarios, cross-check claims against the code, and update CONTEXT.md and ADRs inline as decisions crystallise. Use when the user wants to refine domain terminology, build a ubiquitous language, pin down what a term really means, record a hard-won architectural decision, or when another skill needs to actively maintain the domain model.
+description: Build and sharpen a project's domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, record an architectural decision, or when another skill needs to maintain the domain model.
 ---
 
 # Domain Modeling
