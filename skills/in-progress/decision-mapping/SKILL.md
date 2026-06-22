@@ -20,7 +20,7 @@ Numbered entries ("tickets"), each its own section keyed by its number:
 ## #1: Relational Or Non-Relational Database?
 
 Blocked by: #<ticket-number>, #<ticket-number>
-Type: Research | Prototype | Discuss
+Type: Research | Prototype | Grilling
 
 ### Question
 
@@ -39,7 +39,7 @@ There are three types of tickets:
 
 - **Research**: Reading documentation, third-party API's, or local resources like knowledge bases. Creates a markdown summary as an asset. Use this when knowledge outside the current working directory is required.
 - **Prototype**: Writing UI or logic code to test a hypothesis, or to explore a design space. Uses the /prototype skill. Creates a prototype as an asset. Use this when "how should it look" or "how should it behave" is the key question.
-- **Discuss**: Conversation with the agent. Uses the /grilling and /domain-modelling skills. The default case.
+- **Grilling**: Conversation with the agent. Uses the /grilling and /domain-modelling skills. Asks one question at a time. The default case.
 
 ## Fog of war
 
