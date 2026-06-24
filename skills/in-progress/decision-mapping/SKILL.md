@@ -55,7 +55,7 @@ There are two ways this skill can be invoked: **bootstrap** and **resume**.
 
 User invokes with a loose idea.
 
-1. Run a /grilling and /domain-modelling session to surface the open decisions.
+1. Run a /grilling + /domain-modelling session to surface the open decisions. Ask one question at a time.
 2. Write a new decision map — mostly fog, frontier identified, trivially-decidable entries resolved inline.
 3. Stop. Map-building is one session's work; do not also resolve tickets.
 
