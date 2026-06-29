@@ -14,12 +14,14 @@ Assets created during tickets should be linked to from the map, not duplicated w
 
 ### Structure
 
-Numbered entries ("tickets"), each its own section keyed by its number:
+Entries ("tickets"), each its own section keyed by a short dash-case slug that
+reads as a mini-title (e.g. `relational-db`, `auth-strategy`, `cache-layer`) —
+terse enough to stay token-efficient, and unique within the map.
 
 ```markdown
-## #1: Relational Or Non-Relational Database?
+## relational-db: Relational Or Non-Relational Database?
 
-Blocked by: #<ticket-number>, #<ticket-number>
+Blocked by: <slug>, <slug>
 Status: open | in-progress | resolved
 Type: Research | Prototype | Grilling
 
@@ -32,7 +34,11 @@ Type: Research | Prototype | Grilling
 <answer-here>
 ```
 
-A ticket is **unblocked** when every ticket in its `Blocked by` list is `resolved`. A session **claims** its ticket by setting `Status: in-progress` and saving the map before any work, so concurrent sessions skip it.
+The slug is the canonical id, used in every `Blocked by` edge and prose
+reference; the title after the colon is optional. A ticket
+is **unblocked** when every ticket in its `Blocked by` list is `resolved`. A
+session **claims** its ticket by setting `Status: in-progress` and saving the map
+before any work, so concurrent sessions skip it.
 
 Each ticket must be sized to one 100K token agent session.
 
@@ -62,10 +68,10 @@ User invokes with a loose idea.
 
 ### Work through the map
 
-User invokes with a path to an existing map. A ticket number is **optional** — without one, you pick the next decision, not the user.
+User invokes with a path to an existing map. A ticket slug is **optional** — without one, you pick the next decision, not the user.
 
 1. Load the **whole map** as context.
-2. Choose the ticket. If the user named one, use it. Otherwise pick the lowest-numbered `open` ticket that is [unblocked](#structure). [Claim it](#structure): set `Status: in-progress` and save before any work.
+2. Choose the ticket. If the user named one, use it. Otherwise pick the first `open` ticket in document order that is [unblocked](#structure). [Claim it](#structure): set `Status: in-progress` and save before any work.
 3. Resolve it, invoking skills as needed. If in doubt, use `/grilling` and `/domain-modeling`.
 4. Record the answer in the ticket's body and set `Status: resolved`.
 5. Add newly-discovered tickets with correct `Blocked by` edges. If the decisions made invalidate other parts of the map, update or delete those nodes.
@@ -79,7 +85,7 @@ End every session by clearing the context and opening one or more fresh sessions
 
 **Open tickets remain.** List the currently-unblocked tickets, then give two copy-paste options: a bare command for one session (you pick the next ticket), and one pinned command per unblocked ticket for running them in parallel. Paste one line per fresh window — opening one, some, or all of them.
 
-> **Next steps** — 3 tickets unblocked: #4, #5, #6.
+> **Next steps** — 3 tickets unblocked: `auth-strategy`, `cache-layer`, `rate-limits`.
 > Clear the context, then open fresh sessions.
 >
 > **One session** — resolves the next unblocked ticket:
@@ -89,9 +95,9 @@ End every session by clearing the context and opening one or more fresh sessions
 >
 > **Parallel** — paste one line per window, up to all 3:
 > ```
-> Invoke /decision-mapping with the map at <path>, ticket #4.
-> Invoke /decision-mapping with the map at <path>, ticket #5.
-> Invoke /decision-mapping with the map at <path>, ticket #6.
+> Invoke /decision-mapping with the map at <path>, ticket auth-strategy.
+> Invoke /decision-mapping with the map at <path>, ticket cache-layer.
+> Invoke /decision-mapping with the map at <path>, ticket rate-limits.
 > ```
 
 **No open tickets remain.** The fog is pushed back far enough that the path to the finish line is clear — the map is done. (The initial grilling may also surface no fog at all, in which case there was never a map to build.) Recommend implementing directly, or using `/to-prd` to schedule a multi-session implementation.
