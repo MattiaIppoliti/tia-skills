@@ -42,7 +42,7 @@ There are three types of tickets:
 
 - **Research**: Reading documentation, third-party API's, or local resources like knowledge bases. Creates a markdown summary as an asset. Use this when knowledge outside the current working directory is required.
 - **Prototype**: Writing UI or logic code to test a hypothesis, or to explore a design space. Uses the /prototype skill. Creates a prototype as an asset. Use this when "how should it look" or "how should it behave" is the key question.
-- **Grilling**: Conversation with the agent. Uses the /grilling and /domain-modelling skills. The default case.
+- **Grilling**: Conversation with the agent. Uses the /grilling and /domain-modeling skills. Asks one question at a time. The default case.
 
 ## Fog of war
 
@@ -56,7 +56,7 @@ Two branches. Either way, **every session ends with a [Handoff](#handoff)** — 
 
 User invokes with a loose idea.
 
-1. Run a `/grilling` and `/domain-modelling` session to surface the open decisions.
+1. Run a `/grilling` and `/domain-modeling` session to surface the open decisions. Ask one question at a time.
 2. Write a new decision map — mostly fog, frontier identified, trivially-decidable entries resolved inline.
 3. Handoff. Map-building is one session's work; do not also resolve tickets.
 
@@ -66,7 +66,7 @@ User invokes with a path to an existing map. A ticket number is **optional** —
 
 1. Load the **whole map** as context.
 2. Choose the ticket. If the user named one, use it. Otherwise pick the lowest-numbered `open` ticket that is [unblocked](#structure). [Claim it](#structure): set `Status: in-progress` and save before any work.
-3. Resolve it, invoking skills as needed. If in doubt, use `/grilling` and `/domain-modelling`.
+3. Resolve it, invoking skills as needed. If in doubt, use `/grilling` and `/domain-modeling`.
 4. Record the answer in the ticket's body and set `Status: resolved`.
 5. Add newly-discovered tickets with correct `Blocked by` edges. If the decisions made invalidate other parts of the map, update or delete those nodes.
 6. Handoff.
