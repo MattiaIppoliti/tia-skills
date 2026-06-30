@@ -4,13 +4,15 @@ description: Turn a loose idea into a sequenced map of investigation tickets, th
 disable-model-invocation: true
 ---
 
-This skill is invoked when a loose idea requires more than one agent session to turn into a plan. It creates a stateful decision map in a markdown file, and drives the user through a sequence of tickets to resolve the open questions - which may require either prototyping, research or grilling.
+This skill is invoked when a loose idea requires more than one agent session to turn into a plan. It creates a stateful decision map in a markdown file, and drives the user through a sequence of tickets to resolve the open questions - which may require either sketching, research or grilling. The map is domain-agnostic: it plans engineering work, course content, or anything else that fits the same shape.
 
 ## The Decision Map
 
 The decision map is a single compact Markdown file, one per planning effort, git-tracked alongside the project. It is the canonical artifact — the **whole map is loaded as context into every session**, so it must stay compact.
 
 Assets created during tickets should be linked to from the map, not duplicated within it.
+
+The map opens with an optional `## Notes` block: part declaration (the **domain**, and which skills every session should `consult`), part freeform preference dump — whatever standing context the planning surfaces. It rides into every session with the map, so **every session honors it**: consult the skills it names, respect its preferences. Notes accrue as they emerge; never manufacture them.
 
 ### Structure
 
@@ -23,7 +25,7 @@ terse enough to stay token-efficient, and unique within the map.
 
 Blocked by: <slug>, <slug>
 Status: open | in-progress | resolved
-Type: Research | Prototype | Grilling
+Type: Research | Sketch | Grilling
 
 ### Question
 
@@ -47,8 +49,10 @@ Each ticket must be sized to one 100K token agent session.
 There are three types of tickets:
 
 - **Research**: Reading documentation, third-party API's, or local resources like knowledge bases. Creates a markdown summary as an asset. Use this when knowledge outside the current working directory is required.
-- **Prototype**: Writing UI or logic code to test a hypothesis, or to explore a design space. Uses the /prototype skill. Creates a prototype as an asset. Use this when "how should it look" or "how should it behave" is the key question.
+- **Sketch**: Raise the fidelity of the discussion by making a cheap, rough, concrete artifact to react to — an outline, a rough take, a stub, or UI/logic code via the /prototype skill. Creates the sketch as an asset. Use this when "how should it look" or "how should it behave" is the key question.
 - **Grilling**: Conversation with the agent. Uses the /grilling and /domain-modeling skills. Asks one question at a time. The default case.
+
+Validation isn't a fourth type — it's the thread running through all three.
 
 ## Fog of war
 
@@ -72,7 +76,7 @@ User invokes with a path to an existing map. A ticket slug is **optional** — w
 
 1. Load the **whole map** as context.
 2. Choose the ticket. If the user named one, use it. Otherwise pick the first `open` ticket in document order that is [unblocked](#structure). [Claim it](#structure): set `Status: in-progress` and save before any work.
-3. Resolve it, invoking skills as needed. If in doubt, use `/grilling` and `/domain-modeling`.
+3. Resolve it, invoking skills as needed — including any the `## Notes` block names. If in doubt, use `/grilling` and `/domain-modeling`.
 4. Record the answer in the ticket's body and set `Status: resolved`.
 5. Add newly-discovered tickets with correct `Blocked by` edges. If the decisions made invalidate other parts of the map, update or delete those nodes.
 6. Handoff.
