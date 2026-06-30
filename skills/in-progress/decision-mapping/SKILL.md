@@ -106,4 +106,4 @@ End every session by clearing the context and opening one or more fresh sessions
 
 ## Notes
 
-The map ends with an optional `## Notes` block: part declaration (the **domain**, and which skills every session should `consult`), part freeform preference dump — whatever standing context the planning surfaces. It rides into every session with the map, so **every session honors it**: consult the skills it names, respect its preferences. Notes accrue as they emerge; never manufacture them.
+An optional block declaring the **domain**, any skills every session should `consult`, and freeform standing preferences the planning surfaces.
