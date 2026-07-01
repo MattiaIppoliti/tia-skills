@@ -42,6 +42,6 @@ Use `to-prd` after the plan and domain language have been resolved. Then use `to
 
 ## Pairs well with
 
-- [grill-with-docs](/skills-grill-with-docs), to make sure the context is precise before the PRD is written
-- [to-issues](/skills-to-issues), to turn the PRD into implementation tickets
-- [tdd](/skills-tdd), to implement the resulting issues one behavior at a time
+- [grill-with-docs](https://aihero.dev/skills-grill-with-docs), to make sure the context is precise before the PRD is written
+- [to-issues](https://aihero.dev/skills-to-issues), to turn the PRD into implementation tickets
+- [tdd](https://aihero.dev/skills-tdd), to implement the resulting issues one behavior at a time
