@@ -1,14 +1,14 @@
 ---
-name: decision-mapping
-description: Turn a loose idea into a sequenced map of investigation tickets, then drive them to resolution one at a time.
+name: wayfinder
+description: Chart a route through a foggy problem — turn a loose idea into a map of investigation tickets and resolve them one at a time until the way to the goal is clear.
 disable-model-invocation: true
 ---
 
-This skill is invoked when a loose idea requires more than one agent session to turn into a plan. It creates a stateful decision map in a markdown file, and drives the user through a sequence of tickets to resolve the open questions - which may require either prototyping, research or grilling. The map is domain-agnostic: it plans engineering work, course content, or anything else that fits the same shape.
+A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it: stand up a map, then work its tickets one at a time until the way to the goal is clear. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
 
-## The Decision Map
+## The Map
 
-The decision map is a single compact Markdown file, one per planning effort, git-tracked alongside the project. It is the canonical artifact — the **whole map is loaded as context into every session**, so it must stay compact.
+The map is a single compact Markdown file, one per wayfinding effort, git-tracked alongside the project. It is the canonical artifact — the **whole map is loaded as context into every session**, so it must stay compact.
 
 Assets created during tickets should be linked to from the map, not duplicated within it.
 
@@ -53,19 +53,19 @@ There are four types of tickets:
 
 ## Fog of war
 
-The map is _deliberately_ incomplete beyond the frontier. Your job is to investigate the frontier, and to resolve tickets in order to push the frontier forward. Push back the fog of war, one node at a time — until the path to the finish line is clear and no tickets remain.
+The map is _deliberately_ incomplete beyond the frontier — don't chart what you can't yet see. The frontier is the unblocked tickets at the edge of the known; resolve them to push it forward. Push back the fog of war one ticket at a time, until the way to the goal is clear and no tickets remain.
 
 ## Invocation
 
 Two branches. Either way, **every session ends with a [Handoff](#handoff)** — never resolve more than one ticket per session.
 
-### Create the map
+### Chart the map
 
 User invokes with a loose idea.
 
-1. Run a `/grilling` and `/domain-modeling` session to surface the open decisions. Ask one question at a time.
-2. Write a new decision map — mostly fog, frontier identified, trivially-decidable entries resolved inline.
-3. Handoff. Map-building is one session's work; do not also resolve tickets.
+1. Run a `/grilling` and `/domain-modeling` session to surface the open decisions.
+2. Write a new map — mostly fog, frontier identified, trivially-decidable entries resolved inline.
+3. Handoff. Charting the map is one session's work; do not also resolve tickets.
 
 ### Work through the map
 
@@ -75,7 +75,7 @@ User invokes with a path to an existing map. A ticket slug is **optional** — w
 2. Choose the ticket. If the user named one, use it. Otherwise pick the first `open` ticket in document order that is [unblocked](#structure). [Claim it](#structure): set `Status: in-progress` and save before any work.
 3. Resolve it, invoking skills as needed — including any the `## Notes` block names. If in doubt, use `/grilling` and `/domain-modeling`.
 4. Record the answer in the ticket's body and set `Status: resolved`.
-5. Add newly-discovered tickets with correct `Blocked by` edges. If the decisions made invalidate other parts of the map, update or delete those nodes.
+5. Add newly-discovered tickets with correct `Blocked by` edges. If the decisions made invalidate other parts of the map, update or delete those tickets.
 6. Handoff.
 
 The user may run unblocked tickets in parallel, so expect other agents to be editing the map in their own sessions.
@@ -91,18 +91,18 @@ End every session by clearing the context and opening one or more fresh sessions
 >
 > **One session** — resolves the next unblocked ticket:
 > ```
-> Invoke /decision-mapping with the map at <path>.
+> Invoke /wayfinder with the map at <path>.
 > ```
 >
 > **Parallel** — paste one line per window, up to all 3:
 > ```
-> Invoke /decision-mapping with the map at <path>, ticket auth-strategy.
-> Invoke /decision-mapping with the map at <path>, ticket cache-layer.
-> Invoke /decision-mapping with the map at <path>, ticket rate-limits.
+> Invoke /wayfinder with the map at <path>, ticket auth-strategy.
+> Invoke /wayfinder with the map at <path>, ticket cache-layer.
+> Invoke /wayfinder with the map at <path>, ticket rate-limits.
 > ```
 
-**No open tickets remain.** The fog is pushed back far enough that the path to the finish line is clear — the map is done. (The initial grilling may also surface no fog at all, in which case there was never a map to build.) Recommend implementing directly, or using `/to-prd` to schedule a multi-session implementation.
+**No open tickets remain.** The fog is pushed back far enough that the way to the goal is clear — the map is done. (The initial grilling may also surface no fog at all, in which case there was never a map to chart.) Recommend implementing directly, or using `/to-prd` to schedule a multi-session implementation.
 
 ## Notes
 
-An optional block declaring the **domain**, any skills every session should `consult`, and freeform standing preferences the planning surfaces.
+An optional block declaring the **domain**, any skills every session should `consult`, and freeform standing preferences for this effort.
