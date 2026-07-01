@@ -37,7 +37,7 @@ Before slicing, `to-issues` looks for prefactoring — "make the change easy, th
 `to-issues` is a step in the main build chain:
 
 ```txt
-grill-with-docs → to-prd → to-issues → tdd
+grill-with-docs → to-prd → to-issues → implement
 ```
 
-It sits between [to-prd](https://aihero.dev/skills-to-prd), which hands it a settled spec with user stories to slice against, and [tdd](https://aihero.dev/skills-tdd), which implements each independently-grabbable issue test-first. When you're unsure which skill or flow fits, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.
+It sits between [to-prd](https://aihero.dev/skills-to-prd), which hands it a settled spec with user stories to slice against, and [implement](https://aihero.dev/skills-implement), which builds each independently-grabbable issue, driving [tdd](https://aihero.dev/skills-tdd) internally to write the tests test-first. When you're unsure which skill or flow fits, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.
