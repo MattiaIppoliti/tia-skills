@@ -26,18 +26,18 @@ Look for opportunities to prefactor the code to make the implementation easier. 
 
 ### 3. Draft vertical slices
 
-Break the work into **tracer bullet** phases. Each phase is a thin vertical slice that cuts through ALL integration layers end-to-end, NOT a horizontal slice of one layer.
+Break the work into **tracer bullet** phases.
 
 <vertical-slice-rules>
 
-- Each slice delivers a narrow but COMPLETE path through every layer (schema, API, UI, tests)
+- Each slice cuts a narrow but COMPLETE path through every layer (schema, API, UI, tests) — vertical, NOT a horizontal slice of one layer
 - A completed slice is demoable or verifiable on its own
 - Each slice is sized to fit in a single fresh context window
 - Any prefactoring should be done first
 
 </vertical-slice-rules>
 
-Order the phases **sequentially**, in dependency order — each phase builds on the ones before it. There is no parallelism: a plain top-to-bottom sequence.
+Order the phases in dependency order — each builds on the ones before it.
 
 ### 4. Quiz the user
 
