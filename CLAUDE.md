@@ -13,7 +13,7 @@ Each skill entry in the top-level `README.md` must link the skill name to its `S
 
 Each bucket folder has a `README.md` that lists every skill in the bucket with a one-line description, with the skill name linked to its `SKILL.md`. Bucket `README.md`s and the top-level `README.md` group entries into **User-invoked** and **Model-invoked**.
 
-Every promoted skill also has a human-facing docs page at `docs/<skill-name>.md`. When you add, rename, or change the behaviour of a skill in `engineering/`, `productivity/`, or `misc/`, create or re-sync its docs page following [.agents/writing-docs.md](./.agents/writing-docs.md).
+Every promoted skill also has a human-facing docs page at `docs/<bucket>/<skill-name>.md` (the docs tree mirrors the bucket folders under `skills/`). The published URL is `https://aihero.dev/skills-<skill-name>` regardless of bucket — the docs path is repo organisation only. When you add, rename, or change the behaviour of a skill in `engineering/`, `productivity/`, or `misc/`, create or re-sync its docs page following [.agents/writing-docs.md](./.agents/writing-docs.md).
 
 Every `SKILL.md` is either user-invoked (`disable-model-invocation: true`, reachable only by the human) or model-invoked (model- or user-reachable). See [.agents/invocation.md](./.agents/invocation.md).
 

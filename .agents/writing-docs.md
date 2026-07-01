@@ -1,19 +1,29 @@
 # Writing docs pages
 
-Every promoted skill (`engineering/`, `productivity/`, `misc/`) has a human-facing **docs page** at `docs/<skill-name>.md`, published at `https://aihero.dev/skills-<skill-name>`. The page is not the skill and not a copy of `SKILL.md` — it is the explainer a human reads to decide whether to reach for the skill. Skills in `personal/`, `in-progress/`, and `deprecated/` get no page, mirroring the README rule.
+Every promoted skill (`engineering/`, `productivity/`, `misc/`) has a human-facing **docs page** at `docs/<bucket>/<skill-name>.md` — the docs tree mirrors the bucket folders under `skills/`. It is published at `https://aihero.dev/skills-<skill-name>`; the URL is always `skills-<skill-name>` regardless of bucket, so the docs path is repo organisation only. The page is not the skill and not a copy of `SKILL.md`.
 
-Act whenever a promoted skill is added, renamed, or has its behaviour changed: create or re-sync its docs page. A rename moves the file too (`docs/<old>.md` → `docs/<new>.md`), because the published URL tracks the name.
+Most of these skills are **user-invoked**: the agent will never fire them for you, so *you* are the index that has to remember they exist and when to reach for them. That memory is **cognitive load**. The job of a docs page is to relieve it — to orient one reader around one skill so they can hold it in their head, know when to reach for it, and see where it sits in the system. The pages are collectively a distributed router; each is a node.
+
+Act whenever a promoted skill is added, renamed, or has its behaviour changed: create or re-sync its docs page. A rename moves the file too (`docs/<bucket>/<old>.md` → `docs/<bucket>/<new>.md`), because the published URL tracks the name; a skill that moves buckets moves its docs file to the matching folder. Skills in `personal/`, `in-progress/`, and `deprecated/` get no page, mirroring the README rule.
 
 Because these pages are published on `aihero.dev`, **every link is absolute** — never a repo-relative path. A link to another skill points at `https://aihero.dev/skills-<name>`; a link into the repo points at its full `https://github.com/mattpocock/skills/...` URL. A relative link that works in the repo breaks once published.
 
+There is no H1 — the published page takes its title from the slug.
+
 ## Page structure
 
-Fill the template below. The **fixed frame** (install block, source link, `## What it does`) appears on every page. The **adaptable middle** carries only the sections this particular skill earns — delete the ones it doesn't.
+Fill the template below. The **fixed frame** (Quickstart block, source link, `## What it does`, `## When to reach for it`, `## Where it fits`) appears on every page. The **adaptable middle** — `## Prerequisites` and the free-form substance sections — carries only what this particular skill earns; delete the rest.
 
 <page-template>
 
+Quickstart:
+
 ```bash
 npx skills add mattpocock/skills --skill=<name>
+```
+
+```bash
+npx skills update <name>
 ```
 
 [Source](https://github.com/mattpocock/skills/tree/main/skills/<bucket>/<name>)
@@ -22,36 +32,46 @@ npx skills add mattpocock/skills --skill=<name>
 
 One or two plain-language paragraphs. Lead with the skill's one-sentence job, then state the **load-bearing constraint** — the single fact that makes this skill behave differently from the obvious default (for `to-prd`: it does not interview the user again, it synthesises what is already known). This line is the most valuable on the page; never omit it.
 
-## <Substance heading>
+## When to reach for it
 
-Unpack what the skill produces or how it moves — e.g. a list of the artifact's parts, or a description of the loop it runs. Use as many of these sections as the skill needs; omit if it needs none.
+How and when you reach for the skill — two beats, both effectively always present:
 
-## <Concept highlight>
+- **Invocation mode.** State whether you type it or the agent fires it. A user-invoked skill: "You invoke this by typing `/<name>` — the agent won't reach for it on its own." A model-invoked skill: "Type `/<name>`, or the agent reaches for it automatically when a task fits."
+- **Trigger boundary.** The index entry: "reach for this when …". Where the skill is confusable with a sibling, add the other half — "for <X> instead, use [<sibling>](https://aihero.dev/skills-<sibling>)."
 
-Name the one idea worth calling out, in the skill's own vocabulary, and say why it matters (`to-prd`'s `## Deep modules` explains what a deep module is and why it helps agentic testing). Omit if there is none.
+## Prerequisites
 
-## How it fits the workflow
+Optional — include only when the skill needs something in place to be functional; omit the heading entirely otherwise. Covers: a **workspace it writes into** (a stateful skill like `grill-with-docs` writes `CONTEXT.md` and ADRs; `teach` builds a whole directory — say what it writes and where), **prior setup** (`triage`/`to-prd`/`to-issues` need `setup-matt-pocock-skills` to have configured an issue tracker), or **repo-specific tooling**. A stateless skill that runs anywhere has no prerequisites — drop the section.
 
-```txt
-grill-with-docs → to-prd → to-issues → tdd
-```
+## <free-form middle>
 
-A sentence on where in that chain to reach for the skill. Include only when the skill belongs to a chain.
+One to three short sections, in the skill's *own vocabulary*, that make it click — choose whatever headings fit the skill: the loop it runs, the artifact it produces, the fork it makes, the one anti-pattern it kills. There is no prescribed heading; the skills are too heterogeneous for one.
 
-## Pairs well with
+The single non-negotiable: **surface the skill's leading word / load-bearing idea** — `tight` feedback loop, `deep module`, throwaway-code-answers-a-question, red-green. It pays off three ways: the reader learns what the skill *is*, learns the word they'll later think with to *reach for* it, and learns the word to *watch for in the agent's output* — if the leading words come out, the skill fired and is thinking in its own frame; if they don't, that's the tell something is off.
 
-- [<sibling>](https://aihero.dev/skills-<sibling>), because-clause saying what the pairing buys
+## Where it fits
+
+Always present. Situate the skill in the system in a sentence or two:
+
+- **Role.** Name it: a **chain step** (`grill-with-docs → to-prd → to-issues → tdd`), a **run-once setup** (`setup-matt-pocock-skills`), **periodic maintenance** (`improve-codebase-architecture`, "every few days"), or a **reach-for-it-anytime standalone** (`diagnosing-bugs`, `prototype`, `handoff`). A standalone's map is one honest sentence — far better than omitting the section.
+- **Neighbours.** The one or two siblings that matter, each with a because-clause, linked absolutely.
+- **The map.** Point to [ask-matt](https://aihero.dev/skills-ask-matt), the router over the whole set, so this page stays a node and never has to redraw the graph.
 
 </page-template>
 
 ## Conventions
 
-- Explain the **why**, not the process. The page sells and situates the skill; it never reproduces the `SKILL.md` steps or template dumps — a human choosing a tool does not need the runbook.
+- Explain the **why**, not the process. The page orients and situates the skill; it never reproduces the `SKILL.md` steps or template dumps — a human choosing a tool does not need the runbook.
 - Use the skill's **leading words** (_seam_, _deep module_, _tracer bullet_) so the page and the skill speak one language.
+- Keep the page itself low-load. It is documentation *about* low-cognitive-load skills; furniture (spare headings, restated links) is the thing it is arguing against.
 
 ## Done when
 
-- The page exists at `docs/<name>.md`, and no stale page survives a rename.
-- The install command and source link name the correct bucket and skill.
-- The load-bearing constraint is stated in `## What it does`.
+- The page exists at `docs/<bucket>/<name>.md`, and no stale page survives a rename or bucket move.
+- The Quickstart block and source link name the correct bucket and skill; the update line names the skill.
+- `## What it does` states the load-bearing constraint.
+- `## When to reach for it` states invocation mode and the trigger boundary.
+- `## Where it fits` names the role and links to `ask-matt`.
+- A prerequisite (workspace, prior setup, tooling) is stated where one exists, and the section is absent where none does.
+- The middle surfaces the leading word.
 - Every link is absolute, and every one resolves.
