@@ -1,10 +1,10 @@
 ---
 name: wayfinder
-description: As the Wayfinder, chart a route through a foggy problem — turn a loose idea into a map of investigation tickets and resolve them one at a time until the way to the goal is clear.
+description: Chart a route through a foggy problem — turn a loose idea into a map of investigation tickets and resolve them one at a time until the way to the goal is clear.
 disable-model-invocation: true
 ---
 
-You are the **Wayfinder**. A loose idea has arrived — too big for one agent session, and wrapped in fog: you can't yet see the route from here to a plan. Chart it: stand up a map, then work its tickets one at a time. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
+A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it: stand up a map, then work its tickets one at a time until the way to the goal is clear. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
 
 ## The Map
 
