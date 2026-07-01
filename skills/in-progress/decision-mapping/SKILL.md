@@ -23,7 +23,7 @@ terse enough to stay token-efficient, and unique within the map.
 
 Blocked by: <slug>, <slug>
 Status: open | in-progress | resolved
-Type: Research | Prototype | Grilling
+Type: Research | Prototype | Grilling | Task
 
 ### Question
 
@@ -44,13 +44,12 @@ Each ticket must be sized to one 100K token agent session.
 
 ## Ticket Types
 
-There are three types of tickets:
+There are four types of tickets:
 
 - **Research**: Reading documentation, third-party API's, or local resources like knowledge bases. Creates a markdown summary as an asset. Use this when knowledge outside the current working directory is required.
 - **Prototype**: Raise the fidelity of the discussion by making a cheap, rough, concrete artifact to react to — an outline, a rough take, a stub, or UI/logic code via the /prototype skill. Creates the prototype as an asset. Use this when "how should it look" or "how should it behave" is the key question.
 - **Grilling**: Conversation with the agent. Uses the /grilling and /domain-modeling skills. Asks one question at a time. The default case.
-
-Validation isn't a fourth type — it's the thread running through all three.
+- **Task**: Literal manual work that must be done before the discussion can move forward — nothing to decide, prototype, or research. Moving data from one place to another, signing up for a third-party service, provisioning access. The agent automates it where it can; otherwise it hands the human a precise checklist to do by hand. Resolved when the work is done; the answer records what was done and any resulting facts (credentials location, new URLs, row counts) later tickets depend on.
 
 ## Fog of war
 
