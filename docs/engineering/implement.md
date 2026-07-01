@@ -30,10 +30,10 @@ Around that core it keeps the loop tight — typecheck often, run single test fi
 
 ## Where it fits
 
-`implement` is the build step at the end of the main chain:
+`implement` is the build step near the end of the main chain, just before the review:
 
 ```txt
-grill-with-docs → to-prd → to-issues → implement
+grill-with-docs → to-prd → to-issues → implement → code-review
 ```
 
-Reach for it after the work has been specced and sequenced, not before. Its key neighbours are [to-issues](https://aihero.dev/skills-to-issues), which produces the independently-grabbable tickets it works through, and [tdd](https://aihero.dev/skills-tdd), which it drives internally to write the tests at each seam before running its own `/code-review` pass and committing. When you're unsure which skill or flow fits, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.
+Reach for it after the work has been specced and sequenced, not before. Its key neighbours are [to-issues](https://aihero.dev/skills-to-issues), which produces the independently-grabbable tickets it works through, and [tdd](https://aihero.dev/skills-tdd), which it drives internally to write the tests at each seam before running its own [code-review](https://aihero.dev/skills-code-review) pass and committing. When you're unsure which skill or flow fits, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.

@@ -23,6 +23,8 @@ The route most work travels. You have an idea and want it built.
    - **Yes** → **`/to-prd`** (turn the thread into a PRD) → **`/to-issues`** (split the PRD into independently-grabbable issues). Because the issues are independent, **clear context between each one**: start a fresh session per issue and kick off **`/implement`** by passing it the PRD and the single issue to work on.
    - **No** → **`/implement`** right here, in the same context window.
 
+   Either way, `/implement` closes out by running **`/code-review`** — a two-axis review (Standards + Spec) of the diff — before committing. Reach for **`/code-review`** on its own whenever you want to review a branch or PR against a fixed point.
+
 ### Context hygiene
 
 Keep steps 1–3 in **one unbroken context window** — don't compact or clear until after `/to-issues` — so the grilling, PRD, and issues all build on the same thinking. Each `/implement` then starts fresh, working from the issue.
