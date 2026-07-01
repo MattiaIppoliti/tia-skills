@@ -1,5 +1,5 @@
 ---
-name: wayfinding
+name: wayfinder
 description: As the Wayfinder, chart a route through a foggy problem — turn a loose idea into a map of investigation tickets and resolve them one at a time until the way to the goal is clear.
 disable-model-invocation: true
 ---
@@ -91,14 +91,14 @@ End every session by clearing the context and opening one or more fresh sessions
 >
 > **One session** — resolves the next unblocked ticket:
 > ```
-> Invoke /wayfinding with the map at <path>.
+> Invoke /wayfinder with the map at <path>.
 > ```
 >
 > **Parallel** — paste one line per window, up to all 3:
 > ```
-> Invoke /wayfinding with the map at <path>, ticket auth-strategy.
-> Invoke /wayfinding with the map at <path>, ticket cache-layer.
-> Invoke /wayfinding with the map at <path>, ticket rate-limits.
+> Invoke /wayfinder with the map at <path>, ticket auth-strategy.
+> Invoke /wayfinder with the map at <path>, ticket cache-layer.
+> Invoke /wayfinder with the map at <path>, ticket rate-limits.
 > ```
 
 **No open tickets remain.** The fog is pushed back far enough that the way to the goal is clear — the map is done. (The initial grilling may also surface no fog at all, in which case there was never a map to chart.) Recommend implementing directly, or using `/to-prd` to schedule a multi-session implementation.

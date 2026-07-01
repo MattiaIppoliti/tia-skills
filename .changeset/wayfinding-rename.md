@@ -2,7 +2,7 @@
 "mattpocock-skills": minor
 ---
 
-Rename the **`decision-mapping`** skill to **`wayfinding`**, invoked as `/wayfinding`.
+Rename the **`decision-mapping`** skill to **`wayfinder`**, invoked as `/wayfinder`.
 
 "Decision map" was jargony and inaccurate — only one of the skill's four ticket types (Grilling) is actually a decision. The skill is reframed around the **Wayfinder**: you chart a route through a foggy problem, resolving investigation tickets one at a time until the way to the goal is clear. This makes one coherent leading-word frame (fog of war / frontier / the map) instead of mixing an invented term on top of it.
 
