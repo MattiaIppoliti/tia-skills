@@ -14,7 +14,7 @@ npx skills update migrate-to-shoehorn
 
 `migrate-to-shoehorn` sweeps a test suite for `as` type assertions and replaces them with `@total-typescript/shoehorn` helpers, so a test can pass just the properties it cares about while TypeScript stays happy.
 
-The load-bearing constraint: this is **test code only**. Shoehorn exists to fake partial data behind a type-safe front; it must never touch production code, where a real value is always required.
+This is **test code only**. Shoehorn exists to fake partial data behind a type-safe front; it must never touch production code, where a real value is always required.
 
 ## When to reach for it
 

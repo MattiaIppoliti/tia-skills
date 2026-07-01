@@ -14,7 +14,7 @@ npx skills update ask-matt
 
 `ask-matt` is the router over every user-invoked skill in this repo. You describe the situation you're in; it tells you which skill or flow fits and in what order to run them.
 
-The load-bearing constraint: it **does no work itself**. It doesn't grill, write a PRD, or fix anything — it only orients. Because these skills are user-invoked, nothing fires them for you, so *you* have to remember they exist; `ask-matt` is the memory you offload that to. It answers "which one, and when", then hands you off to the skill that actually does the job.
+It **does no work itself**. It doesn't grill, write a PRD, or fix anything — it only orients. Because these skills are user-invoked, nothing fires them for you, so *you* have to remember they exist; `ask-matt` is the memory you offload that to. It answers "which one, and when", then hands you off to the skill that actually does the job.
 
 ## When to reach for it
 

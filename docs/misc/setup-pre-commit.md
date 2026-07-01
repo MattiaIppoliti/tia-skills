@@ -14,7 +14,7 @@ npx skills update setup-pre-commit
 
 `setup-pre-commit` wires up a Husky pre-commit hook in the current repo: lint-staged runs Prettier over your staged files, then a type check and the test suite run before the commit is allowed through.
 
-The load-bearing constraint: it **adapts to the repo instead of imposing a fixed config**. It detects your package manager from the lockfile, only wires up the `typecheck` and `test` steps that already exist as scripts (and tells you which it skipped), and writes a Prettier config only if you don't already have one. You get a working gate tuned to what the repo actually has, not a template you then have to unpick.
+It **adapts to the repo instead of imposing a fixed config**. It detects your package manager from the lockfile, only wires up the `typecheck` and `test` steps that already exist as scripts (and tells you which it skipped), and writes a Prettier config only if you don't already have one. You get a working gate tuned to what the repo actually has, not a template you then have to unpick.
 
 ## When to reach for it
 

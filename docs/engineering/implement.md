@@ -14,7 +14,7 @@ npx skills update implement
 
 `implement` builds the work described in a PRD or a set of issues — driving it through test-driven development, typechecking, and the full test suite, then handing off to review and committing to the current branch.
 
-The load-bearing constraint: it does **not** decide what to build. The spec is already settled and the seams are already agreed; `implement` executes that plan rather than reopening it. It is the hands, not the head — the thinking happened upstream.
+It does **not** decide what to build. The spec is already settled and the seams are already agreed; `implement` executes that plan rather than reopening it. It is the hands, not the head — the thinking happened upstream.
 
 ## When to reach for it
 

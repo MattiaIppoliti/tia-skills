@@ -14,7 +14,7 @@ npx skills update to-prd
 
 `to-prd` turns the current conversation and your codebase understanding into a product requirements document, then publishes it to your issue tracker.
 
-The load-bearing constraint: it does **not** interview you again. By the time you reach for it, the alignment work is done — `to-prd` synthesises what is already known rather than asking a fresh round of questions.
+It does **not** interview you again. By the time you reach for it, the alignment work is done — `to-prd` synthesises what is already known rather than asking a fresh round of questions.
 
 ## When to reach for it
 

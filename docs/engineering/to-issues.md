@@ -14,7 +14,7 @@ npx skills update to-issues
 
 `to-issues` breaks a plan, spec, or PRD into a set of independently-grabbable issues and publishes them to your project's issue tracker, in dependency order.
 
-The load-bearing constraint: every issue is a **tracer bullet** — a thin *vertical* slice that cuts through all integration layers end-to-end (schema, API, UI, tests), never a horizontal slice of one layer. A completed slice is demoable or verifiable on its own, which is what makes the resulting tickets safe to hand to independent agents.
+Every issue is a **tracer bullet** — a thin *vertical* slice that cuts through all integration layers end-to-end (schema, API, UI, tests), never a horizontal slice of one layer. A completed slice is demoable or verifiable on its own, which is what makes the resulting tickets safe to hand to independent agents.
 
 ## When to reach for it
 

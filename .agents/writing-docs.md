@@ -30,7 +30,7 @@ npx skills update <name>
 
 ## What it does
 
-One or two plain-language paragraphs. Lead with the skill's one-sentence job, then state the **load-bearing constraint** — the single fact that makes this skill behave differently from the obvious default (for `to-prd`: it does not interview the user again, it synthesises what is already known). This line is the most valuable on the page; never omit it.
+One or two plain-language paragraphs. Lead with the skill's one-sentence job, then state the **defining constraint** — the single fact that makes this skill behave differently from the obvious default (for `to-prd`: it does not interview the user again, it synthesises what is already known). Write it as a plain declarative sentence — never a labelled aside like "The defining constraint:" or "The key thing:"; the formula reads as filler. This line is the most valuable on the page; never omit it.
 
 ## When to reach for it
 
@@ -47,7 +47,7 @@ Optional — include only when the skill needs something in place to be function
 
 One to three short sections, in the skill's *own vocabulary*, that make it click — choose whatever headings fit the skill: the loop it runs, the artifact it produces, the fork it makes, the one anti-pattern it kills. There is no prescribed heading; the skills are too heterogeneous for one.
 
-The single non-negotiable: **surface the skill's leading word / load-bearing idea** — `tight` feedback loop, `deep module`, throwaway-code-answers-a-question, red-green. It pays off twice: the reader learns what the skill *is*, and learns the word they'll later think with to *reach for* it.
+The single non-negotiable: **surface the skill's leading word / defining idea** — `tight` feedback loop, `deep module`, throwaway-code-answers-a-question, red-green. It pays off twice: the reader learns what the skill *is*, and learns the word they'll later think with to *reach for* it.
 
 ## It's working if
 
@@ -73,7 +73,7 @@ Always present. Situate the skill in the system in a sentence or two:
 
 - The page exists at `docs/<bucket>/<name>.md`, and no stale page survives a rename or bucket move.
 - The Quickstart block and source link name the correct bucket and skill; the update line names the skill.
-- `## What it does` states the load-bearing constraint.
+- `## What it does` states the defining constraint, as plain prose rather than a labelled aside.
 - `## When to reach for it` states invocation mode and the trigger boundary.
 - `## Where it fits` names the role and links to `ask-matt`.
 - A prerequisite (workspace, prior setup, tooling) is stated where one exists, and the section is absent where none does.

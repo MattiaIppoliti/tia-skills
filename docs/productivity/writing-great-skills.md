@@ -14,7 +14,7 @@ npx skills update writing-great-skills
 
 `writing-great-skills` is the reference you write and edit skills against — the shared vocabulary and principles that make a skill predictable.
 
-The load-bearing constraint: a skill's job is to wrangle determinism out of a stochastic system, so the goal is not the same *output* every run but the same *process*. **Predictability** is the root virtue, and every design choice is judged against it — not against how clever, complete, or exhaustive the skill reads.
+A skill's job is to wrangle determinism out of a stochastic system, so the goal is not the same *output* every run but the same *process*. **Predictability** is the root virtue, and every design choice is judged against it — not against how clever, complete, or exhaustive the skill reads.
 
 ## When to reach for it
 

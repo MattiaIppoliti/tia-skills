@@ -14,7 +14,7 @@ npx skills update scaffold-exercises
 
 `scaffold-exercises` reads a course plan and builds the exercise directory tree it describes — numbered sections, numbered exercises, and their `problem/`, `solution/`, and `explainer/` variant folders, each seeded with a stub `readme.md`.
 
-The load-bearing constraint: the scaffold is only done when it **passes `pnpm ai-hero-cli internal lint`**. The linter is the contract — folder shape, numeric prefixes, non-empty readmes, no stray `.gitkeep` or `speaker-notes.md`, no broken links. The skill scaffolds, runs the lint, and iterates until it's green rather than leaving you a tree that merely looks right.
+The scaffold is only done when it **passes `pnpm ai-hero-cli internal lint`**. The linter is the contract — folder shape, numeric prefixes, non-empty readmes, no stray `.gitkeep` or `speaker-notes.md`, no broken links. The skill scaffolds, runs the lint, and iterates until it's green rather than leaving you a tree that merely looks right.
 
 ## When to reach for it
 

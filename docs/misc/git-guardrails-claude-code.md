@@ -14,7 +14,7 @@ npx skills update git-guardrails-claude-code
 
 `git-guardrails-claude-code` installs a Claude Code **PreToolUse hook** that blocks destructive git commands — `git push`, `reset --hard`, `clean -f`, `branch -D`, `checkout .` / `restore .` — before they run.
 
-The load-bearing constraint: this is a **guardrail**, not a request. The block lives in the harness, not in the agent's instructions — the hook inspects every Bash command and, on a match, exits with code 2 so the command never executes. An agent can forget a "please don't push" note in its prompt; it cannot talk its way past a hook that fires before the tool call lands.
+This is a **guardrail**, not a request. The block lives in the harness, not in the agent's instructions — the hook inspects every Bash command and, on a match, exits with code 2 so the command never executes. An agent can forget a "please don't push" note in its prompt; it cannot talk its way past a hook that fires before the tool call lands.
 
 ## When to reach for it
 

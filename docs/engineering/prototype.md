@@ -14,7 +14,7 @@ npx skills update prototype
 
 `prototype` builds a small, disposable program whose only job is to answer one design question — does this state model feel right, or what should this UI look like.
 
-The load-bearing constraint: the code is **throwaway from day one**, and marked as such. It carries no tests, no error handling beyond what makes it run, no abstractions, and no persistence. The point is to learn something fast and then delete it — so the moment you start hardening it, you've stopped prototyping.
+The code is **throwaway from day one**, and marked as such. It carries no tests, no error handling beyond what makes it run, no abstractions, and no persistence. The point is to learn something fast and then delete it — so the moment you start hardening it, you've stopped prototyping.
 
 ## When to reach for it
 
