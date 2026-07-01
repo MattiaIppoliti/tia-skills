@@ -28,19 +28,25 @@ Reach for it once a change has been talked through and the domain language is se
 
 ## What the PRD includes
 
-- problem statement
-- solution
-- extensive numbered user stories
-- implementation decisions
-- testing decisions
-- out-of-scope items
-- further notes
+- **Problem statement** — what is broken or missing, and why it's worth solving, in the project's own vocabulary.
+- **Solution** — the shape of the fix at a high level, before any implementation detail.
+- **User stories** — an extensive, numbered list of the concrete behaviours the change must support, each one independently checkable.
+- **Implementation decisions** — the choices already settled during the conversation, so they aren't relitigated later.
+- **Testing decisions** — the seams the feature will be tested at, and what "done" looks like.
+- **Out-of-scope items** — what this change deliberately does *not* cover, to keep the ticket bounded.
+- **Further notes** — anything else worth carrying forward that doesn't fit the sections above.
 
 ## Deep modules
 
 Before writing the PRD, `to-prd` sketches the **seams** at which the feature will be tested and looks for **deep module** opportunities — a lot of functionality hidden behind a small, stable interface. It prefers existing seams to new ones and the highest seam possible, ideally just one across the whole change.
 
-That matters for agentic development: a good interface gives tests something durable to target, so the code underneath can change without the tests moving. If you see the words _seam_ and _deep module_ coming back at you as it works, the skill is doing its job.
+That matters for agentic development: a good interface gives tests something durable to target, so the code underneath can change without the tests moving.
+
+## It's working if
+
+- It starts writing the PRD instead of asking you a fresh round of questions.
+- It checks the seams with you before writing, and proposes as few as possible.
+- The PRD comes back in your project's domain vocabulary, not generic boilerplate.
 
 ## Where it fits
 
