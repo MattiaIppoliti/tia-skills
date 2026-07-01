@@ -38,10 +38,10 @@ Refactoring only happens once the suite is green; never while red.
 
 ## Where it fits
 
-`tdd` is the final step of the main build chain:
+`tdd` is the red-green loop the main build chain runs to write code:
 
 ```txt
-grill-with-docs → to-prd → to-issues → tdd
+grill-with-docs → to-prd → to-issues → implement
 ```
 
-It implements the tickets the earlier steps produced. Its key neighbours are [to-issues](https://aihero.dev/skills-to-issues), which hands it an independently-grabbable issue to build, and [codebase-design](https://aihero.dev/skills-codebase-design), which it leans on to find deep-module seams worth testing at. When you're unsure which skill or flow fits, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.
+[implement](https://aihero.dev/skills-implement) is the chain's final step, and it drives `tdd` internally to build each ticket test-first — so `tdd` is the engine inside that step rather than a step of its own. You can also reach for it directly, whenever there's a concrete behaviour to build without a full spec. Its other neighbour is [codebase-design](https://aihero.dev/skills-codebase-design), which it leans on to find deep-module seams worth testing at. When you're unsure which skill or flow fits, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.
