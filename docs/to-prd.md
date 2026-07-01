@@ -1,10 +1,10 @@
 Install this skill:
 
 ```bash
-npx skills add mattpocock/skills skill=to-prd -y -g
+npx skills add mattpocock/skills --skill=to-prd
 ```
 
-Source: [mattpocock/skills/to-prd](https://github.com/mattpocock/skills/tree/main/to-prd)
+[Source](https://github.com/mattpocock/skills/tree/main/skills/engineering/to-prd)
 
 ## What it does
 
