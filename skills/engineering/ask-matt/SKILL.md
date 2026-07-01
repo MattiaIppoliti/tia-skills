@@ -20,7 +20,9 @@ The route most work travels. You have an idea and want it built.
    - **`/prototype`** to answer the question with throwaway code,
    - **`/handoff`** back what you learned, and reference it from the original idea thread.
 3. **Branch — is this a multi-session build?**
-   - **Yes** → **`/to-prd`** (turn the thread into a PRD) → **`/to-issues`** (split the PRD into independently-grabbable issues). Because the issues are independent, **clear context between each one**: start a fresh session per issue and kick off **`/implement`** by passing it the PRD and the single issue to work on.
+   - **Yes** → **`/to-prd`** (turn the thread into a PRD), then split it into tracer-bullet slices one of two ways:
+     - **`/to-issues`** — independently-grabbable issues on your tracker, for **parallel/AFK** agents. Because the issues are independent, **clear context between each one** and kick off **`/implement`** per issue.
+     - **`/to-plan`** — a **sequential** plan you drive **by hand**, staying in the loop. Publishes to the same tracker, shaped to it: a single ordered `plan.md` for a local tracker, or a parent issue with ordered sub-issues for a real one. Work one phase per fresh context, clearing between them, with **`/implement`**.
    - **No** → **`/implement`** right here, in the same context window.
 
    Either way, **`/implement`** builds each issue by driving **`/tdd`** internally — one red-green slice at a time — then closes out by running **`/code-review`**, a two-axis review (Standards + Spec) of the diff, before committing. Reach for **`/tdd`** on its own when you just want to build a concrete behaviour test-first without a full spec, and **`/code-review`** on its own whenever you want to review a branch or PR against a fixed point.
