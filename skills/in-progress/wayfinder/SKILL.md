@@ -1,59 +1,48 @@
 ---
 name: wayfinder
-description: Chart a route through a foggy problem — turn a loose idea into a map of investigation tickets and resolve them one at a time until the way to the goal is clear.
+description: Chart a route through a foggy problem — turn a loose idea into a shared map of investigation tickets on your issue tracker, and resolve them one at a time until the way to the goal is clear.
 disable-model-invocation: true
 ---
 
-A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it: stand up a map, then work its tickets one at a time until the way to the goal is clear. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
+A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it as a **shared map** on the repo's issue tracker, then works its tickets one at a time until the way to the goal is clear. Because the map lives on the tracker, multiple people can watch it, comment on tickets, and pick up the frontier — the chart is a shared artifact, not a private file. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
 
 ## The Map
 
-The map is a single compact Markdown file, one per wayfinding effort, git-tracked alongside the project. It is the canonical artifact — the **whole map is loaded as context into every session**, so it must stay compact.
+The map is a single issue on this repo's issue tracker: one shared object — one URL — that the whole team reads and comments on. It is labelled `wayfinder:map`, and it is the canonical artifact. Its tickets are child issues of the map.
 
-Assets created during tickets should be linked to from the map, not duplicated within it.
+**Where the map, its child tickets, blocking, and frontier queries physically live is tracker-specific.** Consult `docs/agents/issue-tracker.md` (the "Wayfinding operations" section) for how *this* repo expresses them. If that doc is absent, default to the local-markdown tracker.
 
-### Structure
+### The map body
 
-Entries ("tickets"), each its own section keyed by a short dash-case slug that
-reads as a mini-title (e.g. `relational-db`, `auth-strategy`, `cache-layer`) —
-terse enough to stay token-efficient, and unique within the map.
+Three compact zones — this is the whole map at low resolution, loaded once per session:
 
-```markdown
-## relational-db: Relational Or Non-Relational Database?
+- **Notes** — the domain, any skills every session should consult, and freeform standing preferences for this effort.
+- **Decisions so far** — one *context pointer* per closed ticket: a short gist plus a link to the closed issue where the full answer lives. Enough to judge relevance; zoom through the link for detail.
+- **Fog** — terse prose naming what's dimly visible beyond the frontier. Not tickets yet.
 
-Blocked by: <slug>, <slug>
-Status: open | in-progress | resolved
-Type: Research | Prototype | Grilling | Task
+Open tickets are **not** listed here — they are open child issues, found by query.
 
-### Question
+### Tickets
 
-<question-here>
+Each ticket is a **child issue** of the map; the tracker's issue id is its identity. Its body holds the **question**. Two label families:
 
-### Answer
+- `wayfinder:<type>` — one of `research`, `prototype`, `grilling`, `task` (see [Ticket Types](#ticket-types)).
+- `wayfinder:claimed` — a session sets this **first**, before any work, so concurrent sessions skip it.
 
-<answer-here>
-```
+Blocking uses the tracker's native semantics. A ticket is **unblocked** when every ticket blocking it is closed. The **frontier** is the open, unblocked, unclaimed children — the edge of the known.
 
-The slug is the canonical id, used in every `Blocked by` edge and prose
-reference; the title after the colon is optional. A ticket
-is **unblocked** when every ticket in its `Blocked by` list is `resolved`. A
-session **claims** its ticket by setting `Status: in-progress` and saving the map
-before any work, so concurrent sessions skip it.
-
-Each ticket must be sized to one 100K token agent session.
+Each ticket must be sized to one 100K token agent session. Assets created while resolving a ticket are linked from the issue, not pasted into it.
 
 ## Ticket Types
 
-There are four types of tickets:
-
-- **Research**: Reading documentation, third-party API's, or local resources like knowledge bases. Creates a markdown summary as an asset. Use this when knowledge outside the current working directory is required.
-- **Prototype**: Raise the fidelity of the discussion by making a cheap, rough, concrete artifact to react to — an outline, a rough take, a stub, or UI/logic code via the /prototype skill. Creates the prototype as an asset. Use this when "how should it look" or "how should it behave" is the key question.
+- **Research**: Reading documentation, third-party APIs, or local resources like knowledge bases. Creates a markdown summary as a linked asset. Use when knowledge outside the current working directory is required.
+- **Prototype**: Raise the fidelity of the discussion by making a cheap, rough, concrete artifact to react to — an outline, a rough take, a stub, or UI/logic code via the /prototype skill. Links the prototype as an asset. Use when "how should it look" or "how should it behave" is the key question.
 - **Grilling**: Conversation with the agent. Uses the /grilling and /domain-modeling skills. Asks one question at a time. The default case.
-- **Task**: Literal manual work that must be done before the discussion can move forward — nothing to decide, prototype, or research. Moving data from one place to another, signing up for a third-party service, provisioning access. The agent automates it where it can; otherwise it hands the human a precise checklist to do by hand. Resolved when the work is done; the answer records what was done and any resulting facts (credentials location, new URLs, row counts) later tickets depend on.
+- **Task**: Literal manual work that must be done before the discussion can move forward — nothing to decide, prototype, or research. Moving data, signing up for a service, provisioning access. The agent automates it where it can; otherwise it hands the human a precise checklist. Resolved when the work is done; the answer records what was done and any resulting facts (credentials location, new URLs, row counts) later tickets depend on.
 
 ## Fog of war
 
-The map is _deliberately_ incomplete beyond the frontier — don't chart what you can't yet see. The frontier is the unblocked tickets at the edge of the known; resolve them to push it forward. Push back the fog of war one ticket at a time, until the way to the goal is clear and no tickets remain.
+The map is _deliberately_ incomplete beyond the frontier — don't chart what you can't yet see. What is dimly visible but not yet actionable lives as **Fog** prose in the map body, never as speculative tickets; only the frontier becomes real issues. The frontier is the unblocked tickets at the edge of the known; resolve them to push it forward, graduating fog into fresh tickets as it comes into focus. Push back the fog of war one ticket at a time, until the way to the goal is clear and no tickets remain.
 
 ## Invocation
 
@@ -64,45 +53,42 @@ Two branches. Either way, **every session ends with a [Handoff](#handoff)** — 
 User invokes with a loose idea.
 
 1. Run a `/grilling` and `/domain-modeling` session to surface the open decisions.
-2. Write a new map — mostly fog, frontier identified, trivially-decidable entries resolved inline.
-3. Handoff. Charting the map is one session's work; do not also resolve tickets.
+2. **Create the map** (label `wayfinder:map`): Notes filled in, Decisions-so-far empty, Fog sketched.
+3. **Create the frontier tickets** as child issues of the map — then wire blocking edges in a **second pass** (issues need ids before they can reference each other).
+4. Leave everything past the frontier as fog — don't chart what you can't see.
+5. Handoff. Charting the map is one session's work; do not also resolve tickets.
 
 ### Work through the map
 
-User invokes with a path to an existing map. A ticket slug is **optional** — without one, you pick the next decision, not the user.
+User invokes with a map (URL or number). A ticket is **optional** — without one, you pick the next decision, not the user.
 
-1. Load the **whole map** as context.
-2. Choose the ticket. If the user named one, use it. Otherwise pick the first `open` ticket in document order that is [unblocked](#structure). [Claim it](#structure): set `Status: in-progress` and save before any work.
-3. Resolve it, invoking skills as needed — including any the `## Notes` block names. If in doubt, use `/grilling` and `/domain-modeling`.
-4. Record the answer in the ticket's body and set `Status: resolved`.
-5. Add newly-discovered tickets with correct `Blocked by` edges. If the decisions made invalidate other parts of the map, update or delete those tickets.
+1. Load the **map** — the low-res view (Notes, decision pointers, fog). Not every ticket body.
+2. Choose the ticket. If the user named one, use it. Otherwise query the frontier and take the first open, unblocked, unclaimed child in order. **Claim it**: set `wayfinder:claimed` and save before any work.
+3. Resolve it — **zoom as needed**: fetch the full body of any related or closed ticket on demand; invoke the skills the `## Notes` block names. If in doubt, use `/grilling` and `/domain-modeling`.
+4. Record the resolution: post the answer as a **resolution comment**, **close** the issue, and **append a context pointer** to the map's Decisions-so-far.
+5. Add newly-surfaced frontier tickets (create-then-wire); graduate fog that's now actionable. If the decision invalidates other parts of the map, update or delete those tickets.
 6. Handoff.
 
-The user may run unblocked tickets in parallel, so expect other agents to be editing the map in their own sessions.
+The user may run unblocked tickets in parallel, so expect other sessions to be editing the tracker concurrently.
 
 ## Handoff
 
 End every session by clearing the context and opening one or more fresh sessions. Close with a **Next steps** block the user can copy-paste. Two cases:
 
-**Open tickets remain.** List the currently-unblocked tickets, then give two copy-paste options: a bare command for one session (you pick the next ticket), and one pinned command per unblocked ticket for running them in parallel. Paste one line per fresh window — opening one, some, or all of them.
+**Open tickets remain.** Query the map for the currently-unblocked children, then give two copy-paste options: a bare command for one session (you pick the next ticket), and one pinned command per unblocked ticket for running them in parallel. Paste one line per fresh window — opening one, some, or all of them.
 
-> **Next steps** — 3 tickets unblocked: `auth-strategy`, `cache-layer`, `rate-limits`.
-> Clear the context, then open fresh sessions.
+> **Next steps** — 3 tickets unblocked. Clear the context, then open fresh sessions.
 >
 > **One session** — resolves the next unblocked ticket:
 > ```
-> Invoke /wayfinder with the map at <path>.
+> Invoke /wayfinder with the map <map-url>.
 > ```
 >
 > **Parallel** — paste one line per window, up to all 3:
 > ```
-> Invoke /wayfinder with the map at <path>, ticket auth-strategy.
-> Invoke /wayfinder with the map at <path>, ticket cache-layer.
-> Invoke /wayfinder with the map at <path>, ticket rate-limits.
+> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.
+> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.
+> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.
 > ```
 
 **No open tickets remain.** The fog is pushed back far enough that the way to the goal is clear — the map is done. (The initial grilling may also surface no fog at all, in which case there was never a map to chart.) Recommend implementing directly, or using `/to-prd` to schedule a multi-session implementation.
-
-## Notes
-
-An optional block declaring the **domain**, any skills every session should `consult`, and freeform standing preferences for this effort.
