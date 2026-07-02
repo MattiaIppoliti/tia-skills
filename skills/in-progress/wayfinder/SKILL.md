@@ -4,11 +4,11 @@ description: Chart a route through a foggy problem — turn a loose idea into a 
 disable-model-invocation: true
 ---
 
-A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it as a **shared map** on the repo's issue tracker, then works its tickets one at a time until the way to the goal is clear. Because the map lives on the tracker, multiple people can watch it, comment on tickets, and pick up the frontier — the chart is a shared artifact, not a private file. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
+A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it as a **shared map** on the repo's issue tracker, then works its tickets one at a time until the way to the goal is clear. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
 
 ## The Map
 
-The map is a single issue on this repo's issue tracker: one shared object — one URL — that the whole team reads and comments on. It is labelled `wayfinder:map`, and it is the canonical artifact. Its tickets are child issues of the map.
+The map is a single issue on this repo's issue tracker, labelled `wayfinder:map` — the canonical artifact. Its tickets are child issues of the map.
 
 **Where the map, its child tickets, blocking, and frontier queries physically live is tracker-specific.** Consult `docs/agents/issue-tracker.md` (the "Wayfinding operations" section) for how *this* repo expresses them. If that doc is absent, default to the local-markdown tracker.
 
@@ -54,9 +54,8 @@ User invokes with a loose idea.
 
 1. Run a `/grilling` and `/domain-modeling` session to surface the open decisions.
 2. **Create the map** (label `wayfinder:map`): Notes filled in, Decisions-so-far empty, Fog sketched.
-3. **Create the frontier tickets** as child issues of the map — then wire blocking edges in a **second pass** (issues need ids before they can reference each other).
-4. Leave everything past the frontier as fog — don't chart what you can't see.
-5. Handoff. Charting the map is one session's work; do not also resolve tickets.
+3. **Create the frontier tickets** as child issues of the map — then wire blocking edges in a **second pass** (issues need ids before they can reference each other). Everything past the frontier stays fog.
+4. Handoff. Charting the map is one session's work; do not also resolve tickets.
 
 ### Work through the map
 
