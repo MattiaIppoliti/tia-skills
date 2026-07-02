@@ -8,8 +8,6 @@ disable-model-invocation: true
 
 Break a plan, spec, or conversation into a set of **tickets** — tracer-bullet vertical slices, each declaring the tickets that **block** it.
 
-The blocking edges make one set of tickets read two ways. On a **local file** they're written as text — work them top-to-bottom by hand. On a **real tracker** they're native blocking links, so any ticket whose blockers are done is on the **frontier**, and several agents can work it at once. The medium only decides whether the edges are acted on in parallel; you produce the artifact, not the run.
-
 The issue tracker and triage label vocabulary should have been provided to you — run `/setup-matt-pocock-skills` if not.
 
 ## Process
