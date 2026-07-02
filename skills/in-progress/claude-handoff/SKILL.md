@@ -5,7 +5,9 @@ argument-hint: "What will the next session be used for?"
 disable-model-invocation: true
 ---
 
-Write a handoff document summarising the current conversation so a fresh agent can continue the work. Instead of saving it, launch a background agent seeded with the document as its prompt: `claude --bg "<handoff document>"`. It starts in the current working directory and returns immediately; the user manages it with `claude agents`.
+Write a handoff document summarising the current conversation so a fresh agent can continue the work. Instead of saving it, launch a background agent seeded with the document as its prompt: `claude --bg --name "<descriptive name>" "<handoff document>"`. It starts in the current working directory and returns immediately; the user manages it with `claude agents`.
+
+Always pass `-n`/`--name` with a descriptive name (e.g. `--name "Fix login bug"`) — it sets the display name shown in the job list, session picker, and terminal title.
 
 Include a "suggested skills" section in the document, which suggests skills that the agent should invoke.
 
