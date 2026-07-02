@@ -55,7 +55,9 @@ The answer isn't part of the body — it's recorded on resolution (see [Work thr
 
 ## Fog of war
 
-The map is _deliberately_ incomplete beyond the frontier — don't chart what you can't yet see. Only the frontier becomes real tickets; everything dimmer stays fog until it comes into focus. Resolving a frontier ticket pushes the frontier forward, graduating fog into fresh tickets. Push back the fog of war one ticket at a time, until the way to the goal is clear and no tickets remain.
+The map is _deliberately_ incomplete beyond the frontier — don't chart what you can't yet see. Only the frontier becomes real tickets; everything dimmer stays fog until it comes into focus. Resolving a frontier ticket pushes the frontier forward, graduating fog into fresh tickets — one ticket at a time, until the way to the goal is clear and no tickets remain.
+
+The map's **Fog** section is where that dim view is written down: decisions and investigations you can already tell are coming but can't specify yet, because they hang on questions the frontier hasn't answered. Write each as a rough one-liner — the suspected question, the area to revisit later, the risk you're deferring — not a ticket. It doubles as a signpost for collaborators reading where the effort is headed. Keep out what's already decided (that belongs in Decisions so far) and what's actionable now (that becomes a ticket).
 
 ## Invocation
 
