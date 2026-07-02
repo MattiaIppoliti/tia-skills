@@ -1,7 +1,6 @@
 ---
 name: wayfinder
 description: Chart a route through a foggy problem — turn a loose idea into a shared map of investigation tickets on your issue tracker, and resolve them one at a time until the way to the goal is clear.
-disable-model-invocation: true
 ---
 
 A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it as a **shared map** on the repo's issue tracker, then works its tickets one at a time. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
@@ -12,7 +11,7 @@ The map is a single issue on this repo's issue tracker, labelled `wayfinder:map`
 
 The map is an **index**, not a store. It lists the decisions made and points at the tickets that hold their detail; a decision lives in exactly one place — its ticket — so the map never restates it, only gists it and links.
 
-**Where the map, its child tickets, blocking, and frontier queries physically live is tracker-specific.** Consult `docs/agents/issue-tracker.md` (the "Wayfinding operations" section) for how *this* repo expresses them. If that doc is absent, default to the local-markdown tracker.
+**Where the map, its child tickets, blocking, and frontier queries physically live is tracker-specific.** Consult `docs/agents/issue-tracker.md` (the "Wayfinding operations" section) for how _this_ repo expresses them. If that doc is absent, default to the local-markdown tracker.
 
 ### The map body
 
@@ -20,13 +19,17 @@ The whole map at low resolution, loaded once per session. Open tickets are **not
 
 ```markdown
 ## Notes
+
 <domain; skills every session should consult; standing preferences for this effort>
 
 ## Decisions so far
+
 <!-- the index — one line per closed ticket: enough to judge relevance, then zoom the link for the detail the ticket holds -->
-- [<closed ticket title>](<link>) — <one-line gist of the answer>
+
+- [<closed ticket title>](link) — <one-line gist of the answer>
 
 ## Fog
+
 <!-- see "Fog of war" for what belongs here -->
 ```
 
@@ -36,6 +39,7 @@ Each ticket is a **child issue** of the map; the tracker's issue id is its ident
 
 ```markdown
 ## Question
+
 <the decision or investigation this ticket resolves>
 ```
 
@@ -103,11 +107,13 @@ End every session with a **Next steps** block the user can copy-paste. Two cases
 > **Next steps** — 3 tickets unblocked. Clear the context, then open fresh sessions.
 >
 > **One session** — resolves the next unblocked ticket:
+>
 > ```
 > Invoke /wayfinder with the map <map-url>.
 > ```
 >
 > **Parallel** — paste one line per window, up to all 3:
+>
 > ```
 > Invoke /wayfinder with the map <map-url>, ticket <issue-url>.
 > Invoke /wayfinder with the map <map-url>, ticket <issue-url>.
