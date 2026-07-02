@@ -5,6 +5,10 @@ description: Chart a route through a foggy problem — turn a loose idea into a 
 
 A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it as a **shared map** on the repo's issue tracker, then works its tickets one at a time. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
 
+## Refer by name
+
+Every map and ticket is an issue, so it has a **name** — its title. In everything the human reads — narration, the map's Decisions-so-far, the Handoff — refer to it by that name, never by a bare id, number, or slug. A wall of `#42, #43, #44` is illegible at a glance; names read instantly. The id and URL stay the identity: the link a name wraps, the pasteable handle in a command — they ride *inside* the name, never stand in for it.
+
 ## The Map
 
 The map is a single issue on this repo's issue tracker, labelled `wayfinder:map` — the canonical artifact. Its tickets are child issues of the map.
@@ -104,7 +108,7 @@ End every session with a **Next steps** block the user can copy-paste. Two cases
 
 **Open tickets remain.** Query the map for the currently-unblocked children, then give two copy-paste options: a bare command for one session (you pick the next ticket), and one pinned command per unblocked ticket for running them in parallel. Paste one line per fresh window — opening one, some, or all of them.
 
-> **Next steps** — 3 tickets unblocked. Clear the context, then open fresh sessions.
+> **Next steps** — *Briefing pipeline*: 3 tickets unblocked. Clear the context, then open fresh sessions.
 >
 > **One session** — resolves the next unblocked ticket:
 >
@@ -112,12 +116,12 @@ End every session with a **Next steps** block the user can copy-paste. Two cases
 > Invoke /wayfinder with the map <map-url>.
 > ```
 >
-> **Parallel** — paste one line per window, up to all 3:
+> **Parallel** — paste one line per window, up to all 3 (trailing name orients you; it's ignored on paste):
 >
 > ```
-> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.
-> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.
-> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.
+> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.  # Reciprocity filter
+> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.  # TTS chunking
+> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.  # Voice selection
 > ```
 
 **No open tickets remain.** The fog is pushed back far enough that the way to the goal is clear — the map is done. (The initial grilling may also surface no fog at all, in which case there was never a map to chart.) Recommend implementing directly, or using `/to-prd` to schedule a multi-session implementation.
