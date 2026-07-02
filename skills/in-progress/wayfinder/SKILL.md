@@ -14,24 +14,37 @@ The map is a single issue on this repo's issue tracker, labelled `wayfinder:map`
 
 ### The map body
 
-Three compact zones — this is the whole map at low resolution, loaded once per session:
+The whole map at low resolution, loaded once per session. Open tickets are **not** listed — they are open child issues, found by query.
 
-- **Notes** — the domain, any skills every session should consult, and freeform standing preferences for this effort.
-- **Decisions so far** — one *context pointer* per closed ticket: a short gist plus a link to the closed issue where the full answer lives. Enough to judge relevance; zoom through the link for detail.
-- **Fog** — terse prose naming what's dimly visible beyond the frontier. Not tickets yet.
+```markdown
+## Notes
+<domain; skills every session should consult; standing preferences for this effort>
 
-Open tickets are **not** listed here — they are open child issues, found by query.
+## Decisions so far
+<!-- one context pointer per closed ticket — enough to judge relevance; zoom the link for detail -->
+- [<closed ticket title>](<link>) — <one-line gist of the answer>
+
+## Fog
+<!-- terse prose: what's dimly visible beyond the frontier, not yet tickets -->
+```
 
 ### Tickets
 
-Each ticket is a **child issue** of the map; the tracker's issue id is its identity. Its body holds the **question**. Two label families:
+Each ticket is a **child issue** of the map; the tracker's issue id is its identity. Its body is the question, sized to one 100K token agent session:
+
+```markdown
+## Question
+<the decision or investigation this ticket resolves>
+```
+
+Two label families:
 
 - `wayfinder:<type>` — one of `research`, `prototype`, `grilling`, `task` (see [Ticket Types](#ticket-types)).
 - `wayfinder:claimed` — a session sets this **first**, before any work, so concurrent sessions skip it.
 
 Blocking uses the tracker's native semantics. A ticket is **unblocked** when every ticket blocking it is closed. The **frontier** is the open, unblocked, unclaimed children — the edge of the known.
 
-Each ticket must be sized to one 100K token agent session. Assets created while resolving a ticket are linked from the issue, not pasted into it.
+The answer isn't part of the body — it's recorded on resolution (see [Work through the map](#work-through-the-map)). Assets created while resolving a ticket are linked from the issue, not pasted in.
 
 ## Ticket Types
 
