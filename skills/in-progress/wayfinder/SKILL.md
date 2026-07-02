@@ -4,7 +4,7 @@ description: Chart a route through a foggy problem — turn a loose idea into a 
 disable-model-invocation: true
 ---
 
-A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it as a **shared map** on the repo's issue tracker, then works its tickets one at a time until the way to the goal is clear. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
+A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it as a **shared map** on the repo's issue tracker, then works its tickets one at a time. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
 
 ## The Map
 
@@ -42,7 +42,7 @@ Each ticket must be sized to one 100K token agent session. Assets created while 
 
 ## Fog of war
 
-The map is _deliberately_ incomplete beyond the frontier — don't chart what you can't yet see. What is dimly visible but not yet actionable lives as **Fog** prose in the map body, never as speculative tickets; only the frontier becomes real issues. The frontier is the unblocked tickets at the edge of the known; resolve them to push it forward, graduating fog into fresh tickets as it comes into focus. Push back the fog of war one ticket at a time, until the way to the goal is clear and no tickets remain.
+The map is _deliberately_ incomplete beyond the frontier — don't chart what you can't yet see. Only the frontier becomes real tickets; everything dimmer stays fog until it comes into focus. Resolving a frontier ticket pushes the frontier forward, graduating fog into fresh tickets. Push back the fog of war one ticket at a time, until the way to the goal is clear and no tickets remain.
 
 ## Invocation
 
@@ -54,15 +54,15 @@ User invokes with a loose idea.
 
 1. Run a `/grilling` and `/domain-modeling` session to surface the open decisions.
 2. **Create the map** (label `wayfinder:map`): Notes filled in, Decisions-so-far empty, Fog sketched.
-3. **Create the frontier tickets** as child issues of the map — then wire blocking edges in a **second pass** (issues need ids before they can reference each other). Everything past the frontier stays fog.
+3. **Create the frontier tickets** as child issues of the map — then wire blocking edges in a **second pass** (issues need ids before they can reference each other).
 4. Handoff. Charting the map is one session's work; do not also resolve tickets.
 
 ### Work through the map
 
 User invokes with a map (URL or number). A ticket is **optional** — without one, you pick the next decision, not the user.
 
-1. Load the **map** — the low-res view (Notes, decision pointers, fog). Not every ticket body.
-2. Choose the ticket. If the user named one, use it. Otherwise query the frontier and take the first open, unblocked, unclaimed child in order. **Claim it**: set `wayfinder:claimed` and save before any work.
+1. Load the **map** — the low-res view, not every ticket body.
+2. Choose the ticket. If the user named one, use it. Otherwise take the first frontier ticket in order. **Claim it**: set `wayfinder:claimed` and save before any work.
 3. Resolve it — **zoom as needed**: fetch the full body of any related or closed ticket on demand; invoke the skills the `## Notes` block names. If in doubt, use `/grilling` and `/domain-modeling`.
 4. Record the resolution: post the answer as a **resolution comment**, **close** the issue, and **append a context pointer** to the map's Decisions-so-far.
 5. Add newly-surfaced frontier tickets (create-then-wire); graduate fog that's now actionable. If the decision invalidates other parts of the map, update or delete those tickets.
@@ -72,7 +72,7 @@ The user may run unblocked tickets in parallel, so expect other sessions to be e
 
 ## Handoff
 
-End every session by clearing the context and opening one or more fresh sessions. Close with a **Next steps** block the user can copy-paste. Two cases:
+End every session with a **Next steps** block the user can copy-paste. Two cases:
 
 **Open tickets remain.** Query the map for the currently-unblocked children, then give two copy-paste options: a bare command for one session (you pick the next ticket), and one pinned command per unblocked ticket for running them in parallel. Paste one line per fresh window — opening one, some, or all of them.
 
