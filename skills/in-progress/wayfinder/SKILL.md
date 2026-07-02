@@ -7,7 +7,7 @@ A loose idea has arrived — too big for one agent session, and wrapped in fog: 
 
 ## Refer by name
 
-Every map and ticket is an issue, so it has a **name** — its title. In everything the human reads — narration, the map's Decisions-so-far, the Handoff — refer to it by that name, never by a bare id, number, or slug. A wall of `#42, #43, #44` is illegible at a glance; names read instantly. The id and URL stay the identity: the link a name wraps, the pasteable handle in a command — they ride *inside* the name, never stand in for it.
+Every map and ticket is an issue, so it has a **name** — its title. In everything the human reads — narration, the map's Decisions-so-far, the Handoff — refer to it by that name, never by a bare id, number, or slug. A wall of `#42, #43, #44` is illegible; names read at a glance. The id and URL don't vanish — a name wraps its link, and Handoff commands still paste the URL — but they ride *inside* the name, never stand in for it.
 
 ## The Map
 
