@@ -108,7 +108,7 @@ End every session with a **Next steps** block the user can copy-paste. Two cases
 
 **Open tickets remain.** Query the map for the currently-unblocked children, then give two copy-paste options: a bare command for one session (you pick the next ticket), and one pinned command per unblocked ticket for running them in parallel. Paste one line per fresh window — opening one, some, or all of them.
 
-> **Next steps** — *Briefing pipeline*: 3 tickets unblocked. Clear the context, then open fresh sessions.
+> **Next steps** — *<map name>*: 3 tickets unblocked. Clear the context, then open fresh sessions.
 >
 > **One session** — resolves the next unblocked ticket:
 >
@@ -116,12 +116,12 @@ End every session with a **Next steps** block the user can copy-paste. Two cases
 > Invoke /wayfinder with the map <map-url>.
 > ```
 >
-> **Parallel** — paste one line per window, up to all 3 (trailing name orients you; it's ignored on paste):
+> **Parallel** — paste one line per window, up to all 3:
 >
 > ```
-> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.  # Reciprocity filter
-> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.  # TTS chunking
-> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.  # Voice selection
+> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.  # <ticket name>
+> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.  # <ticket name>
+> Invoke /wayfinder with the map <map-url>, ticket <issue-url>.  # <ticket name>
 > ```
 
 **No open tickets remain.** The fog is pushed back far enough that the way to the goal is clear — the map is done. (The initial grilling may also surface no fog at all, in which case there was never a map to chart.) Recommend implementing directly, or using `/to-prd` to schedule a multi-session implementation.
