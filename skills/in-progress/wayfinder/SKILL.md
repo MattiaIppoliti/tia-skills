@@ -10,6 +10,8 @@ A loose idea has arrived — too big for one agent session, and wrapped in fog: 
 
 The map is a single issue on this repo's issue tracker, labelled `wayfinder:map` — the canonical artifact. Its tickets are child issues of the map.
 
+The map is an **index**, not a store. It lists the decisions made and points at the tickets that hold their detail; a decision lives in exactly one place — its ticket — so the map never restates it, only gists it and links.
+
 **Where the map, its child tickets, blocking, and frontier queries physically live is tracker-specific.** Consult `docs/agents/issue-tracker.md` (the "Wayfinding operations" section) for how *this* repo expresses them. If that doc is absent, default to the local-markdown tracker.
 
 ### The map body
@@ -21,7 +23,7 @@ The whole map at low resolution, loaded once per session. Open tickets are **not
 <domain; skills every session should consult; standing preferences for this effort>
 
 ## Decisions so far
-<!-- one context pointer per closed ticket — enough to judge relevance; zoom the link for detail -->
+<!-- the index — one line per closed ticket: enough to judge relevance, then zoom the link for the detail the ticket holds -->
 - [<closed ticket title>](<link>) — <one-line gist of the answer>
 
 ## Fog
@@ -87,7 +89,7 @@ User invokes with a map (URL or number). A ticket is **optional** — without on
 2. Choose the ticket. If the user named one, use it. Otherwise take the first frontier ticket in order. **Claim it**: set `wayfinder:claimed` and save before any work.
 3. Resolve it — **zoom as needed**: fetch the full body of any related or closed ticket on demand; invoke the skills the `## Notes` block names. If in doubt, use `/grilling` and `/domain-modeling`.
 4. Record the resolution: post the answer as a **resolution comment**, **close** the issue, and **append a context pointer** to the map's Decisions-so-far.
-5. Add newly-surfaced tickets (create-then-wire); graduate any fog the answer has made specifiable. If the decision invalidates other parts of the map, update or delete those tickets.
+5. Add newly-surfaced tickets (create-then-wire); graduate any fog the answer has made specifiable, clearing each graduated patch from the Fog so it lives only as its new ticket. If the decision invalidates other parts of the map, update or delete those tickets.
 6. Handoff.
 
 The user may run unblocked tickets in parallel, so expect other sessions to be editing the tracker concurrently.
