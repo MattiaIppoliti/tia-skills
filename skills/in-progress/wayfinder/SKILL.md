@@ -1,6 +1,6 @@
 ---
 name: wayfinder
-description: Chart a route through a foggy problem — turn a loose idea into a shared map of investigation tickets on your issue tracker, and resolve them one at a time until the way to the goal is clear.
+description: Plan a huge chunk of work — more than one agent session can hold — as a shared map of investigation tickets on your issue tracker, and resolve them one at a time until the way to the goal is clear.
 ---
 
 A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it as a **shared map** on the repo's issue tracker, then works its tickets one at a time. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
