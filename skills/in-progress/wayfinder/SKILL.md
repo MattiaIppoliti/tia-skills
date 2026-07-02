@@ -59,7 +59,12 @@ The map is _deliberately_ incomplete: don't chart what you can't yet see. Beyond
 
 The map's **Fog** section is where that dim view is written down: the suspected question, the area to revisit later, the risk you're deferring. Write as loosely or as fully as the view allows; it doubles as a signpost for collaborators reading where the effort is headed.
 
-**Fog or ticket?** The test is whether you can state the question precisely now — _not_ whether you can answer it now. A blocked ticket you can't act on yet is still a ticket, because its question is already sharp; fog is what you can't yet phrase that sharply. So don't pre-slice fog into ticket-sized pieces — it's coarser than a ticket, and one patch may graduate into several tickets, or none, once the frontier reaches it. Fog excludes only what's already decided (that's Decisions so far) and what's already a ticket.
+**Fog or ticket?** The test is whether you can state the question precisely now — _not_ whether you can answer it now.
+
+- **Ticket when** the question is already sharp — even if it's blocked and you can't act on it yet.
+- **Fog when** you can't yet phrase it that sharply. Don't pre-slice fog into ticket-sized pieces: it's coarser than a ticket, and one patch may graduate into several tickets, or none, once the frontier reaches it.
+
+Fog excludes only what's already decided (that's Decisions so far) and what's already a ticket.
 
 ## Invocation
 
