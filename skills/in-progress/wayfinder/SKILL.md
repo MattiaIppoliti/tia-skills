@@ -70,7 +70,7 @@ Fog excludes only what's already decided (that's Decisions so far) and what's al
 
 ## Invocation
 
-Two branches. Either way, **every session ends with a [Handoff](#handoff)** — never resolve more than one ticket per session.
+Two modes. Either way, **every session ends with a [Handoff](#handoff)** — never resolve more than one ticket per session.
 
 ### Chart the map
 
