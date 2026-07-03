@@ -52,7 +52,7 @@ Two label families:
 - `wayfinder:<type>` — one of `research`, `prototype`, `grilling`, `task` (see [Ticket Types](#ticket-types)).
 - `wayfinder:claimed` — a session sets this **first**, before any work, so concurrent sessions skip it.
 
-Blocking uses the tracker's native semantics. A ticket is **unblocked** when every ticket blocking it is closed. The **frontier** is the open, unblocked, unclaimed children — the edge of the known.
+Blocking uses the tracker's **native** dependency relationship — essential because it renders the frontier _visually_ in the tracker's own UI, so the human sees what's takeable without opening the map. Only a tracker that lacks native blocking falls back to a body convention. A ticket is **unblocked** when every ticket blocking it is closed; the **frontier** is the open, unblocked, unclaimed children — the edge of the known.
 
 The answer isn't part of the body — it's recorded on resolution (see [Work through the map](#work-through-the-map)). Assets created while resolving a ticket are linked from the issue, not pasted in.
 
