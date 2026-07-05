@@ -1,9 +1,11 @@
 ---
 name: wayfinder
-description: Plan a huge chunk of work — more than one agent session can hold — as a shared map of investigation tickets on your issue tracker, and resolve them one at a time until the way to the goal is clear.
+description: Plan a huge chunk of work — more than one agent session can hold — as a shared map of investigation tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.
 ---
 
-A loose idea has arrived — too big for one agent session, and wrapped in fog: the route from here to a plan isn't visible yet. This skill charts it as a **shared map** on the repo's issue tracker, then works its tickets one at a time. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
+A loose idea has arrived — too big for one agent session, and wrapped in fog: the way from here to the **destination** isn't visible yet. Wayfinding is about finding that way, not charging at the destination. This skill charts the way as a **shared map** on the repo's issue tracker, then works its tickets one at a time until the route is clear.
+
+The destination varies per effort, and naming it is the first act of charting — it shapes every ticket. It might be a spec to hand off and iterate on, a decision to lock before planning starts, or a change made in place like a data-structure migration. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
 
 ## Refer by name
 
@@ -22,6 +24,10 @@ The map is an **index**, not a store. It lists the decisions made and points at 
 The whole map at low resolution, loaded once per session. Open tickets are **not** listed — they are open child issues, found by query.
 
 ```markdown
+## Destination
+
+<what reaching the end of this map looks like — the spec, decision, or change this effort is finding its way to. One or two lines; every session orients to it before choosing a ticket.>
+
 ## Notes
 
 <domain; skills every session should consult; standing preferences for this effort>
@@ -64,7 +70,7 @@ The answer isn't part of the body — it's recorded on resolution (see [Work thr
 
 ## Fog of war
 
-The map is _deliberately_ incomplete: don't chart what you can't yet see. Beyond the tickets lies fog — the dim view of decisions and investigations you can tell are coming but can't yet pin down, because they hang on questions still open. Resolving a ticket clears the fog ahead of it, graduating whatever's now specifiable into fresh tickets — one at a time, until the way to the goal is clear and no tickets remain.
+The map is _deliberately_ incomplete: don't chart what you can't yet see. Beyond the tickets lies fog — the dim view of decisions and investigations you can tell are coming but can't yet pin down, because they hang on questions still open. Resolving a ticket clears the fog ahead of it, graduating whatever's now specifiable into fresh tickets — one at a time, until the way to the destination is clear and no tickets remain.
 
 The map's **Fog** section is where that dim view is written down: the suspected question, the area to revisit later, the risk you're deferring. Write as loosely or as fully as the view allows; it doubles as a signpost for collaborators reading where the effort is headed.
 
@@ -83,10 +89,11 @@ Two modes. Either way, **never resolve more than one ticket per session.**
 
 User invokes with a loose idea.
 
-1. Run a `/grilling` and `/domain-modeling` session to surface the open decisions.
-2. **Create the map** (label `wayfinder:map`): Notes filled in, Decisions-so-far empty, Fog sketched.
-3. **Create the tickets you can specify now** as child issues of the map — then wire blocking edges in a **second pass** (issues need ids before they can reference each other). Wiring sorts them into the frontier and the blocked; everything you can't yet specify stays in the Fog.
-4. Stop — charting the map is one session's work; do not also resolve tickets.
+1. **Name the destination.** Run a `/grilling` and `/domain-modeling` session to pin down what this map is finding its way to — the spec, decision, or change. The destination fixes the scope, so it's settled first.
+2. **Map the frontier.** Grill again, **breadth-first** this time: fan out across the whole space rather than deep on any one thread, surfacing the open decisions and the first steps takeable now.
+3. **Create the map** (label `wayfinder:map`): Destination and Notes filled in, Decisions-so-far empty, Fog sketched.
+4. **Create the tickets you can specify now** as child issues of the map — then wire blocking edges in a **second pass** (issues need ids before they can reference each other). Wiring sorts them into the frontier and the blocked; everything you can't yet specify stays in the Fog.
+5. Stop — charting the map is one session's work; do not also resolve tickets.
 
 ### Work through the map
 
