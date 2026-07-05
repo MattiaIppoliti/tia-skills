@@ -89,7 +89,7 @@ Two modes. Either way, **never resolve more than one ticket per session.**
 
 User invokes with a loose idea.
 
-1. **Name the destination first.** Run a `/grilling` and `/domain-modeling` session to pin down what this map is finding its way to — the spec, decision, or change — and the open decisions between here and there. The destination shapes every ticket, so it's settled before any ticket exists.
+1. **Name the destination, then map the frontier.** Run a **breadth-first** `/grilling` and `/domain-modeling` session: first pin down what this map is finding its way to — the spec, decision, or change — then fan out across the whole space rather than deep on any one thread, surfacing the open decisions and the first steps takeable now. The destination fixes the scope; the breadth-first pass finds the frontier. Both are settled before any ticket exists.
 2. **Create the map** (label `wayfinder:map`): Destination and Notes filled in, Decisions-so-far empty, Fog sketched.
 3. **Create the tickets you can specify now** as child issues of the map — then wire blocking edges in a **second pass** (issues need ids before they can reference each other). Wiring sorts them into the frontier and the blocked; everything you can't yet specify stays in the Fog.
 4. Stop — charting the map is one session's work; do not also resolve tickets.
