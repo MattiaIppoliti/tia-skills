@@ -41,6 +41,10 @@ The whole map at low resolution, loaded once per session. Open tickets are **not
 ## Fog
 
 <!-- see "Fog of war" for what belongs here -->
+
+## Deferred
+
+<!-- see "Fog of war" — work found to lie beyond the destination; closed, not graduating -->
 ```
 
 ### Tickets
@@ -72,14 +76,19 @@ The answer isn't part of the body — it's recorded on resolution (see [Work thr
 
 The map is _deliberately_ incomplete: don't chart what you can't yet see. Beyond the tickets lies fog — the dim view of decisions and investigations you can tell are coming but can't yet pin down, because they hang on questions still open. Resolving a ticket clears the fog ahead of it, graduating whatever's now specifiable into fresh tickets — one at a time, until the way to the destination is clear and no tickets remain.
 
-The map's **Fog** section is where that dim view is written down: the suspected question, the area to revisit later, the risk you're deferring. Write as loosely or as fully as the view allows; it doubles as a signpost for collaborators reading where the effort is headed.
+The map's **Fog** section is where that dim view is written down: the suspected question, the area to revisit later. It's the undiscovered frontier _toward_ the destination — everything here is in scope, just not yet sharp. Write as loosely or as fully as the view allows; it doubles as a signpost for collaborators reading where the effort is headed.
 
-**Fog or ticket?** The test is whether you can state the question precisely now — _not_ whether you can answer it now.
+**Beyond the destination is not fog.** The destination fixes the scope, so anything past it is out of scope no matter how clearly you can see it — and fog, by its nature, points _toward_ the destination, so out-of-scope work doesn't belong there. It goes in the map's **Deferred** section: work you've consciously ruled out of _this_ effort. Fog graduates into tickets as the frontier advances; Deferred never does, because the frontier stops at the destination.
 
-- **Ticket when** the question is already sharp — even if it's blocked and you can't act on it yet.
-- **Fog when** you can't yet phrase it that sharply. Don't pre-slice fog into ticket-sized pieces: it's coarser than a ticket, and one patch may graduate into several tickets, or none, once the frontier reaches it.
+**Fog, ticket, or deferred?** Two questions: is it _within_ the destination's scope, and can you _state_ it sharply now?
 
-Fog excludes only what's already decided (that's Decisions so far) and what's already a ticket.
+- **Ticket when** it's in scope and the question is already sharp — even if it's blocked and you can't act on it yet.
+- **Fog when** it's in scope but you can't yet phrase it that sharply. Don't pre-slice fog into ticket-sized pieces: it's coarser than a ticket, and one patch may graduate into several tickets, or none, once the frontier reaches it.
+- **Deferred when** it lies _beyond_ the destination — however sharply you can phrase it. Scope, not sharpness, lands it here.
+
+Deferring is a scoping act, not a step on the route. When a ticket that already exists turns out to sit past the destination — mis-scoped in while charting, or exposed by a resolution — **close it** (a closed ticket is unambiguously off the frontier) and leave one line in the **Deferred** section: the gist plus why it's out of scope, linking the closed ticket. It stays out of **Decisions so far**, which records the route actually walked — a scope boundary isn't a step on it. If the destination is ever redrawn to include it, it returns as a fresh effort, not a resumption.
+
+Fog excludes what's already decided (Decisions so far), what's already a ticket, and what lies beyond the destination (Deferred).
 
 ## Invocation
 
@@ -103,6 +112,6 @@ User invokes with a map (URL or number). A ticket is **optional** — without on
 2. Choose the ticket. If the user named one, use it. Otherwise take the first frontier ticket in order. **Claim it**: assign it to yourself before any work.
 3. Resolve it — **zoom as needed**: fetch the full body of any related or closed ticket on demand; invoke the skills the `## Notes` block names. If in doubt, use `/grilling` and `/domain-modeling`.
 4. Record the resolution: post the answer as a **resolution comment**, **close** the issue, and **append a context pointer** to the map's Decisions-so-far.
-5. Add newly-surfaced tickets (create-then-wire); graduate any fog the answer has made specifiable, clearing each graduated patch from the Fog so it lives only as its new ticket. If the decision invalidates other parts of the map, update or delete those tickets.
+5. Add newly-surfaced tickets (create-then-wire); graduate any fog the answer has made specifiable, clearing each graduated patch from the Fog so it lives only as its new ticket. If the answer reveals a ticket — this one or another — sits beyond the destination, **defer** it instead of resolving it on the route: close it and record one line in Deferred. If the decision invalidates other parts of the map, update or delete those tickets.
 
 The user may run unblocked tickets in parallel, so expect other sessions to be editing the tracker concurrently.
