@@ -158,6 +158,18 @@ _Failure mode._ Ending the current step before it is genuinely done, because the
 
 _Avoid_: premature closure, the rush, rushing, shortcutting
 
+### Negation
+
+_Failure mode._ Steering by prohibition — telling the agent what _not_ to do — which drags the forbidden behaviour into context and makes it _more_ available, not less. _Don't think of an elephant_, and the elephant is all there is; _never write verbose comments_, and verbosity is the pattern the agent has just read. The negation is a weak modifier the strongly-activated concept overruns, so the ban half-reads as an instruction to do the thing. Its **leading word** is the _elephant_: whatever a prohibition names into the frame. Cure: prompt the **positive** — describe the target behaviour ("write one-line comments") so the banned one is never spoken. A prohibition earns its place only as a hard guardrail on a behaviour you cannot phrase positively; even then, pair it with the positive target so attention lands on what to do.
+
+_Avoid_: ironic rebound, don't-prompting, the pink elephant
+
+### Negative Space
+
+_Failure mode._ Blindness to the steering done by what you leave _out_. Every decision a skill declines to make, the agent makes from its priors — the unsaid is not neutral, it is delegated. Say nothing about comment length and you have not left length open, you have handed it to the default. The art sense is exact: the shape is carved as much by the space around the subject as by the subject, and here the space is the omission the author never notices leaving. Distinct from **Negation**, which _names_ the wrong thing; Negative Space names nothing and lets the priors choose. Cure: read a draft for the decisions it is silent on, then decide each — fill the space with an explicit target where the default is wrong, and leave it open (a real **branch**) only where any reasonable default will do.
+
+_Avoid_: the void, omission, silent default
+
 ## Pruning
 
 Keeping a skill lean — each remedy paired with the failure it cures.
