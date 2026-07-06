@@ -5,7 +5,13 @@ description: Plan a huge chunk of work — more than one agent session can hold 
 
 A loose idea has arrived — too big for one agent session, and wrapped in fog: the way from here to the **destination** isn't visible yet. Wayfinding is about finding that way, not charging at the destination. This skill charts the way as a **shared map** on the repo's issue tracker, then works its tickets one at a time until the route is clear.
 
-The destination varies per effort, and naming it is the first act of charting — it shapes every ticket. It might be a spec to hand off and iterate on, a decision to lock before planning starts, or a change made in place like a data-structure migration. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
+The destination varies per effort, and naming it is the first act of charting — it shapes every ticket. It might be a spec to hand off and iterate on, a single decision locked before planning starts, or a plan of attack for a change like a data-structure migration — but always a set of **resolved decisions**, never the executed change itself. The map is domain-agnostic — engineering work, course content, whatever fits the shape.
+
+## Plan, don't do
+
+Wayfinder is **planning**, not **execution**. Every ticket resolves a decision; the map is done when the way is clear — the point where someone could *go and do the thing* with nothing left to decide. The doing is a separate act, after the map closes. A session that starts building the destination — writing the migration, shipping the feature — has stopped wayfinding, and should stop.
+
+So the map's output is decisions, not deliverables. When you feel the pull to just do the work, that pull is the signal you've reached the edge of the map: the way is clear, and it's time to hand off.
 
 ## Refer by name
 
@@ -70,7 +76,7 @@ The answer isn't part of the body — it's recorded on resolution (see [Work thr
 - **Research**: Reading documentation, third-party APIs, or local resources like knowledge bases. Creates a markdown summary as a linked asset. Use when knowledge outside the current working directory is required.
 - **Prototype**: Raise the fidelity of the discussion by making a cheap, rough, concrete artifact to react to — an outline, a rough take, a stub, or UI/logic code via the /prototype skill. Links the prototype as an asset. Use when "how should it look" or "how should it behave" is the key question.
 - **Grilling**: Conversation with the agent. Uses the /grilling and /domain-modeling skills. Asks one question at a time. The default case.
-- **Task**: Literal manual work that must be done before the discussion can move forward — nothing to decide, prototype, or research. Moving data, signing up for a service, provisioning access. The agent automates it where it can; otherwise it hands the human a precise checklist. Resolved when the work is done; the answer records what was done and any resulting facts (credentials location, new URLs, row counts) later tickets depend on.
+- **Task**: Manual work that must happen before a *decision* can be made — nothing to decide, prototype, or research, but the discussion is blocked until it's done. Signing up for a service so its API can be judged, provisioning access, moving data so its shape can be seen. This is the one type that *does* rather than decides, and it earns its place only by unblocking a decision — never by delivering the destination (that's execution; see [Plan, don't do](#plan-dont-do)). The agent automates it where it can; otherwise it hands the human a precise checklist. Resolved when the work is done; the answer records what was done and any resulting facts (credentials location, new URLs, row counts) later tickets depend on.
 
 ## Fog of war
 
