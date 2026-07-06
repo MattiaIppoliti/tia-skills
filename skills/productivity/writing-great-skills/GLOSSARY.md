@@ -164,12 +164,6 @@ _Failure mode._ Steering by prohibition — telling the agent what _not_ to do �
 
 _Avoid_: ironic rebound, don't-prompting, the pink elephant
 
-### Negative Space
-
-_Failure mode._ Blindness to the steering done by what you leave _out_. Every decision a skill declines to make, the agent makes from its priors — the unsaid is not neutral, it is delegated. Say nothing about comment length and you have not left length open, you have handed it to the default. The art sense is exact: the shape is carved as much by the space around the subject as by the subject, and here the space is the omission the author never notices leaving. Distinct from **Negation**, which _names_ the wrong thing; Negative Space names nothing and lets the priors choose. Cure: read a draft for the decisions it is silent on, then decide each — fill the space with an explicit target where the default is wrong, and leave it open (a real **branch**) only where any reasonable default will do.
-
-_Avoid_: the void, omission, silent default
-
 ## Pruning
 
 Keeping a skill lean — each remedy paired with the failure it cures.
