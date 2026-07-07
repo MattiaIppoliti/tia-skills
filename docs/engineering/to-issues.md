@@ -32,6 +32,10 @@ The whole skill turns on one distinction. A **horizontal** slice ships one layer
 
 Before slicing, `to-issues` looks for prefactoring — "make the change easy, then make the easy change" — and orders that work first. It then quizzes you on the breakdown (granularity, dependencies, what to merge or split) before writing anything, and publishes blockers first so each issue's "Blocked by" field can reference a real ticket.
 
+## The wide-refactor exception
+
+One shape breaks the tracer-bullet rule: a **wide refactor** — a single mechanical change (rename a column, retype a shared symbol) whose **blast radius** fans across the whole codebase, so one edit breaks thousands of call sites at once and no vertical slice can land green. `to-issues` slices it as **expand–contract** instead: expand (add the new form beside the old so nothing breaks), migrate (move call sites over in batches sized by blast radius, one issue per batch, CI green throughout because the old form still exists), then contract (delete the old form once no caller remains). When even the batches can't stay green alone, they share an integration branch that all block a final integrate-and-verify issue, and green is promised only there.
+
 ## Where it fits
 
 `to-issues` is a step in the main build chain:
