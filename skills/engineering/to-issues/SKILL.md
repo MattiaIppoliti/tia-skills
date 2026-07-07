@@ -66,7 +66,7 @@ A **wide refactor** is one mechanical change — rename a column, retype a share
 
 ### Issue body template
 
-```md
+<issue-template>
 ## Parent
 
 A reference to the parent issue on the issue tracker (if the source was an existing issue, otherwise omit this section).
@@ -88,4 +88,4 @@ Avoid specific file paths or code snippets — they go stale fast. Exception: if
 - A reference to the blocking ticket (if any)
 
 Or "None - can start immediately" if no blockers.
-```
+</issue-template>
