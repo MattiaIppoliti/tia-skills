@@ -1,6 +1,6 @@
 ---
 name: to-issues
-description: Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices.
+description: Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices — and slice wide mechanical refactors by expand–contract instead.
 disable-model-invocation: true
 ---
 
@@ -22,6 +22,8 @@ If you have not already explored the codebase, do so to understand the current s
 
 Look for opportunities to prefactor the code to make the implementation easier. "Make the change easy, then make the easy change."
 
+Watch too for a **wide refactor** hiding in the plan — a single mechanical change whose **blast radius** fans across the whole codebase — because it slices differently from a tracer bullet (step 3).
+
 ### 3. Draft vertical slices
 
 Break the plan into **tracer bullet** issues. Each issue is a thin vertical slice that cuts through ALL integration layers end-to-end, NOT a horizontal slice of one layer.
@@ -33,6 +35,8 @@ Break the plan into **tracer bullet** issues. Each issue is a thin vertical slic
 - Any prefactoring should be done first
 
 </vertical-slice-rules>
+
+The **wide refactor** you spotted in step 2 is the exception to the tracer-bullet rule: because a single edit breaks thousands of call sites at once, no one slice can land green. Don't force it into a tracer bullet — sequence it as **expand–contract**. First expand: add the new form beside the old so nothing breaks. Then migrate the call sites over in batches sized by blast radius (per package, per directory), each batch its own issue blocked by the expand, keeping CI green batch to batch because the old form still exists. Finally contract: delete the old form once no caller remains, in an issue blocked by every migrate batch. When even the batches can't stay green alone, keep the sequence but let them share an integration branch that all block a final integrate-and-verify issue — green is promised only there.
 
 ### 4. Quiz the user
 
