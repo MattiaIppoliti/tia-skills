@@ -68,7 +68,7 @@ Give the user the run command. They'll drive it themselves; the interesting mome
 
 ### 7. Capture the answer
 
-When the prototype has done its job, the answer to the question is the only thing worth keeping. If the user is around, ask what it taught them. If not, leave a `NOTES.md` next to the prototype so the answer can be filled in (or filled in by you, if you've watched the session) before the prototype gets deleted.
+When the prototype has done its job, capture the **answer** — the secondary source — somewhere durable (issue, ADR, commit message). If the user is around, ask what it taught them; if not, leave a `NOTES.md` next to the prototype so the answer can be filled in (or filled in by you, if you've watched the session). Then let go of the prototype the way the [SKILL](SKILL.md) describes: fold any validated logic into the real module, and move the prototype itself — the primary source — onto a throwaway branch linked from the relevant issue rather than deleting it.
 
 ## Anti-patterns
 
