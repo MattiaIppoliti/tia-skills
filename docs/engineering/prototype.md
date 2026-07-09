@@ -31,11 +31,11 @@ The question decides the shape, and there are two shapes:
 
 Picking the wrong branch wastes the whole prototype, so the question comes first. Both branches keep state in memory, run from one command, and surface the full state on every step.
 
-## Primary and secondary source
+## Keep the prototype as a primary source
 
-A finished prototype leaves two things, and they're kept differently. The **secondary source** is the _answer_ — the verdict plus the question it settled, distilled into durable prose (a commit message, an ADR, an issue). That's what future readers consult, and it's the part that matters most. The **primary source** is the _prototype itself_ — the runnable evidence the answer came from.
+A finished prototype leaves two things. The **answer** — the verdict plus the question it settled — is what you capture durably (a commit message, an ADR, an issue). The **prototype itself is a primary source** — the runnable evidence the answer came from.
 
-The prototype doesn't belong in the main repo: no tests, no error handling, nothing to maintain. But that's not a reason to destroy it. Once the answer is captured, fold any validated decision into the real code, then move the prototype onto a throwaway branch linked from the relevant issue — never merged. The main branch stays clean; the raw exploration stays one click away for anyone who wants to re-run it. A prototype left rotting in the main branch has outlived its purpose — a prototype preserved as a primary source on a side branch hasn't.
+The prototype doesn't belong in the main repo: no tests, no error handling, nothing to maintain. But that's not a reason to destroy it. Once the answer is captured, fold any validated decision into the real code, then move the prototype onto a throwaway branch linked from the relevant issue — never merged. The main branch stays clean; the raw exploration stays one click away for anyone who wants to re-run it. A prototype left rotting in the main branch has outlived its purpose — a prototype kept as a primary source on a side branch hasn't.
 
 ## Where it fits
 

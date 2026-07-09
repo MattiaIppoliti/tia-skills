@@ -97,12 +97,12 @@ Surface the URL (and the `?variant=` keys). The user will flip through whenever 
 
 ### 6. Capture the answer and clean up
 
-Once a variant has won, capture the **answer** — the secondary source: which variant and why (commit message, ADR, issue, or a `NOTES.md` next to the prototype if running AFK and the user hasn't responded yet). Then fold the winner into the real code and get the prototype scaffolding out of the main branch:
+Once a variant has won, capture the answer — which variant and why — and dispose of the prototype the way the [SKILL](SKILL.md) describes. Fold the winner into the real code and get the rest out of the main branch:
 
 - **Sub-shape A** — fold the winner into the existing page; drop the losing variants and the switcher from main.
 - **Sub-shape B** — promote the winning variant to a real route; drop the throwaway route and the switcher from main.
 
-Don't leave variant components or the switcher lying around in the main branch — they rot fast and confuse the next reader. But don't just destroy them either: the full set of variants is the primary source, so preserve the prototype on a throwaway branch linked from the relevant issue (see [SKILL](SKILL.md)) before you strip it out of main.
+The full set of variants is the primary source, so it lands on the throwaway branch, not the bin — variant components and the switcher left in the main branch rot fast and confuse the next reader.
 
 ## Anti-patterns
 

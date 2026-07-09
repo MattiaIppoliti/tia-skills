@@ -23,14 +23,14 @@ The two branches produce very different artifacts — getting this wrong wastes 
 3. **No persistence by default.** State lives in memory. Persistence is the thing the prototype is _checking_, not something it should depend on. If the question explicitly involves a database, hit a scratch DB or a local file with a clear "PROTOTYPE — wipe me" name.
 4. **Skip the polish.** No tests, no error handling beyond what makes the prototype _runnable_, no abstractions. The point is to learn something fast and then let it go.
 5. **Surface the state.** After every action (logic) or on every variant switch (UI), print or render the full relevant state so the user can see what changed.
-6. **Let go of it when done.** Fold any validated decision into the real code, then preserve the prototype itself as a **primary source** — committed to a throwaway branch linked from the relevant issue, never merged to main (see _Primary vs secondary source_ below). The main branch keeps only the validated decision.
+6. **Let go of it when done.** Fold any validated decision into the real code, then keep the prototype itself as a **primary source** — committed to a throwaway branch linked from the relevant issue, never merged to main (see _Keep it as a primary source_ below). The main branch keeps only the validated decision.
 
-## When done: primary vs secondary source
+## When done: keep it as a primary source
 
-A finished prototype leaves two things behind, and they're kept differently.
+Two things come out of a finished prototype.
 
-- **The secondary source is the _answer_** — the verdict plus the question it settled, distilled into durable prose: an issue comment, an ADR, or a commit message. This is what future readers actually consult, and it's the part that matters most. If the user is around, capturing it is a quick conversation; if not, leave a placeholder (a `NOTES.md` next to the prototype) so the verdict can be filled in — by them, or by you if you watched the session — before you move the code.
+- **The answer** — the verdict plus the question it settled — is what you capture durably: an issue comment, an ADR, or a commit message. If the user is around, that's a quick conversation; if not, leave a placeholder (a `NOTES.md` next to the prototype) so the verdict can be filled in before you move the code.
 
-- **The primary source is the _prototype itself_** — the runnable artifact the answer came from. It's the evidence behind the verdict, so you don't delete it; but with no tests and no maintenance story, it doesn't belong in the main repo either. Once the answer is captured, get the prototype out: commit it to a throwaway branch (e.g. `prototype/<name>`), push it, and link that branch from the relevant issue. Never merge it. The main branch keeps only the validated decision folded into real code; the raw exploration stays on the branch, one click away for anyone who wants to re-run it.
+- **The prototype itself is a primary source** — the runnable evidence the answer came from. With no tests and no maintenance story it doesn't belong in the main repo, but that's not a reason to delete it. Once the answer's captured, get the prototype out: commit it to a throwaway branch (e.g. `prototype/<name>`), push it, and link that branch from the relevant issue. Never merge it. The main branch keeps only the validated decision folded into real code; the raw exploration stays on the branch, one click away for anyone who wants to re-run it.
 
-This is distinct from _absorbing_: lifting a validated reducer, state machine, or UI direction into the real module keeps the **decision**, not the prototype. The throwaway branch is what preserves the primary source.
+This is distinct from _absorbing_: lifting a validated reducer, state machine, or UI direction into the real module keeps the **decision**, not the prototype. The throwaway branch is what keeps the prototype as a primary source.
