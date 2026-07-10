@@ -83,9 +83,11 @@ This is the completion criterion for the whole skill — a config that doesn't f
 
 ### 7. Document the convention
 
-Write a short `docs/deep-modules.md` (or append to the repo's contributing/README) covering: the `src/packages/<name>/` layout, "import only through `index.ts`", where tests live, and how to run `lint:boundaries`. Keep it to the copy-me snippet plus the four rules in one paragraph each.
+Write a `README.md` **in the packages folder** (`<packages-root>/README.md`) — next to the packages it governs — covering: the `src/packages/<name>/` layout, "import only through `index.ts`", where tests live, and how to run `lint:boundaries`. Keep it to the copy-me snippet plus the four rules in one paragraph each.
 
-**Done when:** a contributor can read one page and know the layout and the boundary rule.
+Then add a **context pointer** to it from the repo's agent-instructions file — `CLAUDE.md` if present, else `AGENTS.md` (create `AGENTS.md` if neither exists). One line is enough, e.g. `Packages are deep modules — see [src/packages/README.md](./src/packages/README.md) before adding or importing one.` This is what makes an agent discover the boundary rule instead of tripping over it.
+
+**Done when:** `<packages-root>/README.md` exists, and the repo's `CLAUDE.md`/`AGENTS.md` links to it.
 
 ## Notes
 
