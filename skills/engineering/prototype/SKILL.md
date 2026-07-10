@@ -23,14 +23,4 @@ The two branches produce very different artifacts — getting this wrong wastes 
 3. **No persistence by default.** State lives in memory. Persistence is the thing the prototype is _checking_, not something it should depend on. If the question explicitly involves a database, hit a scratch DB or a local file with a clear "PROTOTYPE — wipe me" name.
 4. **Skip the polish.** No tests, no error handling beyond what makes the prototype _runnable_, no abstractions. The point is to learn something fast and then let it go.
 5. **Surface the state.** After every action (logic) or on every variant switch (UI), print or render the full relevant state so the user can see what changed.
-6. **Capture it when done.** Fold any validated decision into the real code, then capture the prototype itself as a **primary source** — committed to a throwaway branch, out of main, with a pointer to that branch left on the implementation issue (see _Keep it as a primary source_ below). The main branch keeps only the validated decision.
-
-## When done: keep it as a primary source
-
-Two things come out of a finished prototype.
-
-- **The answer** — the verdict plus the question it settled — is what you capture durably: an issue comment, an ADR, or a commit message. If the user is around, that's a quick conversation; if not, leave a placeholder (a `NOTES.md` next to the prototype) so the verdict can be filled in before you move the code.
-
-- **The prototype itself is a primary source** — the runnable evidence the answer came from. With no tests and no maintenance story it doesn't belong in the main branch, but that's not a reason to delete it. So capture it somewhere out of main: commit it to a throwaway branch (e.g. `prototype/<name>`), push it, and leave a context pointer to that branch on the implementation issue so anyone can find it later. Never merge it in. The main branch keeps only the validated decision folded into real code; the raw exploration stays on the branch, one click away for anyone who wants to re-run it.
-
-This is distinct from _absorbing_: lifting a validated reducer, state machine, or UI direction into the real module keeps the **decision**, not the prototype. The throwaway branch is what keeps the prototype as a primary source.
+6. **Capture it when done.** Fold any validated decision into the real code, then capture the prototype itself as a **primary source**: commit it to a throwaway branch, out of main, and leave a context pointer to that branch on the implementation issue. Capture the answer too — the verdict and the question it settled — in the issue or a commit. The main branch keeps only the validated decision.
