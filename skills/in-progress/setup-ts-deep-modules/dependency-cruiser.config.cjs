@@ -2,9 +2,10 @@
 // Deep-module enforcement for dependency-cruiser.
 //
 // Each package under the packages root is a DEEP MODULE: a lot of behaviour
-// behind a small interface (its `index.ts`). The rules below make the index the
-// only way in — internals stay hidden, and tests exercise the package through
-// the same interface everyone else does.
+// behind a small interface. A package's PUBLIC SURFACE is its ENTRY POINTS —
+// the files at the package root. Implementation lives in SUBFOLDERS and is
+// private. A package may expose several small entry points (index.ts,
+// client.ts, server.ts, …) — prefer that over one giant barrel index.
 //
 // The only thing you should ever need to edit here is PACKAGES_ROOT.
 
@@ -13,49 +14,45 @@ const PACKAGES_ROOT = "src/packages";
 
 // --- derived patterns (no need to edit) -------------------------------------
 const R = PACKAGES_ROOT;
-/** Any file that lives inside some package's internals or subfolders. */
-const INSIDE_A_PACKAGE = `^${R}/[^/]+/.+`;
-/** A package's public interface — the only legal way in. */
-const ANY_INDEX = `^${R}/[^/]+/index\\.(ts|tsx)$`;
+/**
+ * A package's private internals: anything nested inside a package subfolder.
+ * The package's root files are its entry points and are NOT matched here —
+ * they stay importable from outside.
+ */
+const PACKAGE_INTERNALS = `^${R}/[^/]+/[^/]+/`;
 
 /** @type {import('dependency-cruiser').IConfiguration} */
 module.exports = {
   forbidden: [
     {
-      name: "index-boundary-from-app",
+      name: "entrypoint-boundary-from-app",
       comment:
-        "App/root code may reach a package only through its index — never a deep import.",
+        "App/root code may import a package's entry points (its root files), but nothing inside its subfolders.",
       severity: "error",
       from: { pathNot: `^${R}/` }, // importer is NOT inside any package
-      to: { path: INSIDE_A_PACKAGE, pathNot: ANY_INDEX },
+      to: { path: PACKAGE_INTERNALS },
     },
     {
-      name: "index-boundary-across-packages",
+      name: "entrypoint-boundary-across-packages",
       comment:
-        "A package's internals may import each other freely, but may reach OTHER packages only through their index.",
+        "A package's own files import each other freely, but may reach OTHER packages only through their entry points — never their internals.",
       severity: "error",
       // importer is inside a package ($1), but is not a test file
       from: { path: `^${R}/([^/]+)/`, pathNot: `^${R}/[^/]+/tests/` },
       to: {
-        path: INSIDE_A_PACKAGE,
-        pathNot: [
-          `^${R}/$1/`, // same package → intra-package freedom
-          ANY_INDEX, // any package's index → allowed
-        ],
+        path: PACKAGE_INTERNALS,
+        pathNot: `^${R}/$1/`, // same package → intra-package freedom
       },
     },
     {
-      name: "tests-only-through-index",
+      name: "tests-through-entrypoints",
       comment:
-        "A package's tests exercise it through the index like everyone else: they may import any package's index and their own tests/ fixtures, but never any package's internals — not even their own.",
+        "A package's tests exercise it through its entry points like everyone else: they may import any package's entry points and their own tests/ fixtures, but never any package's internals — not even their own.",
       severity: "error",
       from: { path: `^${R}/([^/]+)/tests/` }, // a test file, in package $1
       to: {
-        path: INSIDE_A_PACKAGE,
-        pathNot: [
-          `^${R}/$1/tests/`, // own tests/ fixtures → allowed
-          ANY_INDEX, // any package's index → allowed (integration tests are fine)
-        ],
+        path: PACKAGE_INTERNALS,
+        pathNot: `^${R}/$1/tests/`, // own tests/ fixtures → allowed
       },
     },
     {
@@ -75,8 +72,9 @@ module.exports = {
     },
 
     // --- Layering (optional, off by default) ----------------------------------
-    // Interface-hiding controls HOW you import (through the index). Layering
-    // controls WHICH packages may depend on which. Add your own rules here, e.g.:
+    // Interface-hiding controls HOW you import (through the entry points).
+    // Layering controls WHICH packages may depend on which. Add your own rules
+    // here, e.g.:
     //
     // {
     //   name: "ui-may-not-depend-on-billing",
