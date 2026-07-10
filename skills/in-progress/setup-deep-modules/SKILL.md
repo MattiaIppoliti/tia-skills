@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Make every package in this repo a **deep module**: a lot of behaviour behind a small interface. Each package under the packages root exposes exactly one interface — its `index.ts` — and everything else is hidden. This skill installs [dependency-cruiser](https://github.com/sverweij/dependency-cruiser) and the rules that make the index the only way in, then proves the rules bite.
 
-For the vocabulary (deep module, interface, seam, depth), see the [`codebase-design`](../../engineering/codebase-design/SKILL.md) skill — use its language throughout.
+For the vocabulary (deep module, interface, seam, depth), run the `/codebase-design` skill — use its language throughout.
 
 ## The shape this enforces
 
