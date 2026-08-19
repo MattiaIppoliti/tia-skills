@@ -84,6 +84,7 @@ Off the main flow entirely.
 - **`/wait-what`** is the corrective for a message that didn't land. Use it mid-conversation, inside any other skill, and the agent re-pitches what it just said with the context you were missing, in plain English, using the `CONTEXT.md` vocabulary. It works after the fact; `/grill-with-docs` is the upfront cure, because a shared language agreed early is what stops the jargon arriving at all.
 - **`/teach`**: learn a concept over multiple sessions, using the current directory as a stateful workspace.
 - **`/writing-for-agents`** is the reference for writing documents agents consume: skills, AGENTS.md, pointed-at docs.
+- **`/unslop`** is the other half of that pair, aimed at the *human* reader: it strips the AI tells out of a draft (puffery, AI vocabulary, em dashes, filler, hedging, passive voice, sycophancy) and puts a voice back in. Where `/writing-for-agents` asks whether a line changes an agent's behaviour, `/unslop` asks whether a line sounds like a person wrote it. Model-invoked, so the agent applies it to its own prose; reach for it by hand on a draft that reads like a machine.
 
 ## Precondition
 
