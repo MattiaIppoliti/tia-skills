@@ -1,1 +1,7 @@
 node_modules
+
+# macOS
+.DS_Store
+
+# Skill bundles produced by local packaging runs
+*.zip
