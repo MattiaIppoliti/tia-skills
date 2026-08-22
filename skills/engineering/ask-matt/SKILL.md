@@ -51,6 +51,17 @@ Not feature work, just upkeep.
 
 - **`/improve-codebase-architecture`** runs whenever you have a spare moment to keep the codebase good for agents to operate in. It surfaces **deepening opportunities**; picking one _generates an idea_ you can take into the main flow at `/grill-with-docs`. It's the survey that finds the candidates; **`/codebase-design`** (below) is the bench you design the chosen one on.
 
+## Lazy mode
+
+Four vendored skills that all push the same way: less code. **`/ponytail`** is a stance you switch on; the other three are one-shot reports.
+
+- **`/ponytail`** runs *underneath* the building rather than beside it. It climbs a ladder and stops at the first rung that holds: does this need to exist at all, is it already in this codebase, does the stdlib do it, does the platform, can it be one line. Switch it on and it stays on, at `lite` (name the lazier option and let you pick), `full` (the ladder enforced, the default), or `ultra` (challenge the requirement before building it). It shortens the *solution*, never the reading: the ladder runs after the agent has traced the real flow, which is the whole difference between a small diff and a confident wrong fix. Reach for it when `/implement` or `/tdd` is about to build more than the job needs.
+- **`/ponytail-review`** reviews a diff for over-engineering only, one line per finding, closing with `net: -N lines possible`. It doesn't replace **`/code-review`** and doesn't overlap it: correctness, security and performance are explicitly out of ponytail's scope, and Standards + Spec are out of this one's. Run both on the same diff.
+- **`/ponytail-audit`** is the same hunt over the whole tree instead of a diff, ranked biggest cut first. Where **`/improve-codebase-architecture`** asks what to *deepen* and hands you a design problem to grill, this asks what to *delete* and hands you a list. Check the callers yourself before acting on a `delete:` line: the skill never requires that check, and upstream measured 8 of 31 findings invalid on a real repo.
+- **`/ponytail-debt`** is the counterweight to the rest. Every corner `/ponytail` cuts on purpose leaves a `ponytail:` comment naming its ceiling and its upgrade trigger, and this harvests them into one ledger, flagging the ones with no trigger, since those are the ones that rot. It has nothing to report until `/ponytail` has been building, so treat it as the second half of that pair rather than a skill you reach for cold.
+
+All four are model-invoked, and all four are vendored from [ponytail](https://github.com/DietrichGebert/ponytail) rather than written here, so expect a different voice. Upstream's `ponytail-gain` and `ponytail-help` are deliberately absent: they document an install, config, and benchmark surface this repo doesn't ship.
+
 ## Vocabulary underneath
 
 Two model-invoked references that run *beneath* the other skills, each the single source of truth for its vocabulary. Reach for them directly when the **words**, not the process, are the problem; or let the skills above pull them in.

@@ -212,6 +212,10 @@ Skills I use daily for code work.
 - **[code-review](./skills/engineering/code-review/SKILL.md)**: Two-axis review of the diff since a fixed point: **Standards** (does it follow the repo's coding standards, plus a Fowler smell baseline?) and **Spec** (does it faithfully implement the originating issue/spec?), run as parallel sub-agents so neither pollutes the other.
 - **[resolving-merge-conflicts](./skills/engineering/resolving-merge-conflicts/SKILL.md)**: Work through an in-progress git merge or rebase conflict hunk by hunk, resolving by intent traced to each side's primary source, then finish the operation (never `--abort`).
 - **[wizard](./skills/engineering/wizard/SKILL.md)**: Generate an interactive bash wizard that walks a human through steps only they can perform: provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover.
+- **[ponytail](./skills/engineering/ponytail/SKILL.md)**: Force the laziest solution that actually works, up a ladder that stops at the first rung that holds: does this need to exist, is it already here, does the stdlib do it, does the platform, one line. Runs at `lite`, `full`, or `ultra`.
+- **[ponytail-review](./skills/engineering/ponytail-review/SKILL.md)**: Review a diff for over-engineering only, one line per finding tagged `delete:`, `stdlib:`, `native:`, `yagni:`, or `shrink:`, ending in `net: -N lines possible`. Correctness is explicitly out of scope, so pair it with `code-review`.
+- **[ponytail-audit](./skills/engineering/ponytail-audit/SKILL.md)**: The same over-engineering hunt across the whole tree instead of a diff, ranked biggest cut first. Lists findings, applies nothing.
+- **[ponytail-debt](./skills/engineering/ponytail-debt/SKILL.md)**: Harvest every `ponytail:` shortcut comment into a ledger of what was deferred, each row carrying its ceiling and its upgrade trigger, so "later" can't quietly become "never".
 
 ### Productivity
 

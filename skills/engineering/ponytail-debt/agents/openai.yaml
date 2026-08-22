@@ -1,0 +1,3 @@
+interface:
+  display_name: "Ponytail Debt"
+  short_description: "Harvest deferred ponytail shortcuts into a ledger"
