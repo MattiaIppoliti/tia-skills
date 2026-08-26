@@ -1,6 +1,6 @@
 ## What it does
 
-`design-data-intensive-system` turns a workload and a set of invariants into a buildable data-system design. It covers the data model, records of truth, read and write paths, capacity, failure behavior, and the next growth trigger.
+`design-data-intensive-system` turns a workload and a set of invariants into a buildable data-system design. It explores the constraints first, presents a decision record, then keeps expensive choices open until the user has the evidence needed to decide.
 
 It designs the smallest system that meets the stated need. It does not reach for sharding, streaming, another database, or a second region because the request says "scale."
 
@@ -16,6 +16,10 @@ Use the skill before implementation, while the expensive choices remain cheap to
 | An existing system is slow or hitting a limit | [scale-data-intensive-system](https://aihero.dev/skills-scale-data-intensive-system) |
 | You need file-backed evidence about the current implementation | [audit-data-intensive-repo](https://aihero.dev/skills-audit-data-intensive-repo) |
 | You only need to compare a data-system trade-off | [data-intensive-foundations](https://aihero.dev/skills-data-intensive-foundations) |
+
+## Explore, present, resolve
+
+The skill has three moves. It first finds the workload, records of truth, derived state, invariants, capacity assumptions, and missing facts that can change the design. It then writes a small architecture and dataflow map, plus the alternatives that almost won. Last, it names the test, load run, query plan, fault injection, or restore drill that can settle uncertain premises.
 
 ## The design has to pay its rent
 
@@ -39,6 +43,7 @@ Use a range, show the arithmetic, and mark the input as an assumption. The skill
 - Each important invariant has a transaction, coordination, or repair plan behind it.
 - The capacity model shows both the next limit and what will trigger the next change.
 - A rollout can move forward and back without losing data or leaving two records of truth.
+- A material user-owned trade-off remains explicit until the user chooses it.
 
 ## Where it fits
 

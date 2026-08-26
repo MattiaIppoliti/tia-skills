@@ -3,9 +3,9 @@ name: design-data-intensive-system
 description: Design a new data-intensive application or major data architecture from workload, invariants, access patterns, service objectives, and growth assumptions. Use for system-design proposals and architecture decisions, not performance diagnosis of an existing system or repository audits.
 ---
 
-# Design a Data-Intensive System
+# Design a data-intensive system
 
-Design against the stated workload and invariants. Keep the user's product constraints. Add a datastore or distributed component only when a requirement pays for it.
+Turn a workload and its invariants into the smallest architecture that can meet them. A component earns its place by protecting a named requirement.
 
 ## Before you design
 
@@ -13,54 +13,30 @@ Call the Skill tool with "data-intensive-foundations" before choosing data model
 
 Read [references/design-template.md](references/design-template.md) when writing the final design or ADR.
 
-## Workflow
+## Process
 
-### 1. Set the workload
+### 1. Explore
 
-Extract the facts already supplied. Label harmless gaps as assumptions. Ask only for missing inputs that can change the design.
+Scope before the diagram. Extract the facts already supplied and ask only about a gap that can change the design.
 
-Define users and operations, read and write paths, data volume and growth, retention, traffic distribution and peaks, access patterns, latency percentiles, availability, durability, RPO/RTO, geographic needs, privacy or regulatory constraints, team capacity, and cost boundaries.
+Find the users and operations, read and write paths, current and target volume, growth, retention, traffic shape, access patterns, latency and availability goals, RPO/RTO, geography, privacy, team capacity, and cost limits. Build a small capacity model with units, assumptions, headroom, and the trigger for the next limit.
 
-Build a small capacity model. Show units and assumptions. Include current load, design load, headroom, and the date or threshold at which each limit arrives.
+Name entities, owners, lifecycle, record of truth, derived state, and invariants. Choose transaction and consistency boundaries from those invariants. Select indexes and data models from actual query shapes.
 
-### 2. Set the data rules
+### 2. Present the design
 
-Name entities, relationships, lifecycle, ownership, and invariants. Identify the system of record and each derived view. Choose transaction or consistency boundaries from the invariants, never from a database label.
+Write a decision record with a small architecture and dataflow map. For every stateful component, state its authority, read and write path, persistence or index, consistency and ordering, scaling unit, failure and recovery behavior, observability, and schema evolution.
 
-Select data models and indexes from the actual query shapes. State why normalization, denormalization, materialization, search, graph traversal, vector retrieval, or analytical storage is or is not needed.
+Show the alternatives that nearly won. Tie replication to a read, availability, latency, or durability need. Tie sharding to a measured storage or write ceiling. Keep coordination on the narrow path that protects an invariant.
 
-### 3. Draw the smallest architecture that works
+Walk critical operations through timeout before and after commit, duplicate delivery, concurrent update, stale read, dependency loss, overload, corrupted derived state, bad rollout, and restore. Include the rollout, backfill or replay, validation, cutover, rollback, and deletion path.
 
-Start with the smallest topology that meets the requirements. Define components by responsibility and data flow, not vendor name. Then map them to the user's products or a short list of real options.
+### 3. Resolve the expensive choices
 
-For every component, state:
+For every uncertain premise, give the test that can settle it: representative load, query plan, concurrency test, fault injection, failover, replay, reconciliation, or restore drill.
 
-- authoritative versus derived data;
-- read and write path;
-- persistence and indexing;
-- consistency and ordering;
-- scaling unit and likely bottleneck;
-- failure behavior, recovery, and observability;
-- schema and deployment evolution.
+When two viable designs differ on a user-owned trade-off, show both plainly and ask for the choice before presenting it as settled. Keep the design reversible while evidence is thin.
 
-### 4. Add distribution only for a reason
+## Boundaries
 
-If replication is needed, tie topology and acknowledgment to availability, latency, durability, and read-consistency goals. If sharding is needed, choose a key from measured distribution and query locality. Cover hot partitions, routing, rebalancing, secondary indexes, and cross-shard work.
-
-Keep global coordination on the narrowest path that protects an invariant. State the latency and availability cost of cross-region or cross-shard decisions.
-
-### 5. Walk the failures
-
-Walk critical operations through timeout before commit, timeout after commit, duplicate delivery, concurrent update, stale replica, node or dependency loss, overload, lag, corrupted derived state, bad deployment, and accidental deletion. Include idempotency, backpressure, reconciliation, backups, restore drills, and rebuild time where relevant.
-
-### 6. Keep change reversible
-
-Specify compatibility, rollout order, backfill or replay, validation, cutover, rollback, retention, and deletion propagation. Prefer versioned derived views and parallel rebuilds over in-place irreversible migration.
-
-### 7. Prove the risky parts
-
-Define tests or experiments for the uncertain assumptions: representative load tests, query plans, concurrency tests, fault injection, failover, replay, reconciliation, and restoration. Check current authoritative product documentation for guarantees and limits before making product-specific claims.
-
-## Done when
-
-The design is complete when every material requirement and invariant maps to a component or mechanism, every authoritative and derived dataset has an owner and recovery path, every distributed boundary has explicit failure semantics, capacity assumptions are visible, and the proposal includes a reversible growth path plus validation plan.
+Design a new system or a major architecture change. Route a measured problem in an existing system to `scale-data-intensive-system`. Route an evidence-backed repository review to `audit-data-intensive-repo`. Check current product documentation before making product-specific claims.

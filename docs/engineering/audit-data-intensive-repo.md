@@ -1,6 +1,6 @@
 ## What it does
 
-`audit-data-intensive-repo` reads a repository as a data system. It maps records of truth, derived state, critical reads and writes, retries, transactions, queues, caches, migrations, recovery, and the code that binds them together.
+`audit-data-intensive-repo` reads a repository as a data system. It hunts for risks in records of truth, atomicity, delivery, freshness, capacity, and recovery, then reports them in risk order.
 
 It stays read-only unless you ask for fixes. Every finding needs file-backed evidence, a failure scenario, a consequence, and a way to prove the fix. Missing production settings stay unknown rather than turning into a confident diagnosis.
 
@@ -16,6 +16,10 @@ Use it when the risk is in how data moves or fails, not only in a changed diff.
 | Does this diff meet its spec and repo rules | [code-review](https://aihero.dev/skills-code-review) |
 | What bottleneck limits a known production path | [scale-data-intensive-system](https://aihero.dev/skills-scale-data-intensive-system) |
 | What can we delete from the whole repository | [ponytail-audit](https://aihero.dev/skills-ponytail-audit) |
+
+## Tags, hunt, output
+
+The skill uses six tags: `truth:`, `atomicity:`, `delivery:`, `freshness:`, `capacity:`, and `recovery:`. It traces a critical write and read, then emits one compact line per finding with its severity, repository evidence, failure scenario, smallest remediation, and validation. It ends with the production metric, configuration, or runbook needed to close each material unknown.
 
 ## Evidence first
 

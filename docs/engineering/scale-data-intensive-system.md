@@ -1,6 +1,6 @@
 ## What it does
 
-`scale-data-intensive-system` finds the first measured limit in a live or existing data system, then makes a plan to move it. It looks at request paths, query plans, resource saturation, queueing, data skew, replication lag, and recovery work.
+`scale-data-intensive-system` finds the first measured limit in a live or existing data system, then returns a ranked list of the smallest changes that can move it. It looks at request paths, query plans, resource saturation, queueing, data skew, replication lag, and recovery work.
 
 It refuses to prescribe a topology from the word "scale." A cache, replica, queue, or shard only earns its place after the baseline says what is actually full, slow, or blocked.
 
@@ -16,6 +16,10 @@ Use it for the existing system. Use a sibling when the work starts elsewhere.
 | The main problem is a bug or a regression | [diagnosing-bugs](https://aihero.dev/skills-diagnosing-bugs) |
 | The system is new and has no implementation to measure | [design-data-intensive-system](https://aihero.dev/skills-design-data-intensive-system) |
 | You need a broad codebase risk assessment | [audit-data-intensive-repo](https://aihero.dev/skills-audit-data-intensive-repo) |
+
+## Baseline, hunt, output
+
+The skill names the growing load and traces a critical read and write before it hunts. It separates observed limits from hypotheses and unknowns. Its output gives every candidate a tag, evidence, smallest change, correctness or recovery cost, validation, and rollback. It ends with the metric threshold that triggers later work.
 
 ## The baseline is the argument
 
@@ -39,6 +43,7 @@ No. It starts with the measured limit. A query plan may point at an index. A bac
 - The before and after runs use the same data shape, concurrency, and request mix.
 - Each change has an invariant check, an abort threshold, and a rollback path.
 - Later infrastructure has a measurable trigger rather than a calendar date.
+- The first line in the report names the first limit, not a favorite technology.
 
 ## Where it fits
 

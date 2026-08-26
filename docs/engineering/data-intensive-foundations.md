@@ -1,6 +1,6 @@
 ## What it does
 
-`data-intensive-foundations` gives an [agent](https://www.aihero.dev/ai-coding-dictionary/agent) a shared way to reason about data systems. It starts with workload, invariants, and failure behavior, then compares storage, replication, sharding, transactions, and data flows against those facts.
+`data-intensive-foundations` gives an [agent](https://www.aihero.dev/ai-coding-dictionary/agent) a compact vocabulary for data systems. It starts with the record of truth, derived state, invariants, and headroom, then compares storage, replication, sharding, transactions, and data flows against those facts.
 
 It does not choose a vendor or draw an architecture by itself. It stops a system design from turning into a list of fashionable infrastructure.
 
@@ -21,7 +21,7 @@ Reach for it when the question is about the shape of a data system. Pick a sibli
 
 The leading question is simple: "What must stay true when this gets bigger or fails?" That gets to the actual choice. A replica might buy read capacity while making a user's own write stale. A shard might fix a storage ceiling while making a once-simple transaction cross the network. A queue might smooth a spike while delaying the result the user sees.
 
-The answer should name the gain and the bill.
+The answer should name the gain, the bill, and the evidence that would settle an open choice.
 
 ## Common questions
 
