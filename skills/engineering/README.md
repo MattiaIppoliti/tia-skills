@@ -27,6 +27,10 @@ Model- or user-reachable (rich trigger phrasing so the model can reach for them)
 - **[tdd](./tdd/SKILL.md)**: Test-driven development with a red-green-refactor loop. Builds features or fixes bugs one vertical slice at a time.
 - **[domain-modeling](./domain-modeling/SKILL.md)**: Actively build and sharpen a project's domain model by challenging terms, stress-testing with scenarios, and updating `CONTEXT.md` and ADRs inline.
 - **[codebase-design](./codebase-design/SKILL.md)**: Shared discipline and vocabulary for designing deep modules: small interfaces, clean seams, testable through the interface.
+- **[data-intensive-foundations](./data-intensive-foundations/SKILL.md)**: Shared rules for weighing workload, storage, replication, sharding, transactions, consistency, and data flows.
+- **[design-data-intensive-system](./design-data-intensive-system/SKILL.md)**: Design a new data system from its workload, invariants, access patterns, and service objectives.
+- **[scale-data-intensive-system](./scale-data-intensive-system/SKILL.md)**: Find the measured limit in an existing data system, then plan or make the smallest safe change.
+- **[audit-data-intensive-repo](./audit-data-intensive-repo/SKILL.md)**: Audit a repository's data paths, failure handling, data flow, and operating risks with file-backed findings.
 - **[code-review](./code-review/SKILL.md)**: Two-axis review of the diff since a fixed point: **Standards** (does it follow the repo's coding standards, plus a Fowler smell baseline?) and **Spec** (does it faithfully implement the originating issue/spec?), run as parallel sub-agents.
 - **[resolving-merge-conflicts](./resolving-merge-conflicts/SKILL.md)**: Work through an in-progress git merge or rebase conflict hunk by hunk, resolving by intent traced to each side's primary source, then finish the operation, never `--abort`.
 - **[wizard](./wizard/SKILL.md)**: Generate an interactive bash wizard that walks a human through steps only they can perform: provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover.

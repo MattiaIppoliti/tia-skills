@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scale Data-Intensive System"
+  short_description: "Find and remove data-system bottlenecks"
+  default_prompt: "Use $scale-data-intensive-system to create an evidence-based scaling plan for this application."

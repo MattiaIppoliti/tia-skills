@@ -1,0 +1,4 @@
+interface:
+  display_name: "Data-Intensive Foundations"
+  short_description: "Reason about data-system trade-offs"
+  default_prompt: "Use $data-intensive-foundations to compare the architectural trade-offs for this system."

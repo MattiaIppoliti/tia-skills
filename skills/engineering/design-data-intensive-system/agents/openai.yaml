@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Data-Intensive System"
+  short_description: "Design systems from workloads and invariants"
+  default_prompt: "Use $design-data-intensive-system to design an architecture for this workload."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Data-Intensive Repo"
+  short_description: "Audit data architecture and failure risks"
+  default_prompt: "Use $audit-data-intensive-repo to audit this repository for data-intensive system risks."
