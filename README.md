@@ -195,6 +195,7 @@ Skills I use daily for code work.
 - **[ponytail-review](./skills/engineering/ponytail-review/SKILL.md)**: Review a diff for over-engineering only, one line per finding tagged `delete:`, `stdlib:`, `native:`, `yagni:`, or `shrink:`, ending in `net: -N lines possible`. Correctness is explicitly out of scope, so pair it with `code-review`.
 - **[ponytail-audit](./skills/engineering/ponytail-audit/SKILL.md)**: The same over-engineering hunt across the whole tree instead of a diff, ranked biggest cut first. Lists findings, applies nothing.
 - **[ponytail-debt](./skills/engineering/ponytail-debt/SKILL.md)**: Harvest every `ponytail:` shortcut comment into a ledger of what was deferred, each row carrying its ceiling and its upgrade trigger, so "later" can't quietly become "never".
+- **[apple-design](./skills/engineering/apple-design/SKILL.md)**: Apple's fluid-interface craft translated to the web: springs instead of fixed durations, 1:1 pointer tracking, motion that starts from the live on-screen value so a gesture can grab and reverse it mid-flight, momentum projection, translucent materials, and size-specific tracking and leading.
 
 ### Productivity
 
@@ -220,6 +221,7 @@ Most of the skills here were written by other people. This section says who.
 
 - [Matt Pocock](https://github.com/mattpocock) wrote the engineering and productivity sets this repo forked from, [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). Every skill in those two buckets except the ones named below started as his.
 - [DietrichGebert](https://github.com/DietrichGebert) wrote the four `ponytail` skills, vendored from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) (MIT). The rules are unchanged and only the frontmatter differs, so a pull from upstream stays a clean sync rather than a merge.
+- [Emil Kowalski](https://github.com/emilkowalski) wrote `apple-design`, vendored from [emilkowalski/skills](https://github.com/emilkowalski/skills) (MIT). The rules are unchanged; the only edits are the em-dash rewrites this repo's prose rule requires, so an upstream pull is a sync with 65 known conflicts rather than a clean one.
 - `unslop` comes from [cursor/plugins](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop), Cursor's own plugin repo. Its 31 rules are unchanged.
 - The eighteen skills in [`skills/video/`](./skills/video/README.md) are third-party work too, and I cannot name who wrote them. Nothing in this repo records it. Read that as a hole in the attribution, not as a claim.
 - The four data-intensive skills were written here, but the thinking behind them is not mine. They paraphrase *Designing Data-Intensive Applications, Second Edition* by Martin Kleppmann and Chris Riccomini (O'Reilly, 2026), and reproduce no text from it. [`book-map.md`](./skills/engineering/data-intensive-foundations/references/book-map.md) maps each chapter to the decisions it informs.
