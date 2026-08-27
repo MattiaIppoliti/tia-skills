@@ -13,8 +13,8 @@ Reach for it by hand whenever a draft reads like a machine wrote it, no matter w
 | Situation | Skill |
 | --- | --- |
 | A human will read it and it sounds like a robot | `unslop` |
-| An [agent](https://www.aihero.dev/ai-coding-dictionary/agent) will read it and it is bloated or ambiguous | [writing-for-agents](https://aihero.dev/skills-writing-for-agents) |
-| The reader is you, and a message just did not land | [wait-what](https://aihero.dev/skills-wait-what) |
+| An [agent](https://www.aihero.dev/ai-coding-dictionary/agent) will read it and it is bloated or ambiguous | [writing-for-agents](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/productivity/writing-for-agents.md) |
+| The reader is you, and a message just did not land | [wait-what](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/productivity/wait-what.md) |
 
 ## Tells, and the voice underneath
 
@@ -50,4 +50,4 @@ That is the failure mode the "adding soul" step exists to prevent, and it is the
 
 ## Where it fits
 
-This is a reach-for-it-anytime standalone, and the last pass over anything a human will read. Its nearest neighbour is [writing-for-agents](https://aihero.dev/skills-writing-for-agents), because the two split the same territory by audience: one governs the documents [models](https://www.aihero.dev/ai-coding-dictionary/model) consume, this one governs the documents people do. It is vendored from [cursor/plugins](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop) rather than written here, so its rules track upstream. When you are unsure which skill or flow fits a task, [ask-matt](https://aihero.dev/skills-ask-matt) routes you over the whole set.
+This is a reach-for-it-anytime standalone, and the last pass over anything a human will read. Its nearest neighbour is [writing-for-agents](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/productivity/writing-for-agents.md), because the two split the same territory by audience: one governs the documents [models](https://www.aihero.dev/ai-coding-dictionary/model) consume, this one governs the documents people do. It is vendored from [cursor/plugins](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop) rather than written here, so its rules track upstream. When you are unsure which skill or flow fits a task, [ask-mattia](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ask-mattia.md) routes you over the whole set.

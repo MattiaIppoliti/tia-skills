@@ -2,60 +2,44 @@
 
 One install story, one wording. `README.md`, `.changeset/*`, and every page under `docs/` must say **this** and nothing else. Change it here first, then propagate.
 
-`mattpocock-skills` is listed in **Claude Code's official marketplace** (configured name `claude-plugins-official`, source repo `anthropics/claude-plugins-official`), which every Claude Code install has out of the box. There is no marketplace to add first. Official Anthropic marketplaces have auto-update enabled by default ([discover-plugins](https://code.claude.com/docs/en/discover-plugins)), so "updates arrive automatically" is a true claim, not a hope.
+`tia-skills` is **not** listed in any third-party marketplace. It ships from this repo, which is its own single-plugin marketplace via `.claude-plugin/marketplace.json`. So the install story has exactly one route, and it starts by adding the marketplace: there is no shorter form to offer, and claiming otherwise would send users to a `/plugin install` that resolves to somebody else's plugin.
 
 ## Claude Code: the plugin
 
 <canonical-block name="claude-code">
 
 ```bash
-claude plugins install mattpocock-skills
-```
-
-Or, from inside a session:
-
-```
-/plugin install mattpocock-skills
-```
-
-It's in Claude Code's official marketplace, so there's nothing to add first, and updates arrive automatically.
-
-</canonical-block>
-
-## Codex, and other agents: skills.sh
-
-The plugin is Claude Code only. Everywhere else, [skills.sh](https://skills.sh/mattpocock/skills) copies editable skill files into the project. Use the whole-set form on `README.md`:
-
-<canonical-block name="skills-sh-whole-set">
-
-```bash
-npx skills@latest add mattpocock/skills
-```
-
-Pick the skills you want, and which coding agents to install them on. **The installer lets you choose which skills to take: make sure `setup-matt-pocock-skills` is one of them.**
-
-</canonical-block>
-
-…and the single-skill form wherever one skill is named on its own. Note that **`docs/` pages are not a consumer of this block**: ai-hero renders the install widget above the body, so a page that writes the commands out duplicates it. See [writing-docs.md](./writing-docs.md).
-
-<canonical-block name="skills-sh-one-skill">
-
-```bash
-npx skills@latest add mattpocock/skills --skill=<name>
+/plugin marketplace add MattiaIppoliti/tia-skills
 ```
 
 ```bash
-npx skills@latest update <name>
+/plugin install tia-skills@mattiaippoliti
 ```
+
+Both run from inside a Claude Code session. Adding the marketplace is a one-time step; after that, `/plugin update tia-skills@mattiaippoliti` pulls the latest published version.
 
 </canonical-block>
 
-`skills@latest` is the pinned spelling in all three. The pages under `docs/` used to carry their own copy of these commands; those blocks are now deleted rather than corrected, because the site renders the install commands itself.
+## Codex, and other agents
 
-## The two routes are exclusive
+The plugin is Claude Code only. Everywhere else, take the skill folders directly: clone the repo once, then link or copy the skills you want into the directory your harness reads (`~/.agents/skills` for Agent Skills-compatible harnesses).
 
-The plugin is a managed, read-only bundle you subscribe to. skills.sh writes files you own and edit. Installing both leaves the user with every skill twice: always say "pick one".
+<canonical-block name="other-agents">
+
+```bash
+git clone https://github.com/MattiaIppoliti/tia-skills.git
+```
+
+```bash
+ln -s "$PWD/tia-skills/skills/engineering/<name>" ~/.agents/skills/<name>
+```
+
+A symlink means `git pull` in the clone keeps the skill current; copy the folder instead if you'd rather own an editable version that never changes under you. **Whichever you pick, make sure `setup-tia-skills` is one of the skills you take.**
+
+</canonical-block>
+
+Note that **`docs/` pages are not a consumer of this block**: the page renders above the body of the skill, so a page that writes the commands out duplicates the surrounding text. See [writing-docs.md](./writing-docs.md).
 
 ## Not the install story
 
-`.claude-plugin/marketplace.json` makes the repo its own single-plugin marketplace (`/plugin marketplace add mattpocock/skills`, then `/plugin install mattpocock-skills@mattpocock`). The official listing supersedes it. It is kept as a fallback for installing the repo directly (an unreleased commit, or a fork), and is **not** documented to users.
+`npx skills@latest add …` (skills.sh) and Claude Code's official marketplace (`anthropics/claude-plugins-official`) are how the upstream set this repo forked from is distributed. This repo is published in neither, so neither is documented here. If it ever is listed, this file changes first and the rest of the repo follows.

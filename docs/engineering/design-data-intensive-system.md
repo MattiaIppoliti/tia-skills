@@ -13,9 +13,9 @@ Use the skill before implementation, while the expensive choices remain cheap to
 | Situation | Skill |
 | --- | --- |
 | A new system or a large data architecture change | `design-data-intensive-system` |
-| An existing system is slow or hitting a limit | [scale-data-intensive-system](https://aihero.dev/skills-scale-data-intensive-system) |
-| You need file-backed evidence about the current implementation | [audit-data-intensive-repo](https://aihero.dev/skills-audit-data-intensive-repo) |
-| You only need to compare a data-system trade-off | [data-intensive-foundations](https://aihero.dev/skills-data-intensive-foundations) |
+| An existing system is slow or hitting a limit | [scale-data-intensive-system](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/scale-data-intensive-system.md) |
+| You need file-backed evidence about the current implementation | [audit-data-intensive-repo](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/audit-data-intensive-repo.md) |
+| You only need to compare a data-system trade-off | [data-intensive-foundations](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/data-intensive-foundations.md) |
 
 ## Explore, present, resolve
 
@@ -47,4 +47,4 @@ Use a range, show the arithmetic, and mark the input as an assumption. The skill
 
 ## Where it fits
 
-This is the design step before a build. It calls [data-intensive-foundations](https://aihero.dev/skills-data-intensive-foundations) for the shared rules, then can feed a spec and implementation flow. Use [audit-data-intensive-repo](https://aihero.dev/skills-audit-data-intensive-repo) when the job starts with an existing codebase. [ask-matt](https://aihero.dev/skills-ask-matt) maps the wider flow.
+This is the design step before a build. It calls [data-intensive-foundations](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/data-intensive-foundations.md) for the shared rules, then can feed a spec and implementation flow. Use [audit-data-intensive-repo](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/audit-data-intensive-repo.md) when the job starts with an existing codebase. [ask-mattia](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ask-mattia.md) maps the wider flow.

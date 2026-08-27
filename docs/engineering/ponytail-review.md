@@ -13,8 +13,8 @@ It reads a diff, so the natural moment is the same one you would run any review 
 | What you want to know | Skill |
 | --- | --- |
 | What can I delete from this diff | `ponytail-review` |
-| Does this diff follow our standards and do what the spec asked | [code-review](https://aihero.dev/skills-code-review) |
-| What can I delete from this whole repo | [ponytail-audit](https://aihero.dev/skills-ponytail-audit) |
+| Does this diff follow our standards and do what the spec asked | [code-review](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/code-review.md) |
+| What can I delete from this whole repo | [ponytail-audit](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-audit.md) |
 
 ## Five tags, one line each
 
@@ -35,7 +35,7 @@ It lists and never applies. You get the delete-list, you decide what goes.
 ## Common questions
 
 **Does this replace `code-review`?**
-No, and the two barely overlap. [code-review](https://aihero.dev/skills-code-review) runs two axes, Standards and Spec, as parallel sub-agents, and treats correctness as its job. `ponytail-review` treats correctness as out of scope and hunts only complexity. A diff can pass one and fail the other badly, so run both on the same diff.
+No, and the two barely overlap. [code-review](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/code-review.md) runs two axes, Standards and Spec, as parallel sub-agents, and treats correctness as its job. `ponytail-review` treats correctness as out of scope and hunts only complexity. A diff can pass one and fail the other badly, so run both on the same diff.
 
 **Will it try to delete my tests?**
 Not the ones that matter. The skill carries an explicit carve-out: a single smoke test or `assert`-based self-check is the ponytail minimum, not bloat, and is never flagged. Test suites that mirror every method one-to-one are a different matter, and worth noting that upstream has an open gap here: there is no pass for the machine-shaped test brittleness (fixture-name branches in production code, snapshot-only or mock-only assertions) that tends to arrive alongside over-engineering.
@@ -44,7 +44,7 @@ Not the ones that matter. The skill carries an explicit carve-out: a single smok
 Known, and it is a real hole rather than a judgement call. The five tags have no home for a broad `except Exception` wrapper or a guard clause chain defending against states that cannot happen, so those findings fall between the cracks. If that is what you are hunting, say so in the prompt rather than expecting the tags to catch it.
 
 **Does running it turn ponytail mode on?**
-Not in this repo. Upstream, invoking a review command could latch the session's mode flag; that machinery is not vendored here, so a review is a one-shot report and leaves your mode alone. To switch the stance on for building, invoke [ponytail](https://aihero.dev/skills-ponytail) directly.
+Not in this repo. Upstream, invoking a review command could latch the session's mode flag; that machinery is not vendored here, so a review is a one-shot report and leaves your mode alone. To switch the stance on for building, invoke [ponytail](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail.md) directly.
 
 ## It's working if
 
@@ -55,4 +55,4 @@ Not in this repo. Upstream, invoking a review command could latch the session's 
 
 ## Where it fits
 
-A reach-for-it-anytime standalone that sits beside the review step rather than in it: [implement](https://aihero.dev/skills-implement) closes out by running [code-review](https://aihero.dev/skills-code-review), and this is the second pass you add when a diff feels bigger than the change deserved. Its neighbours are [code-review](https://aihero.dev/skills-code-review), which owns the correctness and spec axes this skill refuses, and [ponytail-audit](https://aihero.dev/skills-ponytail-audit), which is the same hunt widened from a diff to the whole tree. Vendored from [ponytail](https://github.com/DietrichGebert/ponytail) rather than written here. When you are unsure which skill or flow fits a task, [ask-matt](https://aihero.dev/skills-ask-matt) routes you over the whole set.
+A reach-for-it-anytime standalone that sits beside the review step rather than in it: [implement](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/implement.md) closes out by running [code-review](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/code-review.md), and this is the second pass you add when a diff feels bigger than the change deserved. Its neighbours are [code-review](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/code-review.md), which owns the correctness and spec axes this skill refuses, and [ponytail-audit](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-audit.md), which is the same hunt widened from a diff to the whole tree. Vendored from [ponytail](https://github.com/DietrichGebert/ponytail) rather than written here. When you are unsure which skill or flow fits a task, [ask-mattia](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ask-mattia.md) routes you over the whole set.

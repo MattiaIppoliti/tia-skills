@@ -1,10 +1,10 @@
 ---
-name: ask-matt
+name: ask-mattia
 description: Ask which skill or flow fits your situation. A router over the skills in this repo.
 disable-model-invocation: true
 ---
 
-# Ask Matt
+# Ask Mattia
 
 You don't remember every skill, so ask.
 
@@ -51,6 +51,17 @@ Not feature work, just upkeep.
 
 - **`/improve-codebase-architecture`** runs whenever you have a spare moment to keep the codebase good for agents to operate in. It surfaces **deepening opportunities**; picking one _generates an idea_ you can take into the main flow at `/grill-with-docs`. It's the survey that finds the candidates; **`/codebase-design`** (below) is the bench you design the chosen one on.
 
+## Data-intensive systems
+
+Four model-invoked skills for the part of a system that holds state: what the **record of truth** is, what has to stay true under load, concurrency and failure, and where the first real limit sits. They share one vocabulary layer, and what separates them is only *which question you're asking*.
+
+- **`/data-intensive-foundations`** is that vocabulary layer: record of truth, derived state, invariant, headroom, plus the decision axes for storage, replication, sharding, transactions, consistency and data flows. The other three call it before they choose anything, so reach for it directly only when you want a trade-off compared, technology-neutral, with no design or report wrapped around it. It compares architectures; it never picks a vendor or a product setup.
+- **`/design-data-intensive-system`** is for a system that doesn't exist yet, or an architecture change big enough to count as one. Workload and invariants first, then the smallest architecture that meets them, and every component has to earn its place by protecting a named requirement. What it produces is a decision record, so it **hands off, it doesn't build**: take it into the main flow at **`/to-spec`**. Where **`/codebase-design`** designs a *module's* shape, this designs the *system's*.
+- **`/scale-data-intensive-system`** is the on-ramp for a system that already exists and is running out of room. It refuses to change topology just because you said the word "scale": it names what grows, reproduces the first constraint, and keeps the red baseline the change has to beat. The other on-ramp, **`/diagnosing-bugs`**, is for something that's *broken*; this is for something that works and won't for much longer.
+- **`/audit-data-intensive-repo`** reads a whole repository as a data system and reports ranked, file-backed risks, tagged `truth:`, `atomicity:`, `delivery:`, `freshness:`, `capacity:` or `recovery:`, each with the failure it can cause, the smallest remediation, and how to validate it. Read-only and one-shot, so it sits beside **`/ponytail-audit`** and **`/improve-codebase-architecture`**: those ask what to *delete* and what to *deepen*, this asks what can *lose or corrupt data*.
+
+All four mark every claim `observed`, `supplied`, `inferred` or `unknown`, and list the gaps rather than filling them in. An `unknown:` line is the measurement to go and take, not a hedge.
+
 ## Lazy mode
 
 Four vendored skills that all push the same way: less code. **`/ponytail`** is a stance you switch on; the other three are one-shot reports.
@@ -68,6 +79,8 @@ Two model-invoked references that run *beneath* the other skills, each the singl
 
 - **`/domain-modeling`**: sharpen the project's *domain* language: challenge a fuzzy term, resolve an overloaded word ("account" doing three jobs), record a hard-to-reverse decision as an ADR. It's the active discipline `/grill-with-docs` drives to keep `CONTEXT.md` a clean glossary.
 - **`/codebase-design`** is the deep-module vocabulary (module, interface, depth, seam, adapter, leverage, locality) for designing a module's *shape*: a lot of behaviour behind a small interface at a clean seam. `/tdd` and `/improve-codebase-architecture` both speak it.
+
+A third reference works the same way: **`/data-intensive-foundations`** is the single source of truth for data-system vocabulary, and is described with its family under Data-intensive systems.
 
 ## Phase boundaries
 
@@ -100,4 +113,4 @@ Off the main flow entirely.
 
 ## Precondition
 
-**`/setup-matt-pocock-skills`**: run before your first engineering flow to configure the issue tracker, triage labels, and doc layout the other skills assume. Custom issue trackers also work.
+**`/setup-tia-skills`**: run before your first engineering flow to configure the issue tracker, triage labels, and doc layout the other skills assume. Custom issue trackers also work.

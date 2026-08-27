@@ -13,9 +13,9 @@ Use it when the risk is in how data moves or fails, not only in a changed diff.
 | Question | Skill |
 | --- | --- |
 | Where can this repository lose, duplicate, or misread data | `audit-data-intensive-repo` |
-| Does this diff meet its spec and repo rules | [code-review](https://aihero.dev/skills-code-review) |
-| What bottleneck limits a known production path | [scale-data-intensive-system](https://aihero.dev/skills-scale-data-intensive-system) |
-| What can we delete from the whole repository | [ponytail-audit](https://aihero.dev/skills-ponytail-audit) |
+| Does this diff meet its spec and repo rules | [code-review](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/code-review.md) |
+| What bottleneck limits a known production path | [scale-data-intensive-system](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/scale-data-intensive-system.md) |
+| What can we delete from the whole repository | [ponytail-audit](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-audit.md) |
 
 ## Tags, hunt, output
 
@@ -46,4 +46,4 @@ No. It produces a ranked report. Ask for a fix in a later task if you want chang
 
 ## Where it fits
 
-This is a reach-for-it-anytime repository review. It calls [data-intensive-foundations](https://aihero.dev/skills-data-intensive-foundations) for the underlying rules, and it can hand a measured bottleneck to [scale-data-intensive-system](https://aihero.dev/skills-scale-data-intensive-system). For a change-focused review, use [code-review](https://aihero.dev/skills-code-review). [ask-matt](https://aihero.dev/skills-ask-matt) maps the whole set.
+This is a reach-for-it-anytime repository review. It calls [data-intensive-foundations](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/data-intensive-foundations.md) for the underlying rules, and it can hand a measured bottleneck to [scale-data-intensive-system](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/scale-data-intensive-system.md). For a change-focused review, use [code-review](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/code-review.md). [ask-mattia](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ask-mattia.md) maps the whole set.

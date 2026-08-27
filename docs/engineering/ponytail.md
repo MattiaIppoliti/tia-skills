@@ -14,7 +14,7 @@ Type `/ponytail`, or the agent reaches for it automatically when a coding task f
 | The ladder enforced, shortest working diff | `/ponytail` (full, the default) |
 | The requirement itself challenged before anything gets built | `/ponytail ultra` |
 
-Reach for it when a task is about to grow a class where a function would do, a config option nobody will set, or a dependency for something the platform ships. It governs code only. For prose that reads like a machine wrote it, the skill you want is [unslop](https://aihero.dev/skills-unslop), which is the same instinct aimed at writing.
+Reach for it when a task is about to grow a class where a function would do, a config option nobody will set, or a dependency for something the platform ships. It governs code only. For prose that reads like a machine wrote it, the skill you want is [unslop](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/productivity/unslop.md), which is the same instinct aimed at writing.
 
 ## The ladder, and the rung that holds
 
@@ -24,7 +24,7 @@ Laziness has a floor, and the skill names it. Never simplified away: validation 
 
 Two conventions come with it, and both matter more than they look:
 
-- **A corner cut on purpose gets a comment.** A shortcut with a real ceiling (a global lock, an O(n²) scan, a naive heuristic) leaves a `ponytail:` comment naming that ceiling and the trigger to revisit it: `# ponytail: global lock, per-account locks if throughput matters`. That comment is what [ponytail-debt](https://aihero.dev/skills-ponytail-debt) later harvests.
+- **A corner cut on purpose gets a comment.** A shortcut with a real ceiling (a global lock, an O(n²) scan, a naive heuristic) leaves a `ponytail:` comment naming that ceiling and the trigger to revisit it: `# ponytail: global lock, per-account locks if throughput matters`. That comment is what [ponytail-debt](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-debt.md) later harvests.
 - **Lazy code without its check is unfinished.** Non-trivial logic leaves behind one runnable check, the smallest thing that fails if the logic breaks: an `assert`-based self-check or one small test file. No frameworks, no fixtures, no per-function suites. Trivial one-liners get nothing, because YAGNI applies to tests too.
 
 ## Common questions
@@ -39,7 +39,7 @@ Yes, and this is the sharpest criticism of the skill. One reported case was a co
 Not here. Upstream ships Node lifecycle hooks that inject the ruleset at session start and track the current level in a machine-global flag file. Only the skill text is vendored into this repo, so ponytail applies from the moment you or the agent invoke it, and the level is whatever that invocation asked for. That also skips a whole class of upstream bug, most notably two concurrent sessions in different repos overwriting each other's mode.
 
 **Will it skip the tests?**
-No. The one-runnable-check rule above is part of the skill, and [ponytail-review](https://aihero.dev/skills-ponytail-review) is explicitly told never to flag a single smoke test or `assert` as bloat. What it does skip is the framework, the fixtures, and the per-function suite you didn't ask for.
+No. The one-runnable-check rule above is part of the skill, and [ponytail-review](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-review.md) is explicitly told never to flag a single smoke test or `assert` as bloat. What it does skip is the framework, the fixtures, and the per-function suite you didn't ask for.
 
 **What if I really do want the 120-line version?**
 Ask, and it builds it. The skill says not to re-argue once you have insisted.
@@ -53,4 +53,4 @@ Ask, and it builds it. The skill says not to re-argue once you have insisted.
 
 ## Where it fits
 
-A stance rather than a step, so it has no place on the main flow: switch it on and it colours whatever else you are doing, most usefully inside [implement](https://aihero.dev/skills-implement) and [tdd](https://aihero.dev/skills-tdd), where the code actually gets written. Its nearest neighbours are the three report skills vendored alongside it: [ponytail-review](https://aihero.dev/skills-ponytail-review) on a diff, [ponytail-audit](https://aihero.dev/skills-ponytail-audit) on a whole repo, and [ponytail-debt](https://aihero.dev/skills-ponytail-debt) on the shortcuts this skill leaves behind, which is the one that closes the loop. All four are vendored from [ponytail](https://github.com/DietrichGebert/ponytail) rather than written here, so their voice is not the rest of this set's. When you are unsure which skill or flow fits a task, [ask-matt](https://aihero.dev/skills-ask-matt) routes you over the whole set.
+A stance rather than a step, so it has no place on the main flow: switch it on and it colours whatever else you are doing, most usefully inside [implement](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/implement.md) and [tdd](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/tdd.md), where the code actually gets written. Its nearest neighbours are the three report skills vendored alongside it: [ponytail-review](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-review.md) on a diff, [ponytail-audit](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-audit.md) on a whole repo, and [ponytail-debt](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-debt.md) on the shortcuts this skill leaves behind, which is the one that closes the loop. All four are vendored from [ponytail](https://github.com/DietrichGebert/ponytail) rather than written here, so their voice is not the rest of this set's. When you are unsure which skill or flow fits a task, [ask-mattia](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ask-mattia.md) routes you over the whole set.

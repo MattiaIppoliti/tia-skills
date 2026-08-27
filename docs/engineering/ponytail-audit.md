@@ -1,6 +1,6 @@
 ## What it does
 
-`ponytail-audit` is [ponytail-review](https://aihero.dev/skills-ponytail-review) pointed at a whole repository instead of a diff. It scans the tree for over-engineering and hands back a ranked list, biggest cut first, using the same five tags: `delete:`, `stdlib:`, `native:`, `yagni:`, `shrink:`. The report ends with `net: -N lines, -M deps possible.`
+`ponytail-audit` is [ponytail-review](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-review.md) pointed at a whole repository instead of a diff. It scans the tree for over-engineering and hands back a ranked list, biggest cut first, using the same five tags: `delete:`, `stdlib:`, `native:`, `yagni:`, `shrink:`. The report ends with `net: -N lines, -M deps possible.`
 
 It lists and applies nothing. That separation is deliberate, and it matters more here than on a diff review, because the findings are phrased as flat assertions ("no callers anywhere") over a tree far larger than anyone will re-check by hand. The list is a set of leads to verify, not a work order.
 
@@ -13,9 +13,9 @@ Reach for it on a codebase you have inherited, or one that grew past the point w
 | The question | Skill |
 | --- | --- |
 | What can I delete from this repo | `ponytail-audit` |
-| What should I deepen in this repo | [improve-codebase-architecture](https://aihero.dev/skills-improve-codebase-architecture) |
-| What can I delete from this diff | [ponytail-review](https://aihero.dev/skills-ponytail-review) |
-| What did we already decide to defer | [ponytail-debt](https://aihero.dev/skills-ponytail-debt) |
+| What should I deepen in this repo | [improve-codebase-architecture](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/improve-codebase-architecture.md) |
+| What can I delete from this diff | [ponytail-review](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-review.md) |
+| What did we already decide to defer | [ponytail-debt](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-debt.md) |
 
 ## The hunt, and why the list needs checking
 
@@ -37,7 +37,7 @@ Treat it as leads, not conclusions. The one published measurement puts roughly a
 Because it is vendored. The rules here are upstream's, unchanged, so a `git pull` upstream stays a clean sync rather than a merge against local edits. The caveat lives in the docs and in the skill's own provenance note instead of in the rules. Upstream tracks it as [issue #679](https://github.com/DietrichGebert/ponytail/issues/679).
 
 **Isn't this the same as `improve-codebase-architecture`?**
-No, and they pull in opposite directions, which is what makes them useful together. [improve-codebase-architecture](https://aihero.dev/skills-improve-codebase-architecture) looks for **deepening opportunities**, shallow modules that should hold more behaviour behind a smaller interface, and hands you a design problem to grill through. This one looks for code that should not exist and hands you a list. Run the audit first: deleting a module is strictly cheaper than designing it.
+No, and they pull in opposite directions, which is what makes them useful together. [improve-codebase-architecture](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/improve-codebase-architecture.md) looks for **deepening opportunities**, shallow modules that should hold more behaviour behind a smaller interface, and hands you a design problem to grill through. This one looks for code that should not exist and hands you a list. Run the audit first: deleting a module is strictly cheaper than designing it.
 
 **It didn't flag our test suite or our error handling.**
 It has no tag for either. Upstream carries open gaps for over-defensive control flow and broad exception wrappers, and separately for machine-shaped test brittleness such as snapshot-only assertions or tests that mirror every method one-to-one. Neither fits the five tags, so neither gets found.
@@ -51,4 +51,4 @@ It has no tag for either. Upstream carries open gaps for over-defensive control 
 
 ## Where it fits
 
-Periodic maintenance, in the same slot as [improve-codebase-architecture](https://aihero.dev/skills-improve-codebase-architecture) and best run just before it, since there is no point designing a better shape for a module that should be deleted. Its other neighbour is [ponytail-review](https://aihero.dev/skills-ponytail-review), the same hunt narrowed to a diff, which is where you want it once the repo is lean and you are trying to keep it that way. Vendored from [ponytail](https://github.com/DietrichGebert/ponytail) rather than written here. When you are unsure which skill or flow fits a task, [ask-matt](https://aihero.dev/skills-ask-matt) routes you over the whole set.
+Periodic maintenance, in the same slot as [improve-codebase-architecture](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/improve-codebase-architecture.md) and best run just before it, since there is no point designing a better shape for a module that should be deleted. Its other neighbour is [ponytail-review](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-review.md), the same hunt narrowed to a diff, which is where you want it once the repo is lean and you are trying to keep it that way. Vendored from [ponytail](https://github.com/DietrichGebert/ponytail) rather than written here. When you are unsure which skill or flow fits a task, [ask-mattia](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ask-mattia.md) routes you over the whole set.

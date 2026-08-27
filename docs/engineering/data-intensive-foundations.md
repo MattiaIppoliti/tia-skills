@@ -13,9 +13,9 @@ Reach for it when the question is about the shape of a data system. Pick a sibli
 | Question | Skill |
 | --- | --- |
 | What trade-offs fit this data workload | `data-intensive-foundations` |
-| How should we build a new system | [design-data-intensive-system](https://aihero.dev/skills-design-data-intensive-system) |
-| Why does the current system stop coping with load | [scale-data-intensive-system](https://aihero.dev/skills-scale-data-intensive-system) |
-| What is risky in this repository | [audit-data-intensive-repo](https://aihero.dev/skills-audit-data-intensive-repo) |
+| How should we build a new system | [design-data-intensive-system](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/design-data-intensive-system.md) |
+| Why does the current system stop coping with load | [scale-data-intensive-system](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/scale-data-intensive-system.md) |
+| What is risky in this repository | [audit-data-intensive-repo](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/audit-data-intensive-repo.md) |
 
 ## The useful question
 
@@ -41,4 +41,4 @@ No. The skill gives the working rules. Read the book when you want the full argu
 
 ## Where it fits
 
-This is a reach-for-it-anytime reference layer. [design-data-intensive-system](https://aihero.dev/skills-design-data-intensive-system), [scale-data-intensive-system](https://aihero.dev/skills-scale-data-intensive-system), and [audit-data-intensive-repo](https://aihero.dev/skills-audit-data-intensive-repo) call it before they make a decision. [ask-matt](https://aihero.dev/skills-ask-matt) maps the rest of the set.
+This is a reach-for-it-anytime reference layer. [design-data-intensive-system](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/design-data-intensive-system.md), [scale-data-intensive-system](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/scale-data-intensive-system.md), and [audit-data-intensive-repo](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/audit-data-intensive-repo.md) call it before they make a decision. [ask-mattia](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ask-mattia.md) maps the rest of the set.

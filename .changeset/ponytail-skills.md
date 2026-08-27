@@ -1,5 +1,5 @@
 ---
-"mattpocock-skills": minor
+"tia-skills": minor
 ---
 
 Add four model-invoked engineering skills vendored from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) (MIT), all aimed at building and keeping less code:
@@ -17,4 +17,4 @@ Two of upstream's six skills are deliberately absent. `ponytail-help` documents 
 
 `ponytail-audit`'s known weakness is kept rather than patched, so the vendored copy stays a clean sync: its `## Hunt` says what to look for but never how to confirm a `delete:` claim, and upstream measured 8 of 31 findings invalid on a real repo. The caveat is recorded in the skill's provenance note and in its docs page instead of in the rules.
 
-Registers all four everywhere a promoted skill has to appear: `plugin.json`, the top-level README, the engineering bucket README, a docs page each, and a new **Lazy mode** section in the `ask-matt` router that states the boundaries against `code-review` (correctness versus complexity) and `improve-codebase-architecture` (what to deepen versus what to delete).
+Registers all four everywhere a promoted skill has to appear: `plugin.json`, the top-level README, the engineering bucket README, a docs page each, and a new **Lazy mode** section in the `ask-mattia` router that states the boundaries against `code-review` (correctness versus complexity) and `improve-codebase-architecture` (what to deepen versus what to delete).

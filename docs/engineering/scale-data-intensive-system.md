@@ -13,9 +13,9 @@ Use it for the existing system. Use a sibling when the work starts elsewhere.
 | Situation | Skill |
 | --- | --- |
 | A known system needs more capacity or lower tail latency | `scale-data-intensive-system` |
-| The main problem is a bug or a regression | [diagnosing-bugs](https://aihero.dev/skills-diagnosing-bugs) |
-| The system is new and has no implementation to measure | [design-data-intensive-system](https://aihero.dev/skills-design-data-intensive-system) |
-| You need a broad codebase risk assessment | [audit-data-intensive-repo](https://aihero.dev/skills-audit-data-intensive-repo) |
+| The main problem is a bug or a regression | [diagnosing-bugs](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/diagnosing-bugs.md) |
+| The system is new and has no implementation to measure | [design-data-intensive-system](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/design-data-intensive-system.md) |
+| You need a broad codebase risk assessment | [audit-data-intensive-repo](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/audit-data-intensive-repo.md) |
 
 ## Baseline, hunt, output
 
@@ -47,4 +47,4 @@ No. It starts with the measured limit. A query plan may point at an index. A bac
 
 ## Where it fits
 
-This is a reach-for-it-anytime maintenance skill. It calls [data-intensive-foundations](https://aihero.dev/skills-data-intensive-foundations) for the trade-offs behind each option. Use [audit-data-intensive-repo](https://aihero.dev/skills-audit-data-intensive-repo) before it when nobody has mapped the system yet. [ask-matt](https://aihero.dev/skills-ask-matt) maps the rest of the engineering skills.
+This is a reach-for-it-anytime maintenance skill. It calls [data-intensive-foundations](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/data-intensive-foundations.md) for the trade-offs behind each option. Use [audit-data-intensive-repo](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/audit-data-intensive-repo.md) before it when nobody has mapped the system yet. [ask-mattia](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ask-mattia.md) maps the rest of the engineering skills.

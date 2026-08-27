@@ -2,7 +2,7 @@
 
 `ponytail-debt` greps the repo for `ponytail:` comments and collects them into one ledger. Each row names the file and line, what was simplified, the **ceiling** the shortcut has, and the **trigger** that should make you revisit it. It closes with a count: `N markers, M with no trigger.`
 
-The ledger only works because of a convention upstream in [ponytail](https://aihero.dev/skills-ponytail): a corner cut on purpose leaves a comment naming its own limit, in the form `# ponytail: global lock, per-account locks if throughput matters`. That is the whole mechanism. This skill invents nothing and infers nothing, it reads what the earlier decision wrote down, which is why it can count and a survey of "technical debt" cannot.
+The ledger only works because of a convention upstream in [ponytail](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail.md): a corner cut on purpose leaves a comment naming its own limit, in the form `# ponytail: global lock, per-account locks if throughput matters`. That is the whole mechanism. This skill invents nothing and infers nothing, it reads what the earlier decision wrote down, which is why it can count and a survey of "technical debt" cannot.
 
 ## When to reach for it
 
@@ -23,7 +23,7 @@ The scan is a grep over comment prefixes, `(#|//) ?ponytail:`, skipping `node_mo
 ## Common questions
 
 **I ran it and got nothing.**
-Then the ledger is empty and that is the honest answer. The markers only exist where [ponytail](https://aihero.dev/skills-ponytail) was active and chose to cut a corner with a real ceiling, and it is told to mark only those, not every simplification. An empty ledger on a repo that has never run ponytail means the skill worked.
+Then the ledger is empty and that is the honest answer. The markers only exist where [ponytail](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail.md) was active and chose to cut a corner with a real ceiling, and it is told to mark only those, not every simplification. An empty ledger on a repo that has never run ponytail means the skill worked.
 
 **Why not just use TODO comments?**
 Nothing stops you, but a `TODO` names a wish and a `ponytail:` marker names a limit and a condition. The ledger is only countable because the convention is structured: pull the ceiling from one half of the comment, the trigger from the other. A wall of `TODO: fix this properly` gives you a number with nothing behind it.
@@ -40,4 +40,4 @@ Ask for the file when you want to hand the list to someone or take it into a pla
 
 ## Where it fits
 
-A reach-for-it-anytime standalone, and the closing half of a loop: [ponytail](https://aihero.dev/skills-ponytail) cuts corners and marks them, this collects the marks. Its other neighbour is [ponytail-audit](https://aihero.dev/skills-ponytail-audit), which asks the opposite question about the same repo, what is here that shouldn't be, where this one asks what was left out on purpose. Vendored from [ponytail](https://github.com/DietrichGebert/ponytail) rather than written here. When you are unsure which skill or flow fits a task, [ask-matt](https://aihero.dev/skills-ask-matt) routes you over the whole set.
+A reach-for-it-anytime standalone, and the closing half of a loop: [ponytail](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail.md) cuts corners and marks them, this collects the marks. Its other neighbour is [ponytail-audit](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ponytail-audit.md), which asks the opposite question about the same repo, what is here that shouldn't be, where this one asks what was left out on purpose. Vendored from [ponytail](https://github.com/DietrichGebert/ponytail) rather than written here. When you are unsure which skill or flow fits a task, [ask-mattia](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/ask-mattia.md) routes you over the whole set.
