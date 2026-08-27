@@ -213,3 +213,15 @@ General workflow tools, not code-specific.
 - **[grilling](./skills/productivity/grilling/SKILL.md)**: Interview the user relentlessly about a plan, decision, or idea until every branch of the design tree is resolved. The reusable interview primitive behind `grill-me`, `grill-with-docs`, `triage`, `wayfinder` and `improve-codebase-architecture`.
 - **[unslop](./skills/productivity/unslop/SKILL.md)**: Cut the AI tells out of a draft: puffery, AI vocabulary, em dashes, filler, hedging, passive voice, then put a human voice back in.
 - **[writing-for-agents](./skills/productivity/writing-for-agents/SKILL.md)**: Writing documents for agents: skills, AGENTS.md/CLAUDE.md, and any doc an agent reaches by a pointer.
+
+## Credits
+
+Most of the skills here were written by other people. This section says who.
+
+- [Matt Pocock](https://github.com/mattpocock) wrote the engineering and productivity sets this repo forked from, [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). Every skill in those two buckets except the ones named below started as his.
+- [DietrichGebert](https://github.com/DietrichGebert) wrote the four `ponytail` skills, vendored from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) (MIT). The rules are unchanged and only the frontmatter differs, so a pull from upstream stays a clean sync rather than a merge.
+- `unslop` comes from [cursor/plugins](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop), Cursor's own plugin repo. Its 31 rules are unchanged.
+- The eighteen skills in [`skills/video/`](./skills/video/README.md) are third-party work too, and I cannot name who wrote them. Nothing in this repo records it. Read that as a hole in the attribution, not as a claim.
+- The four data-intensive skills were written here, but the thinking behind them is not mine. They paraphrase *Designing Data-Intensive Applications, Second Edition* by Martin Kleppmann and Chris Riccomini (O'Reilly, 2026), and reproduce no text from it. [`book-map.md`](./skills/engineering/data-intensive-foundations/references/book-map.md) maps each chapter to the decisions it informs.
+
+The books the flows lean on are cited where they come up above: David Thomas and Andrew Hunt for tracer bullets, Eric Evans for the domain vocabulary, John Ousterhout for deep modules. `codebase-design` disagrees with Ousterhout on how to measure depth, and its docs page explains why.

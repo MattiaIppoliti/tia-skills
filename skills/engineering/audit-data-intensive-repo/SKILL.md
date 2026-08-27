@@ -22,7 +22,7 @@ Call the Skill tool with "data-intensive-foundations" before judging data models
 
 Read [references/audit-catalog.md](references/audit-catalog.md) before the audit.
 
-Read [references/audit-catalog.md](references/audit-catalog.md). Scope the repository, deployed services, entrypoints, stateful components, schemas, migrations, infrastructure, and configuration that is absent from the tree.
+Scope the repository, deployed services, entrypoints, stateful components, schemas, migrations, infrastructure, and configuration that is absent from the tree.
 
 Trace at least one important write and read. For each stateful component, find its authority, writers, readers, keys, indexes, transaction boundary, retry behavior, retention, backup and recovery path, and observability. Walk timeout before and after commit, duplicate delivery, concurrent update, stale replica or cache, dependency loss, overload, deploy overlap, and recovery.
 
