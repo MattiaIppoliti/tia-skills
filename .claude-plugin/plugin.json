@@ -20,6 +20,10 @@
   ],
   "skills": [
     "./skills/engineering/ask-mattia",
+    "./skills/engineering/architect",
+    "./skills/engineering/principle-redesign-from-first-principles",
+    "./skills/engineering/principle-fix-root-causes",
+    "./skills/engineering/principle-foundational-thinking",
     "./skills/engineering/diagnosing-bugs",
     "./skills/engineering/grill-with-docs",
     "./skills/engineering/triage",
@@ -34,6 +38,8 @@
     "./skills/engineering/research",
     "./skills/engineering/domain-modeling",
     "./skills/engineering/codebase-design",
+    "./skills/engineering/typescript-best-practices",
+    "./skills/engineering/why",
     "./skills/engineering/data-intensive-foundations",
     "./skills/engineering/design-data-intensive-system",
     "./skills/engineering/scale-data-intensive-system",
@@ -50,9 +56,11 @@
     "./skills/productivity/grilling",
     "./skills/productivity/handoff",
     "./skills/productivity/teach",
+    "./skills/productivity/technical-writing",
     "./skills/productivity/to-questionnaire",
     "./skills/productivity/wait-what",
     "./skills/productivity/unslop",
-    "./skills/productivity/writing-for-agents"
+    "./skills/productivity/writing-for-agents",
+    "./skills/productivity/excalidraw-diagram"
   ]
 }

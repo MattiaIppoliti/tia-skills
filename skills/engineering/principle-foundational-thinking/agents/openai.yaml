@@ -1,0 +1,5 @@
+interface:
+  display_name: "Foundational thinking"
+  short_description: "Set contracts and invariants before implementation"
+policy:
+  allow_implicit_invocation: false

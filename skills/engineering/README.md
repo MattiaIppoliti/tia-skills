@@ -7,6 +7,10 @@ Skills I use daily for code work.
 Reachable only when you type them (Claude Code: `disable-model-invocation: true`; Codex: `policy.allow_implicit_invocation: false` in `agents/openai.yaml`).
 
 - **[ask-mattia](./ask-mattia/SKILL.md)**: Ask which skill or flow fits your situation. A router over the skills in this repo.
+- **[architect](./architect/SKILL.md)**: Sketch callers, types, boundaries, and failure behavior before implementing a non-trivial change.
+- **[principle-redesign-from-first-principles](./principle-redesign-from-first-principles/SKILL.md)**: Rebuild a design around a new requirement rather than spread another special case.
+- **[principle-fix-root-causes](./principle-fix-root-causes/SKILL.md)**: Trace a failure to its earliest controllable cause and prevent that condition.
+- **[principle-foundational-thinking](./principle-foundational-thinking/SKILL.md)**: Establish contracts, ownership, and invariants before filling in implementation details.
 - **[grill-with-docs](./grill-with-docs/SKILL.md)**: Grilling session that also builds your project's domain model, sharpening terminology and updating `CONTEXT.md` and ADRs inline.
 - **[triage](./triage/SKILL.md)**: Move issues through a state machine of triage roles.
 - **[improve-codebase-architecture](./improve-codebase-architecture/SKILL.md)**: Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
@@ -27,6 +31,8 @@ Model- or user-reachable (rich trigger phrasing so the model can reach for them)
 - **[tdd](./tdd/SKILL.md)**: Test-driven development with a red-green-refactor loop. Builds features or fixes bugs one vertical slice at a time.
 - **[domain-modeling](./domain-modeling/SKILL.md)**: Actively build and sharpen a project's domain model by challenging terms, stress-testing with scenarios, and updating `CONTEXT.md` and ADRs inline.
 - **[codebase-design](./codebase-design/SKILL.md)**: Shared discipline and vocabulary for designing deep modules: small interfaces, clean seams, testable through the interface.
+- **[typescript-best-practices](./typescript-best-practices/SKILL.md)**: Model TypeScript data safely, parse boundaries, and narrow without unsafe assertions.
+- **[why](./why/SKILL.md)**: Investigate the primary evidence behind a code decision, its constraints, and alternatives.
 - **[data-intensive-foundations](./data-intensive-foundations/SKILL.md)**: Shared rules for weighing workload, storage, replication, sharding, transactions, consistency, and data flows.
 - **[design-data-intensive-system](./design-data-intensive-system/SKILL.md)**: Design a new data system from its workload, invariants, access patterns, and service objectives.
 - **[scale-data-intensive-system](./scale-data-intensive-system/SKILL.md)**: Find the measured limit in an existing data system, then plan or make the smallest safe change.

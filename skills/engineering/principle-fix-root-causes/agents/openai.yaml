@@ -1,0 +1,5 @@
+interface:
+  display_name: "Fix root causes"
+  short_description: "Eliminate the condition behind a failure"
+policy:
+  allow_implicit_invocation: false

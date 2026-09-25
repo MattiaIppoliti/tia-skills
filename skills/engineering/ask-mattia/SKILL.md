@@ -50,6 +50,8 @@ A starting situation that generates work, then merges onto the main flow.
 Not feature work, just upkeep.
 
 - **`/improve-codebase-architecture`** runs whenever you have a spare moment to keep the codebase good for agents to operate in. It surfaces **deepening opportunities**; picking one _generates an idea_ you can take into the main flow at `/grill-with-docs`. It's the survey that finds the candidates; **`/codebase-design`** (below) is the bench you design the chosen one on.
+- **`/architect`** is the design bench for one non-trivial change before implementation. It writes the caller's usage, types, ownership, and invariants first. It is not the full main flow: use it when the question is the code shape, then take the chosen design into `/implement` or `/to-spec`.
+- The three **principles** are short prompts for a stuck design: **`/principle-foundational-thinking`** establishes contracts and ownership before bodies; **`/principle-redesign-from-first-principles`** rebuilds a shape when a new requirement would otherwise leak exceptions; **`/principle-fix-root-causes`** traces recurring failures to their earliest controllable condition. For a full bug investigation, use `/diagnosing-bugs`.
 
 ## Data-intensive systems
 
@@ -82,6 +84,8 @@ Two model-invoked references that run *beneath* the other skills, each the singl
 
 A third reference works the same way: **`/data-intensive-foundations`** is the single source of truth for data-system vocabulary, and is described with its family under Data-intensive systems.
 
+Two more references are narrower. **`/typescript-best-practices`** runs underneath TypeScript changes to make invalid states hard to construct and external data safe at the boundary. **`/why`** investigates the evidence behind a code decision, keeping direct evidence, inference, and unknowns separate. Reach for `/why` before changing a shape whose history could encode a constraint.
+
 ## Phase boundaries
 
 A **phase** is a chunk of work inside a session: the grilling, the implementation, the QA. At the **boundary** between two of them you have five options, and picking between them is the fuzziest decision in this whole map:
@@ -107,7 +111,9 @@ Off the main flow entirely.
 - **`/to-questionnaire`** comes in when the thing blocking you isn't in your head or the codebase but in **someone else's**, and it writes them a questionnaire to fill in. It's the inverse of `/grill-me`: instead of interviewing you about the subject, it interviews you about the **send** (who it's going to, what you need back) and aims the questions at the gap. What comes back is material for `/grill-with-docs` or `/to-spec`.
 - **`/wizard`** is for the steps only a **human** can take: provisioning infrastructure, setting up credentials or CI secrets, clicking through an unfamiliar third-party dashboard, running a one-off migration or cutover. It generates an interactive bash script that opens each URL, captures each value, and writes it into `.env` and GitHub secrets, so the procedure stops being something you re-explain to an agent every time. Model-invoked, so the agent reaches for it the moment it hits a wall only you can pass. If the agent could just do it itself, it should; this is for where a human is genuinely in the loop.
 - **`/wait-what`** is the corrective for a message that didn't land. Use it mid-conversation, inside any other skill, and the agent re-pitches what it just said with the context you were missing, in plain English, using the `CONTEXT.md` vocabulary. It works after the fact; `/grill-with-docs` is the upfront cure, because a shared language agreed early is what stops the jargon arriving at all.
-- **`/teach`**: learn a concept over multiple sessions, using the current directory as a stateful workspace.
+- **`/teach`** explains the system, diff, or concept in front of you, including why it has that shape when the evidence matters. It is not a course workspace. Use it when the immediate blocker is understanding.
+- **`/excalidraw-diagram`** creates editable overall architecture maps, module diagrams and workflows, with local SVG and PNG exports. Use it with `/teach` when relationships need a diagram, or with `/technical-writing` when the figure belongs in a document. Model-invoked, and also available by name.
+- **`/technical-writing`** is the writing standard for docs, RFCs, READMEs, pull-request descriptions, and commit messages. It chooses one document mode, then makes the prose precise and unambiguous. Pair it with `/unslop` when the draft needs a more human voice.
 - **`/hyperframes`** is the door into the whole `skills/video/` stack: making a product launch video, a promo, or a motion graphic in code, output as a Remotion (React) project. It owns its own routing, so ask it rather than picking one of the eighteen skills behind it. Off the engineering flow entirely, and the one part of this repo that is vendored from elsewhere rather than written here: expect a rougher edge, and read the contract-status banner on whichever skill it hands you to.
 - **`/writing-for-agents`** is the reference for writing documents agents consume: skills, AGENTS.md, pointed-at docs.
 - **`/unslop`** is the other half of that pair, aimed at the *human* reader: it strips the AI tells out of a draft (puffery, AI vocabulary, em dashes, filler, hedging, passive voice, sycophancy) and puts a voice back in. Where `/writing-for-agents` asks whether a line changes an agent's behaviour, `/unslop` asks whether a line sounds like a person wrote it. Model-invoked, so the agent applies it to its own prose; reach for it by hand on a draft that reads like a machine.

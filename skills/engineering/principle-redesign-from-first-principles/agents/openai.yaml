@@ -1,0 +1,5 @@
+interface:
+  display_name: "Redesign from first principles"
+  short_description: "Rebuild a design around a new requirement"
+policy:
+  allow_implicit_invocation: false

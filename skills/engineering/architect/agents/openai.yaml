@@ -1,0 +1,5 @@
+interface:
+  display_name: "Architect"
+  short_description: "Sketch a change before implementing it"
+policy:
+  allow_implicit_invocation: false

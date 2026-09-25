@@ -167,6 +167,10 @@ Skills I use daily for code work.
 **User-invoked**
 
 - **[ask-mattia](./skills/engineering/ask-mattia/SKILL.md)**: Ask which skill or flow fits your situation. A router over the skills in this repo.
+- **[architect](./skills/engineering/architect/SKILL.md)**: Sketch callers, types, boundaries, and failure behavior before implementing a non-trivial change.
+- **[principle-redesign-from-first-principles](./skills/engineering/principle-redesign-from-first-principles/SKILL.md)**: Rebuild a design around a new requirement rather than spread another special case.
+- **[principle-fix-root-causes](./skills/engineering/principle-fix-root-causes/SKILL.md)**: Trace a failure to its earliest controllable cause and prevent that condition.
+- **[principle-foundational-thinking](./skills/engineering/principle-foundational-thinking/SKILL.md)**: Establish contracts, ownership, and invariants before filling in implementation details.
 - **[grill-with-docs](./skills/engineering/grill-with-docs/SKILL.md)**: Grilling session that also builds your project's domain model, sharpening terminology and updating `CONTEXT.md` and ADRs inline.
 - **[triage](./skills/engineering/triage/SKILL.md)**: Move issues through a state machine of triage roles.
 - **[improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md)**: Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
@@ -184,6 +188,8 @@ Skills I use daily for code work.
 - **[tdd](./skills/engineering/tdd/SKILL.md)**: Test-driven development with a red-green-refactor loop. Builds features or fixes bugs one vertical slice at a time.
 - **[domain-modeling](./skills/engineering/domain-modeling/SKILL.md)**: Actively build and sharpen a project's domain model: challenge terms against the glossary, stress-test with edge-case scenarios, and update `CONTEXT.md` and ADRs inline.
 - **[codebase-design](./skills/engineering/codebase-design/SKILL.md)**: Shared discipline and vocabulary for designing deep modules: a lot of behaviour behind a small interface, placed at a clean seam, testable through that interface.
+- **[typescript-best-practices](./skills/engineering/typescript-best-practices/SKILL.md)**: Model TypeScript data safely, parse boundaries, and narrow without unsafe assertions.
+- **[why](./skills/engineering/why/SKILL.md)**: Investigate the primary evidence behind a code decision, its constraints, and alternatives.
 - **[data-intensive-foundations](./skills/engineering/data-intensive-foundations/SKILL.md)**: Shared rules for weighing workload, storage, replication, sharding, transactions, consistency, and data flows.
 - **[design-data-intensive-system](./skills/engineering/design-data-intensive-system/SKILL.md)**: Design a new data system from its workload, invariants, access patterns, and service objectives.
 - **[scale-data-intensive-system](./skills/engineering/scale-data-intensive-system/SKILL.md)**: Find the measured limit in an existing data system, then plan or make the smallest safe change.
@@ -205,12 +211,14 @@ General workflow tools, not code-specific.
 
 - **[grill-me](./skills/productivity/grill-me/SKILL.md)**: Get relentlessly interviewed about a plan or design until every branch of the design tree is resolved.
 - **[handoff](./skills/productivity/handoff/SKILL.md)**: Compact the current conversation into a handoff document so another agent can continue the work.
-- **[teach](./skills/productivity/teach/SKILL.md)**: Teach the user a new skill or concept over multiple sessions, using the current directory as a stateful teaching workspace.
+- **[teach](./skills/productivity/teach/SKILL.md)**: Explain a system, change, or concept so a person understands what it does and why it has that shape.
+- **[technical-writing](./skills/productivity/technical-writing/SKILL.md)**: Write or review docs and engineering prose that survive a tired reader's first pass.
 - **[to-questionnaire](./skills/productivity/to-questionnaire/SKILL.md)**: Turn a decision you can't answer alone into a Markdown questionnaire for the one person who can, filled in async, or together over a meeting. It grills you about the send (who it's for, what you need back), not the subject.
 - **[wait-what](./skills/productivity/wait-what/SKILL.md)**: Fire this the moment a message doesn't land. The agent re-pitches it with the context you're missing, in plain English, using your `CONTEXT.md` vocabulary.
 
 **Model-invoked**
 
+- **[excalidraw-diagram](./skills/productivity/excalidraw-diagram/SKILL.md)**: Create editable overall architecture maps, module diagrams and workflows with verified local exports.
 - **[grilling](./skills/productivity/grilling/SKILL.md)**: Interview the user relentlessly about a plan, decision, or idea until every branch of the design tree is resolved. The reusable interview primitive behind `grill-me`, `grill-with-docs`, `triage`, `wayfinder` and `improve-codebase-architecture`.
 - **[unslop](./skills/productivity/unslop/SKILL.md)**: Cut the AI tells out of a draft: puffery, AI vocabulary, em dashes, filler, hedging, passive voice, then put a human voice back in.
 - **[writing-for-agents](./skills/productivity/writing-for-agents/SKILL.md)**: Writing documents for agents: skills, AGENTS.md/CLAUDE.md, and any doc an agent reaches by a pointer.
@@ -223,6 +231,8 @@ Most of the skills here were written by other people. This section says who.
 - [DietrichGebert](https://github.com/DietrichGebert) wrote the four `ponytail` skills, vendored from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) (MIT). The rules are unchanged and only the frontmatter differs, so a pull from upstream stays a clean sync rather than a merge.
 - [Emil Kowalski](https://github.com/emilkowalski) wrote `apple-design`, vendored from [emilkowalski/skills](https://github.com/emilkowalski/skills) (MIT). The rules are unchanged; the only edits are the em-dash rewrites this repo's prose rule requires, so an upstream pull is a sync with 65 known conflicts rather than a clean one.
 - `unslop` comes from [cursor/plugins](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop), Cursor's own plugin repo. Its 31 rules are unchanged.
+- `architect`, `teach`, `technical-writing`, `typescript-best-practices`, `why`, and the three `principle-*` skills are adapted from [Cursor's Pstack skills](https://github.com/cursor/plugins/tree/main/pstack/skills), with instructions made compatible with this repository's skill model.
+- `excalidraw-diagram` is independently written, informed by [coleam00/excalidraw-diagram-skill](https://github.com/coleam00/excalidraw-diagram-skill). Its provenance file records the inspected revision and the renderer changes.
 - The eighteen skills in [`skills/video/`](./skills/video/README.md) are third-party work too, and I cannot name who wrote them. Nothing in this repo records it. Read that as a hole in the attribution, not as a claim.
 - The four data-intensive skills were written here, but the thinking behind them is not mine. They paraphrase *Designing Data-Intensive Applications, Second Edition* by Martin Kleppmann and Chris Riccomini (O'Reilly, 2026), and reproduce no text from it. [`book-map.md`](./skills/engineering/data-intensive-foundations/references/book-map.md) maps each chapter to the decisions it informs.
 

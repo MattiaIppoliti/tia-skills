@@ -1,0 +1,13 @@
+{
+  "name": "tia-excalidraw-renderer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@excalidraw/excalidraw": "0.18.0",
+    "esbuild": "0.25.10",
+    "playwright": "1.62.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
