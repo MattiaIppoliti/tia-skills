@@ -1,6 +1,6 @@
 ---
 name: hyperframes-cli
-description: Drive the Remotion CLI development loop: scaffold, studio, type-check, compositions, still probes, single and batch render, bundle, Lambda and Cloud Run rendering, benchmark, versions, upgrade, and GPU checks. Also use when diagnosing a build or render failure, or when looking for a capability the retired HyperFrames CLI used to own.
+description: "Drive the Remotion CLI development loop: scaffold, studio, type-check, compositions, still probes, single and batch render, bundle, Lambda and Cloud Run rendering, benchmark, versions, upgrade, and GPU checks. Also use when diagnosing a build or render failure, or when looking for a capability the retired HyperFrames CLI used to own."
 ---
 
 # Remotion CLI

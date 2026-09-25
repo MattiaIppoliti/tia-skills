@@ -1,6 +1,6 @@
 ---
 name: unslop
-description: Cut AI tells from writing: puffery, AI vocabulary, em dashes, filler, hedging, passive voice, sycophancy. Use when drafting or editing prose a human will read, when the user asks to unslop, de-slop, or de-AI text, or when they say something reads like it was written by an AI.
+description: "Cut AI tells from writing: puffery, AI vocabulary, em dashes, filler, hedging, passive voice, sycophancy. Use when drafting or editing prose a human will read, when the user asks to unslop, de-slop, or de-AI text, or when they say something reads like it was written by an AI."
 ---
 
 # Unslop
