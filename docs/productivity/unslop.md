@@ -18,7 +18,7 @@ Reach for it by hand whenever a draft reads like a machine wrote it, no matter w
 
 ## Tells, and the voice underneath
 
-The leading word is **tell**: a surface pattern that leaks the writer's identity. The catalogue runs to 31 of them across seven groups (content, language, style, communication artifacts, filler, jargon, plain speech), and they are worth reading as a list because most of them are invisible until named. "Serves as" reads fine until you notice it is a four-syllable way to write "is".
+The leading word is **tell**: a surface pattern that leaks the writer's identity. The catalogue runs to 33 of them across seven groups (content, language, style, communication artifacts, filler, jargon, plain speech), and they are worth reading as a list because most of them are invisible until named. "Serves as" reads fine until you notice it is a four-syllable way to write "is".
 
 Two of them do more work than the rest:
 
