@@ -6,7 +6,7 @@ One rule does most of the work: every animation starts from the **presentation v
 
 ## When to reach for it
 
-Type `/apple-design`, or the agent reaches for it automatically when a task fits.
+Type `/apple-design`, or the agent reaches for it automatically when a task fits. Typed with no question, it answers with one line saying what it knows and waits for you to ask.
 
 | Your situation | Reach for it? |
 | --- | --- |
