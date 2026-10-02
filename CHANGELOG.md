@@ -1,5 +1,106 @@
 # tia-skills
 
+## 1.3.0
+
+### Minor Changes
+
+- [`0e39d6a`](https://github.com/MattiaIppoliti/tia-skills/commit/0e39d6a2eeaea63aae5b721cc10d684a8c432e04) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Vendor Emil Kowalski's `apple-design` skill into `engineering/`.
+
+  It is the set's first design-craft reference: Apple's fluid-interface rules translated to the web, covering springs instead of fixed durations, 1:1 pointer tracking, animating from the presentation value so a gesture can grab and reverse motion mid-flight, velocity handoff, momentum projection, rubber-banding, translucent materials, size-specific typography, and the eight principles from _Principles of Great Design_.
+
+  Model-invoked, wired into `plugin.json`, both `README.md`s, `docs/engineering/apple-design.md`, and `ask-mattia`'s Standalone section, where it sits next to `/prototype` and is explicitly kept apart from `/hyperframes`: this skill is about live motion reacting to input, and the video stack renders a deterministic timeline where interruptibility has no meaning.
+
+  The rules are unchanged from upstream. The only edits are the 65 em-dash rewrites this repo's prose rule requires, so an upstream pull is a sync with known conflicts rather than a clean one, and `README.md`'s Credits section says so.
+
+- [`375bcb3`](https://github.com/MattiaIppoliti/tia-skills/commit/375bcb3954d102a0728ff16b7d049f0f30016c69) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Add four model-invoked engineering skills for data-intensive systems. `data-intensive-foundations` holds the shared rules. `design-data-intensive-system` designs a new system from workload and invariants. `scale-data-intensive-system` finds the first measured limit before changing topology. `audit-data-intensive-repo` produces read-only, file-backed findings about data paths, correctness, data flow, and recovery.
+
+  The guidance is an original paraphrase of _Designing Data-Intensive Applications, Second Edition_. It does not include text from the book.
+
+- [`b90e4a1`](https://github.com/MattiaIppoliti/tia-skills/commit/b90e4a10bdb78020e5511520a438d0c6af3dbdc6) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Add four model-invoked engineering skills vendored from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) (MIT), all aimed at building and keeping less code:
+
+  - `ponytail`: a mode, not a step. Climbs a ladder before writing anything and stops at the first rung that holds (does this need to exist, is it already here, stdlib, native platform, installed dependency, one line), at `lite`, `full`, or `ultra`. Stays on for the rest of the session.
+  - `ponytail-review`: reviews a diff for over-engineering only, one line per finding tagged `delete:`, `stdlib:`, `native:`, `yagni:`, or `shrink:`, closing with `net: -N lines possible`. Correctness, security, and performance are explicitly out of scope, so it complements `code-review` rather than competing with it.
+  - `ponytail-audit`: the same hunt across the whole tree, ranked biggest cut first.
+  - `ponytail-debt`: harvests every `ponytail:` shortcut comment into a ledger, each row carrying its ceiling and its upgrade trigger, and tags the rows with no trigger, since those are the ones that rot.
+
+  Upstream's rules are unchanged. Three edits: frontmatter flattened from folded YAML to this repo's model-invoked convention, five sentences in `ponytail` rewritten to drop em-dashes per `CLAUDE.md`, and upstream's pointer to the Caveman skill dropped because this repo does not ship it. Each skill carries a `## Provenance` section.
+
+  Only the skill text is vendored, not upstream's Node lifecycle hooks, statusline, or mode flag file. So `ponytail` does not activate itself at session start, it applies from the moment it is invoked, and there is no machine-global flag for concurrent sessions in different repos to overwrite.
+
+  Two of upstream's six skills are deliberately absent. `ponytail-help` documents an install flow, config file, and env var this repo does not ship, and `ponytail-gain` prints benchmark medians that upstream's own README has since superseded.
+
+  `ponytail-audit`'s known weakness is kept rather than patched, so the vendored copy stays a clean sync: its `## Hunt` says what to look for but never how to confirm a `delete:` claim, and upstream measured 8 of 31 findings invalid on a real repo. The caveat is recorded in the skill's provenance note and in its docs page instead of in the rules.
+
+  Registers all four everywhere a promoted skill has to appear: `plugin.json`, the top-level README, the engineering bucket README, a docs page each, and a new **Lazy mode** section in the `ask-mattia` router that states the boundaries against `code-review` (correctness versus complexity) and `improve-codebase-architecture` (what to deepen versus what to delete).
+
+- [`78a9148`](https://github.com/MattiaIppoliti/tia-skills/commit/78a9148fa01337730139174d4dcd92bf3be1bc45) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Adapt eight skills from Cursor's Pstack set and add `excalidraw-diagram`.
+
+  `architect`, `typescript-best-practices`, `why`, and the three `principle-*` skills join `engineering/`; `technical-writing` and `excalidraw-diagram` join `productivity/`. `teach` is replaced by the Pstack version: it now explains the system or change in front of you instead of running a multi-session course workspace, so its four `*-FORMAT.md` files are gone. Every new skill is wired into `plugin.json`, both `README.md`s, a docs page, and `ask-mattia`.
+
+- [`aae9615`](https://github.com/MattiaIppoliti/tia-skills/commit/aae9615a628a4f38bdd71c123d4751d52040780f) Thanks [@claude](https://github.com/claude)! - Rebrand the set to `tia-skills`, owned by Mattia Ippoliti, and teach the router the data-intensive skills.
+
+  - **`ask-matt` is now `ask-mattia`**, and **`setup-matt-pocock-skills` is now `setup-tia-skills`**. Both are renames with no alias: the old slash commands stop resolving, and a repo that already ran the old setup skill keeps its config, since only the skill's name changed.
+  - **The plugin and package are now `tia-skills`**, published from this repo's own marketplace (`/plugin marketplace add MattiaIppoliti/tia-skills`, then `/plugin install tia-skills@mattiaippoliti`). The previous install text claimed a listing in Claude Code's official marketplace and on skills.sh; neither covers this repo, so both are gone rather than renamed. `.agents/install-block.md` carries the one true wording, and `README.md` follows it.
+  - **Docs pages are read on GitHub**, at `https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/<bucket>/<skill-name>.md`. Every cross-page link moved to that scheme, and `.agents/writing-docs.md` records it. Links to the AI Coding Dictionary stay as they are: those cite an external glossary rather than claim ownership.
+  - **`ask-mattia` now maps the four data-intensive skills** in a section of their own, because what separates them is only which question is being asked: `data-intensive-foundations` as the vocabulary layer, `design-data-intensive-system` handing its decision record off to `to-spec`, `scale-data-intensive-system` as the on-ramp for a system running out of room, and `audit-data-intensive-repo` as the read-only risk report beside `ponytail-audit`. The docs page gained the matching route, and its stale count of user-invoked skills is now correct at fourteen of thirty-four.
+  - **Attribution kept where removing it would be wrong**: `LICENSE` names Mattia Ippoliti and retains the upstream copyright for the portions this repo derives from, and `CHANGELOG.md` entries up to 1.2.3 keep their upstream pull request, commit, and author links, under a note saying so.
+
+- [`c1d86d0`](https://github.com/MattiaIppoliti/tia-skills/commit/c1d86d0fc24b82e177e69ef08f68c55416ca9528) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Add `unslop`, a model-invoked productivity skill that strips AI tells out of prose a human will read (puffery, AI vocabulary, em dashes, filler, hedging, passive voice, sycophancy) and puts a voice back in.
+
+  Vendored from [cursor/plugins](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop). The 31 rules are upstream's, unchanged; only the frontmatter is rewritten, from upstream's human-facing "Must always apply" to the model-facing trigger phrasing this repo's model-invoked skills use. A `## Provenance` section records where it came from.
+
+  It pairs with `writing-for-agents`, which splits the same territory by audience: `writing-for-agents` governs documents an agent reads and tests each line behaviourally, `unslop` governs documents a person reads and tests whether the line sounds like a person wrote it. `ask-mattia` now states that boundary under Standalone.
+
+- [`cc08b3b`](https://github.com/MattiaIppoliti/tia-skills/commit/cc08b3be51b768d56d37ff43dfb38c0eb17560ca) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Vendor Vercel's `web-design-guidelines` skill into `engineering/`.
+
+  It reviews UI files against the Web Interface Guidelines, fetched fresh from vercel-labs/web-interface-guidelines on every run, and reports violations as terse `file:line` findings. Model-invoked, wired into `plugin.json`, both `README.md`s, `docs/engineering/web-design-guidelines.md`, and `ask-mattia`'s Standalone section next to `/apple-design`. The body is unchanged from upstream; only the frontmatter is flattened.
+
+### Patch Changes
+
+- [`c5e0785`](https://github.com/MattiaIppoliti/tia-skills/commit/c5e078574cf588cdf38b0087c09ed162662d7c0b) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Add the `implement-spec` skill (in-progress bucket, user-invoked). It takes a spec and its tickets and drives them to a single PR: the tickets are read as a task graph with blocking edges, so implementer subagents run in background worktrees across the ready frontier for concurrency, a merger subagent folds each one back into the PR branch, and the flow closes with `/code-review` before the PR is marked ready.
+
+- [`c5e0785`](https://github.com/MattiaIppoliti/tia-skills/commit/c5e078574cf588cdf38b0087c09ed162662d7c0b) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Add the `pr` skill (in-progress bucket, model-invoked). It's a reference for the shape a pull request body should take, not a workflow: the template comes first, then a short section per part of it. The summary comes from the primary source (the issue or spec), never inferred from the diff; the body states size and a one-way/two-way door call up front; "the shape of the change" reproduces `show-me` almost verbatim (credited in the skill's `CREDITS.md`), aimed at a diff instead of a conversation; evidence is a before/after pair (visual first, a failing-then-passing test run where no visual exists); and what was deliberately left out gets its own section. Relates to [#521](https://github.com/MattiaIppoliti/tia-skills/issues/521), [#938](https://github.com/MattiaIppoliti/tia-skills/issues/938), [#509](https://github.com/MattiaIppoliti/tia-skills/issues/509), and [#915](https://github.com/MattiaIppoliti/tia-skills/issues/915).
+
+- [`284fb07`](https://github.com/MattiaIppoliti/tia-skills/commit/284fb07474fa869dbca5629462cc1ce02957d874) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Sync `apple-design` with emilkowalski/skills: invoked with no question, it now answers with one line saying what it knows and waits. Upstream added the section with a course link and removed the link the same day; this port takes the result.
+
+- [`573a257`](https://github.com/MattiaIppoliti/tia-skills/commit/573a257eaa9e738906fed2776aac51e57284f99b) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Restore `caveman` from the current upstream skill, with six intensity levels, clarity safeguards, and boundaries that keep generated prose for other people in its normal voice. Add it to the promoted productivity set and route it from `ask-mattia`.
+
+- [`c24c859`](https://github.com/MattiaIppoliti/tia-skills/commit/c24c859499ab1a41524adf3c2e2de654da5edade) Thanks [@claude](https://github.com/claude)! - Credit the people whose skills this repo ships, and drop a duplicated line from `audit-data-intensive-repo`.
+
+  `README.md` gains a **Credits** section naming the authors of the work that came from elsewhere: Matt Pocock for the two sets this repo forked from, DietrichGebert for the four `ponytail` skills, Cursor for `unslop`, and Martin Kleppmann and Chris Riccomini for the book the data-intensive skills paraphrase. The eighteen skills in `skills/video/` are third-party too, and no author is recorded anywhere in the repo, so the section says that outright instead of leaving the silence to imply otherwise.
+
+  `audit-data-intensive-repo`'s `## Hunt` section told the agent to read `references/audit-catalog.md` twice in consecutive paragraphs. The second copy is gone; the instruction and the scoping sentence that followed it both stay.
+
+- [`838877d`](https://github.com/MattiaIppoliti/tia-skills/commit/838877d838e497777275a97e2544c4027a660ea2) Thanks [@claude](https://github.com/claude)! - domain-modeling: trigger on discussing codebase terminology and on writing or editing a CONTEXT.md or an ADR directly, replacing the narrower "pin down domain terminology or a ubiquitous language" / "record an architectural decision" phrasing. Also drops the "another skill needs to maintain the domain model" caveat, since that's the invoking skill's job to state explicitly, not this description's.
+
+- [`c5e0785`](https://github.com/MattiaIppoliti/tia-skills/commit/c5e078574cf588cdf38b0087c09ed162662d7c0b) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Quote the `description` front matter in `to-spec`, `code-review`, `setup-matt-pocock-skills`, `writing-fragments`, `writing-shape`, and `wait-what`. An unquoted colon-space left over from the em-dash sweep in [#905](https://github.com/MattiaIppoliti/tia-skills/issues/905) made each block invalid YAML, so `skills.sh` skipped all six during discovery and they couldn't be listed or installed via `npx skills`.
+
+- [`c5e0785`](https://github.com/MattiaIppoliti/tia-skills/commit/c5e078574cf588cdf38b0087c09ed162662d7c0b) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - grilling: update the round template so consecutive questions are separated by a horizontal rule (`---`) instead of running together.
+
+- [`7fcebc7`](https://github.com/MattiaIppoliti/tia-skills/commit/7fcebc7797b7419b1bf0f43fdb45425cb9df751a) - grilling: remove em-dashes from `SKILL.md`, replacing them with colons and semicolons so the instructions read as plain text.
+
+- [`8fca7dd`](https://github.com/MattiaIppoliti/tia-skills/commit/8fca7dde307494d631d08ac4c769b5425f99ce24) - Remove every em-dash from the repo's prose (docs, `SKILL.md` files, ADRs, `README.md`, scripts, JSON/YAML metadata), hand-rewriting each sentence with a comma, colon, period, parentheses, or conjunction rather than mechanically substituting the character. `CLAUDE.md`/`AGENTS.md` now says not to reintroduce them.
+
+- [`c5e0785`](https://github.com/MattiaIppoliti/tia-skills/commit/c5e078574cf588cdf38b0087c09ed162662d7c0b) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - retro: classify coding-standards findings as mechanical or judgement calls before writing them. A mechanical violation (a fixed syntactic pattern, a banned API, an import shape, a file-location rule) now gets a deterministic check instead (a linter rule, a pre-commit hook, or a CI job), reserving `CODING_STANDARDS.md` for genuine judgement calls. Automated checks also now flags a repo with no guardrail at all (no pre-commit hook, no CI lint/typecheck/test job) as a finding in its own right.
+
+- [`bc5600f`](https://github.com/MattiaIppoliti/tia-skills/commit/bc5600f24fb8af0a74de81041df903bf6fa30243) Thanks [@claude](https://github.com/claude)! - Standardize cross-skill invocation on an explicit "call the Skill tool" instruction instead of bare `/skill`-style prose, across `code-review`, `diagnosing-bugs`, `grill-with-docs`, `grill-me`, `improve-codebase-architecture`, `tdd`, `to-spec`, `to-tickets`, `triage`, and `wayfinder`.
+
+  - A skill that names another skill in prose ("run the `/grilling` skill") does not reliably cause it to load. This is the documented rough edge behind `grill-with-docs`'s most-reported problem. Naming the tool directly (`Call the Skill tool with "grilling"`) is intended to raise the hit rate. Dropping the leading `/` also makes the instruction harness-neutral rather than less: it no longer assumes Claude Code's trigger syntax.
+  - A step needing more than one skill now says so as multiple calls ("Call the Skill tool twice, for `grilling` and `domain-modeling`"), not one call carrying two names.
+  - Documents the convention in `.agents/invocation.md` for future skills to follow.
+
+- [`fddad79`](https://github.com/MattiaIppoliti/tia-skills/commit/fddad7960d55656ee62f04beb908ec702ccd3b3c) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - `unslop` gains two rules from cursor/plugins: 32, mannered prose (metaphor or flourish where a literal phrase exists), and 33, over-compression (dropped articles, arrows, and symbol-speak). Upstream also removed the "Adding soul" section and rules 1, 2, 4, 6, and 21; this copy keeps them, and its Provenance section and the README's Credits say so.
+
+- [`c6c2eed`](https://github.com/MattiaIppoliti/tia-skills/commit/c6c2eed96564ffd48d011f5e7fae9728408a55a3) - Stop skills from trying to reach user-invoked skills through the Skill tool: fix cross-skill references that violated the "no other skill can call it" invariant in `.agents/invocation.md`, in `to-spec`, `wayfinder`, `to-tickets`, `triage`, `code-review`, and `diagnosing-bugs`.
+
+  - `to-spec`, `wayfinder`, `to-tickets`, `triage`, and `code-review` each carried a precondition ("...run `/setup-tia-skills` if not") that PR [#878](https://github.com/MattiaIppoliti/tia-skills/issues/878) rewrote into a literal `Call the Skill tool with "setup-tia-skills"` instruction. `setup-tia-skills` is user-invoked, so none of these skills (user-invoked or model-invoked) can call it. Reworded all five as instructions for the agent to tell the human to run it instead.
+  - `diagnosing-bugs`'s Phase 6 post-mortem hand off to `improve-codebase-architecture` (also user-invoked) the same way, from an autonomous, often-unattended bug-fixing flow with no human in the loop to catch the failed call. Removed the hand-off outright rather than softening it, since it rarely fired in practice. Phase 6 is now "Cleanup" only; the mechanical checklist is untouched.
+  - Added a carve-out paragraph to `.agents/invocation.md`'s "Dependencies between them" section: the `Call the Skill tool with "name"` convention only applies when the named skill is model-invoked. This is the section PR [#878](https://github.com/MattiaIppoliti/tia-skills/issues/878) introduced without reconciling it against the user-invoked/model-invoked invariant stated eight lines above it; the gap is most of why this bug reached six call sites instead of one.
+
+  Fixes [#453](https://github.com/MattiaIppoliti/tia-skills/issues/453).
+
+- [`f9a5676`](https://github.com/MattiaIppoliti/tia-skills/commit/f9a5676e09d21594fa323195b7fac290ed4dca2b) - wait-what: follow `CONTEXT-MAP.md` to the right `CONTEXT.md` when a repo indexes multiple contexts that way instead of keeping a single root `CONTEXT.md`.
+
 Entries up to and including 1.2.3 were written for the upstream project this repo was forked from, and their pull request, commit, and author links point there. They are kept verbatim so the links keep resolving; releases from here on are this repo's own.
 
 ## 1.2.3
