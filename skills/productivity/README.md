@@ -18,6 +18,7 @@ Reachable only when you type them (Claude Code: `disable-model-invocation: true`
 Model- or user-reachable (rich trigger phrasing so the model can reach for them).
 
 - **[excalidraw-diagram](./excalidraw-diagram/SKILL.md)**: Create editable overall architecture maps, module diagrams and workflows with verified local exports.
+- **[caveman](./caveman/SKILL.md)**: Set a concise response style with six intensity levels, while preserving technical detail and switching to full clarity when compression could mislead.
 - **[grilling](./grilling/SKILL.md)**: Interview the user relentlessly about a plan, decision, or idea until every branch of the design tree is resolved.
 - **[unslop](./unslop/SKILL.md)**: Cut the AI tells out of a draft: puffery, AI vocabulary, em dashes, filler, hedging, passive voice, then put a human voice back in.
 - **[writing-for-agents](./writing-for-agents/SKILL.md)**: Writing documents for agents: skills, AGENTS.md/CLAUDE.md, and any doc an agent reaches by a pointer.
