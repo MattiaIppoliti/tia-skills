@@ -1,0 +1,5 @@
+interface:
+  display_name: "EGM draft"
+  short_description: "Write a design document section by section."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,5 @@
+interface:
+  display_name: "EGM review loop"
+  short_description: "Run a configured group of design reviewers."
+policy:
+  allow_implicit_invocation: false

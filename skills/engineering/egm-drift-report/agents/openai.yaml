@@ -1,0 +1,5 @@
+interface:
+  display_name: "EGM drift report"
+  short_description: "Compare checked-in designs with current source code."
+policy:
+  allow_implicit_invocation: false

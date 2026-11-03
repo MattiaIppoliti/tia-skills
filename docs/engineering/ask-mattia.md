@@ -91,3 +91,5 @@ Check the changelog for a rename before assuming it is gone. `writing-great-skil
 `ask-mattia` is a **standalone router** that sits over the whole set. It is never a step in a chain; it points into every chain, and it is the node the other docs pages link back to so none of them has to redraw the graph. From here you most often land on [grill-with-docs](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/grill-with-docs.md), the head of the main flow, or [triage](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/triage.md), the on-ramp for work that arrived rather than work you started.
 
 It is a [secondary source](https://www.aihero.dev/ai-coding-dictionary/secondary-source) over the skills it describes. Where the router and a `SKILL.md` disagree, the `SKILL.md` is right.
+
+EGM adds an optional design path: [brainstorm](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/egm-brainstorm.md), draft, review, and resolve. Use bootstrap for directory contracts, drift-report for documentation drift, and review-loop for selected reviewers.

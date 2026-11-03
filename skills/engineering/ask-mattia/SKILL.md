@@ -124,3 +124,7 @@ Off the main flow entirely.
 ## Precondition
 
 **`/setup-tia-skills`**: run before your first engineering flow to configure the issue tracker, triage labels, and doc layout the other skills assume. Custom issue trackers also work.
+
+## EGM design workflow
+
+For a specification challenged by fresh-context reviewers, choose `/egm-brainstorm` → `/egm-draft` → `/egm-review` → `/egm-resolve`. These are user-invoked: suggest the next command for the human to run. `/egm-review-loop` selects a targeted reviewer group. `/egm-bootstrap` creates architectural directory guides; `/egm-drift-report` compares documents with current code. This optional design workflow precedes implementation; `/code-review` reviews implementation changes.

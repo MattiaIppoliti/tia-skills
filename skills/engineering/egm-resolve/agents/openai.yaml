@@ -1,0 +1,5 @@
+interface:
+  display_name: "EGM resolve"
+  short_description: "Resolve review findings in a design."
+policy:
+  allow_implicit_invocation: false

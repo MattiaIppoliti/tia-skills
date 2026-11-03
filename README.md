@@ -180,6 +180,14 @@ Skills I use daily for code work.
 - **[implement](./skills/engineering/implement/SKILL.md)**: Build the work described by a spec or set of tickets, driving `/tdd` at pre-agreed seams and closing out with `/code-review` before committing.
 - **[wayfinder](./skills/engineering/wayfinder/SKILL.md)**: Plan a huge chunk of work, more than one agent session can hold, as a shared map of decision tickets on the issue tracker, and resolve them one at a time until the way to the destination is clear.
 
+- **[egm-brainstorm](./skills/engineering/egm-brainstorm/SKILL.md)**: Test an idea and write a concept brief.
+- **[egm-draft](./skills/engineering/egm-draft/SKILL.md)**: Write a design document section by section.
+- **[egm-review](./skills/engineering/egm-review/SKILL.md)**: Stress-test a design with fresh reviewers.
+- **[egm-resolve](./skills/engineering/egm-resolve/SKILL.md)**: Resolve review findings in a design.
+- **[egm-bootstrap](./skills/engineering/egm-bootstrap/SKILL.md)**: Create architectural directory guides for a codebase.
+- **[egm-review-loop](./skills/engineering/egm-review-loop/SKILL.md)**: Run a configured group of design reviewers.
+- **[egm-drift-report](./skills/engineering/egm-drift-report/SKILL.md)**: Compare checked-in designs with current source code.
+
 **Model-invoked**
 
 - **[prototype](./skills/engineering/prototype/SKILL.md)**: Build a throwaway prototype to answer a design question, either a single shareable HTML file for state/logic questions, or several radically different UI variations toggleable from one route.

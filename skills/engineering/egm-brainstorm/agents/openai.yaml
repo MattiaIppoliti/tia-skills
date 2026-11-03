@@ -1,0 +1,5 @@
+interface:
+  display_name: "EGM brainstorm"
+  short_description: "Test an idea and write a concept brief."
+policy:
+  allow_implicit_invocation: false

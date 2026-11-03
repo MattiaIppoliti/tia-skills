@@ -64,6 +64,13 @@
     "./skills/productivity/wait-what",
     "./skills/productivity/unslop",
     "./skills/productivity/writing-for-agents",
-    "./skills/productivity/excalidraw-diagram"
+    "./skills/productivity/excalidraw-diagram",
+    "./skills/engineering/egm-brainstorm",
+    "./skills/engineering/egm-draft",
+    "./skills/engineering/egm-review",
+    "./skills/engineering/egm-resolve",
+    "./skills/engineering/egm-bootstrap",
+    "./skills/engineering/egm-review-loop",
+    "./skills/engineering/egm-drift-report"
   ]
 }

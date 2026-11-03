@@ -1,0 +1,5 @@
+interface:
+  display_name: "EGM review"
+  short_description: "Stress-test a design with fresh reviewers."
+policy:
+  allow_implicit_invocation: false

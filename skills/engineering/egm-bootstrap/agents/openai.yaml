@@ -1,0 +1,5 @@
+interface:
+  display_name: "EGM bootstrap"
+  short_description: "Create architectural directory guides for a codebase."
+policy:
+  allow_implicit_invocation: false

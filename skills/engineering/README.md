@@ -20,6 +20,14 @@ Reachable only when you type them (Claude Code: `disable-model-invocation: true`
 - **[implement](./implement/SKILL.md)**: Build the work described by a spec or set of tickets, driving `/tdd` at pre-agreed seams and closing out with `/code-review` before committing.
 - **[wayfinder](./wayfinder/SKILL.md)**: Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on the issue tracker, resolved one at a time until the way to the destination is clear.
 
+- **[egm-brainstorm](./egm-brainstorm/SKILL.md)**: Test an idea and write a concept brief.
+- **[egm-draft](./egm-draft/SKILL.md)**: Write a design document section by section.
+- **[egm-review](./egm-review/SKILL.md)**: Stress-test a design with fresh reviewers.
+- **[egm-resolve](./egm-resolve/SKILL.md)**: Resolve review findings in a design.
+- **[egm-bootstrap](./egm-bootstrap/SKILL.md)**: Create architectural directory guides for a codebase.
+- **[egm-review-loop](./egm-review-loop/SKILL.md)**: Run a configured group of design reviewers.
+- **[egm-drift-report](./egm-drift-report/SKILL.md)**: Compare checked-in designs with current source code.
+
 ## Model-invoked
 
 Model- or user-reachable (rich trigger phrasing so the model can reach for them).
