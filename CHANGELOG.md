@@ -1,5 +1,13 @@
 # tia-skills
 
+## 1.4.0
+
+### Minor Changes
+
+- [`e100377`](https://github.com/MattiaIppoliti/tia-skills/commit/e1003770db9602b7af6b16ffdbdbb1bb95625ecb) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Add seven EGM design workflow skills with shared reviewer personas, standards, documentation, and local installation links. Retain Apache-2.0 licensing and pinned upstream provenance.
+
+- [`a6eed4f`](https://github.com/MattiaIppoliti/tia-skills/commit/a6eed4f2fca452bb6a562a6cfa15dc8fcc37821e) Thanks [@MattiaIppoliti](https://github.com/MattiaIppoliti)! - Add `full-send`, `full-stop` and `council` from t3dotgg/tstack, with the whole upstream bundle vendored under `vendor/tstack` so `full-send` can reach the helper skills it calls.
+
 ## 1.3.0
 
 ### Minor Changes
