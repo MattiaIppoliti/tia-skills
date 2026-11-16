@@ -93,3 +93,5 @@ Check the changelog for a rename before assuming it is gone. `writing-great-skil
 It is a [secondary source](https://www.aihero.dev/ai-coding-dictionary/secondary-source) over the skills it describes. Where the router and a `SKILL.md` disagree, the `SKILL.md` is right.
 
 EGM adds an optional design path: [brainstorm](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/egm-brainstorm.md), draft, review, and resolve. Use bootstrap for directory contracts, drift-report for documentation drift, and review-loop for selected reviewers.
+
+To ship a change unattended, [full-send](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/full-send.md) takes it to a merged PR and [full-stop](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/full-stop.md) stops one step short of merging. [council](https://github.com/MattiaIppoliti/tia-skills/blob/main/docs/engineering/council.md) gets a three-provider review.

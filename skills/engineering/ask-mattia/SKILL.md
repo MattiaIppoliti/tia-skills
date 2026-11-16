@@ -128,3 +128,13 @@ Off the main flow entirely.
 ## EGM design workflow
 
 For a specification challenged by fresh-context reviewers, choose `/egm-brainstorm` → `/egm-draft` → `/egm-review` → `/egm-resolve`. These are user-invoked: suggest the next command for the human to run. `/egm-review-loop` selects a targeted reviewer group. `/egm-bootstrap` creates architectural directory guides; `/egm-drift-report` compares documents with current code. This optional design workflow precedes implementation; `/code-review` reviews implementation changes.
+
+## Shipping a PR unattended
+
+Three model-invoked skills from [t3dotgg/tstack](https://github.com/t3dotgg/tstack), each fired by a spoken phrase, so expect a different voice:
+
+- **`/full-send`** ("full send") takes a finished or half-finished change to a **merged** PR with nobody watching: proof, a GPT Sol review loop, filing, babysitting CI and review bots, then the merge. The phrase is the grant to merge and force-with-lease the PR's own branch.
+- **`/full-stop`** ("full stop") runs the same workflow and stops with the PR ready for the human to merge. Pick it over `full-send` whenever the merge button should stay yours.
+- **`/council`** ("council") puts the change in front of three models from three providers and loops until all three are satisfied. It needs a harness that can reach non-Anthropic models and reports a missing provider instead of substituting one.
+
+They sit after `/implement` or any hand-written change. `/code-review` checks this repo's standards and the spec; `council` and `full-send`'s Sol loop are independent second opinions, not replacements for it.

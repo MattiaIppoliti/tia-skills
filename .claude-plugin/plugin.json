@@ -71,6 +71,9 @@
     "./skills/engineering/egm-resolve",
     "./skills/engineering/egm-bootstrap",
     "./skills/engineering/egm-review-loop",
-    "./skills/engineering/egm-drift-report"
+    "./skills/engineering/egm-drift-report",
+    "./skills/engineering/full-send",
+    "./skills/engineering/full-stop",
+    "./skills/engineering/council"
   ]
 }
